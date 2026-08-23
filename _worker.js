@@ -1,4 +1,4 @@
-const locale = (voice.match(/^([a-z]{2}-[A-Z]{2})/) || [, 'ar-SA'])[1];/**
+/**
  * دليلك — Cloudflare Pages Worker
  * ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
  * 1) يخدم ملفات الموقع الثابتة كما هي (index.html, map.html, الفيديوهات…)
@@ -155,14 +155,15 @@ async function handleTTS(request, env) {
     : await ttsAzure(text, key, env);
 
   return new Response(bytes, {
-    headers: { 'Content-Type': 'audio/mpeg', 'Cache-Control': 'public, max-age=86400' }
+    headers: { 'Content-Type': 'audio/mpeg', 'Cache-Control': 'no-store',
+               'X-Voice-Used': (provider === 'google' ? (env.TTS_VOICE || 'ar-XA-Wavenet-B') : 'ar-SA-HamedNeural') }
   });
 }
 
 /* Azure AI Speech — صوت سعودي */
 async function ttsAzure(text, key, env) {
   const region = env.TTS_REGION || 'uaenorth';
-  const voice  = (env.TTS_VOICE || 'ar-SA-HamedNeural').trim();
+  const voice  = 'ar-SA-HamedNeural';   // مثبّت — لا يعتمد على المتغيّرات
   // اللهجة تُشتق من اسم الصوت نفسه (ar-SA / ar-EG ...) لضمان اللكنة الصحيحة
   const locale = (voice.match(/^([a-z]{2}-[A-Z]{2})/) || [, 'ar-SA'])[1];
   const ssml =
