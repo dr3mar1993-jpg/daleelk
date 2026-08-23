@@ -35,6 +35,10 @@ export default {
       if (request.method === 'OPTIONS') return new Response(null, { status: 204 });
       if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
       try {
+        if (url.searchParams.get('debug') === '1') {
+          return json({ provider: (env.TTS_PROVIDER || 'azure'), voice: (env.TTS_VOICE || 'ar-SA-HamedNeural'),
+                        region: (env.TTS_REGION || 'uaenorth'), key_set: !!env.TTS_API_KEY });
+        }
         return await handleTTS(request, env);
       } catch (err) {
         return json({ error: 'server_error', detail: String(err && err.message || err) }, 500);
@@ -158,9 +162,11 @@ async function handleTTS(request, env) {
 /* Azure AI Speech — صوت سعودي */
 async function ttsAzure(text, key, env) {
   const region = env.TTS_REGION || 'uaenorth';
-  const voice  = env.TTS_VOICE  || 'ar-SA-HamedNeural';
+  const voice  = (env.TTS_VOICE || 'ar-SA-HamedNeural').trim();
+  // اللهجة تُشتق من اسم الصوت نفسه (ar-SA / ar-EG ...) لضمان اللكنة الصحيحة
+  const locale = (voice.match(/^([a-z]{2}-[A-Z]{2})/) || [, 'ar-SA'])[1];
   const ssml =
-    `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="ar-SA">` +
+    `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="${locale}">` +
     `<voice name="${voice}"><prosody rate="-4%">${xmlEsc(text)}</prosody></voice></speak>`;
 
   const r = await fetch(`https://${region}.tts.speech.microsoft.com/cognitiveservices/v1`, {
