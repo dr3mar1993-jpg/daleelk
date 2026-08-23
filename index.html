@@ -100,7 +100,7 @@ main{padding-bottom:40px;min-height:60vh}
 /* ── شبكة الخدمات (بدون أيقونات للأقسام — بطاقات نصية بلون معتمد) ── */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
 @media(min-width:620px){.grid{grid-template-columns:1fr 1fr 1fr}}
-.svc{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 15px 15px;box-shadow:var(--sh);text-align:start;min-height:104px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;transition:transform .22s cubic-bezier(.34,1.56,.44,1),box-shadow .22s,border-color .18s;animation:cardIn .45s both;cursor:pointer;will-change:transform}
+.svc{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 15px 15px;box-shadow:var(--sh);text-align:start;min-height:132px;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;transition:transform .22s cubic-bezier(.34,1.56,.44,1),box-shadow .22s,border-color .18s;animation:cardIn .45s both;cursor:pointer;will-change:transform}
 @keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
 .svc .glow{position:absolute;inset:0;opacity:.06;background:var(--sc);transition:opacity .22s}
 .svc:hover{transform:translateY(-8px) scale(1.045);box-shadow:0 18px 40px -12px color-mix(in srgb,var(--sc) 55%,transparent),var(--sh2);border-color:var(--sc)}
@@ -109,9 +109,9 @@ main{padding-bottom:40px;min-height:60vh}
 .svc:hover b{color:var(--sc)}
 .svc:active{transform:translateY(-2px) scale(.99);transition:transform .09s}
 .svc .bar{position:absolute;top:0;inset-inline-start:0;width:100%;height:5px;transition:height .22s,background .2s;z-index:1}
-.svc b{font-size:16.5px;font-weight:700;line-height:1.3;position:relative;z-index:1;transition:color .18s,transform .24s cubic-bezier(.34,1.56,.44,1);transform-origin:right center}
+.svc b{font-size:16px;font-weight:700;line-height:1.35;position:relative;z-index:1;margin-top:12px;transition:color .18s,transform .24s cubic-bezier(.34,1.56,.44,1);transform-origin:right center}
 /* أيقونة الخدمة داخل البطاقة */
-.svic{position:relative;z-index:1;width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--sc) 14%,#fff);display:grid;place-items:center;margin-bottom:10px;transition:transform .28s cubic-bezier(.34,1.56,.44,1),background .2s}
+.svic{position:relative;z-index:1;width:44px;height:44px;border-radius:13px;background:color-mix(in srgb,var(--sc) 14%,#fff);display:grid;place-items:center;margin:0 0 auto;flex:none;transition:transform .28s cubic-bezier(.34,1.56,.44,1),background .2s}
 .svic svg{width:23px;height:23px;stroke:var(--sc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .svc:hover .svic{transform:scale(1.15) rotate(-6deg);background:color-mix(in srgb,var(--sc) 24%,#fff)}
 .svc.big{grid-column:1/-1;min-height:auto;flex-direction:row;align-items:center;gap:14px;padding:20px 18px}
@@ -121,7 +121,7 @@ main{padding-bottom:40px;min-height:60vh}
 .dept .dic{width:46px;height:46px;border-radius:13px;background:color-mix(in srgb,var(--sc) 13%,#fff);display:grid;place-items:center;flex:none;transition:transform .26s cubic-bezier(.34,1.56,.44,1)}
 .dept .dic svg{width:24px;height:24px;stroke:var(--sc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .dept:hover .dic{transform:scale(1.12) rotate(-5deg)}
-.svc span{font-size:12.5px;color:var(--ink3);margin-top:4px;position:relative;z-index:1;transition:transform .24s;transform-origin:right center}
+.svc span{font-size:12.2px;color:var(--ink3);margin-top:5px;position:relative;z-index:1;line-height:1.5;transition:transform .24s;transform-origin:right center}
 .svc:hover b{color:var(--sc);transform:scale(1.08) translateY(-3px)}
 .svc:hover span{transform:translateY(-2px)}
 .svc.big{grid-column:1/-1;min-height:auto;flex-direction:row;align-items:center;gap:14px;padding:20px 18px}
@@ -159,7 +159,7 @@ body.mapview .a11y,body.sub.hidea .a11y{display:none}
 /* بطاقات معلومات الأقسام */
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 @media(min-width:560px){.info-grid{grid-template-columns:1fr 1fr 1fr}}
-.icard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:16px 13px 14px;text-align:start;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;min-height:118px;cursor:pointer;animation:cardIn .45s both;transition:transform .2s cubic-bezier(.34,1.56,.44,1),box-shadow .2s,border-color .18s}
+.icard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:17px 13px 15px;text-align:start;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;min-height:132px;cursor:pointer;animation:cardIn .45s both;transition:transform .2s cubic-bezier(.34,1.56,.44,1),box-shadow .2s,border-color .18s}
 .icard .glow{position:absolute;inset:0;opacity:.06;background:var(--sc);transition:opacity .2s}
 .icard .bar{position:absolute;top:0;inset-inline-start:0;width:100%;height:5px;transition:height .2s;z-index:1}
 .icard:hover{transform:translateY(-6px) scale(1.04);box-shadow:var(--sh2);border-color:var(--sc)}
@@ -167,6 +167,8 @@ body.mapview .a11y,body.sub.hidea .a11y{display:none}
 .icard:hover .iic{transform:scale(1.14) rotate(-6deg)}
 .icard:hover b{color:var(--sc)}
 .icard:active{transform:scale(.97)}
+.icard .iic.tool{width:58px;height:58px;border-radius:17px;background:color-mix(in srgb,var(--sc) 16%,#fff);border:1.5px solid color-mix(in srgb,var(--sc) 26%,#fff)}
+.icard .iic.tool svg{width:32px;height:32px;stroke-width:1.85}
 .icard .iic{position:relative;z-index:1;width:40px;height:40px;border-radius:12px;background:color-mix(in srgb,var(--sc) 14%,#fff);display:grid;place-items:center;margin-bottom:9px;transition:transform .26s cubic-bezier(.34,1.56,.44,1)}
 .icard .iic svg{width:22px;height:22px;stroke:var(--sc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .icard b{position:relative;z-index:1;font-size:14.5px;font-weight:700;line-height:1.35;transition:color .18s}
@@ -263,6 +265,175 @@ body.mapview .asst-fab{display:none}
 .recbar .stop{background:var(--c-red);color:#fff}.recbar .cancel{background:#fff;color:#A81B29;border:1px solid #F6C9CE}
 .asst-note{font-size:11.5px;color:var(--ink3);text-align:center;padding:7px 14px;background:var(--card)}
 @media(prefers-reduced-motion:reduce){.asst-fab .ring,.asst-hd .av.think,.typing i,.recbar .wave i,.asst-in .mic.rec{animation:none!important}}
+
+/* ══ امتنان — بطاقة مركزية بشكل قلب ══ */
+.grat-wrap{position:relative;margin:22px 0 6px;display:grid;place-items:center;padding:6px 0}
+.grat-btn{position:relative;width:128px;height:128px;display:grid;place-items:center;background:none;padding:0;cursor:pointer}
+.grat-heart{position:absolute;inset:0;background:linear-gradient(140deg,#0d5450,#05A854 55%,#06c063);
+ clip-path:path("M64 120C64 120 6 83 6 44C6 22 22 7 40 7C52 7 60 13 64 21C68 13 76 7 88 7C106 7 122 22 122 44C122 83 64 120 64 120Z");
+ box-shadow:0 16px 40px -14px rgba(5,168,84,.75);transition:transform .3s cubic-bezier(.34,1.56,.44,1),filter .3s;animation:heartBeat 3.2s ease-in-out infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}14%{transform:scale(1.055)}28%{transform:scale(1)}42%{transform:scale(1.035)}56%{transform:scale(1)}}
+.grat-btn:hover .grat-heart,.grat-btn:active .grat-heart{transform:scale(1.09);filter:brightness(1.07)}
+.grat-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:-4px;pointer-events:none}
+.grat-in svg{width:25px;height:25px;stroke:#fff;fill:none;stroke-width:2}
+.grat-in b{color:#fff;font-size:17px;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.25)}
+.grat-in span{color:#DCF4E6;font-size:9.5px;font-weight:600}
+.grat-halo{position:absolute;width:158px;height:158px;border-radius:50%;border:2px dashed rgba(5,168,84,.32);animation:haloSpin 26s linear infinite}
+@keyframes haloSpin{to{transform:rotate(360deg)}}
+/* الأقمار المدارية حول القلب */
+.orbit{position:absolute;inset:0;pointer-events:none}
+.orb-i{position:absolute;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--card);
+ border:1.5px solid var(--line);box-shadow:var(--sh);pointer-events:auto;cursor:pointer;
+ transition:transform .26s cubic-bezier(.34,1.56,.44,1),box-shadow .22s,border-color .2s;animation:orbFloat 5.5s ease-in-out infinite}
+.orb-i svg{width:25px;height:25px;stroke:var(--oc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.orb-i:hover,.orb-i:active{transform:scale(1.2) translateY(-3px);border-color:var(--oc);box-shadow:0 10px 24px -8px var(--oc)}
+.orb-i .tip{position:absolute;bottom:-19px;font-size:10.5px;font-weight:700;color:var(--ink2);white-space:nowrap;opacity:1;text-shadow:0 1px 3px rgba(255,255,255,.9)}
+.orb-i:hover .tip,.orb-i:active .tip{color:var(--oc)}
+@keyframes orbFloat{0%,100%{margin-top:0}50%{margin-top:-6px}}
+@media(prefers-reduced-motion:reduce){.grat-heart,.grat-halo,.orb-i{animation:none!important}}
+/* صفحة الخبر الكاملة */
+.art{background:var(--card);border:1px solid var(--line);border-radius:var(--rl);box-shadow:var(--sh);overflow:hidden;animation:cardIn .45s both}
+.art-hero{position:relative;aspect-ratio:16/9;background:var(--line2);display:grid;place-items:center;overflow:hidden}
+.art-hero img{width:100%;height:100%;object-fit:cover}
+.art-hero.ph svg{width:54px;height:54px;stroke:var(--grey);fill:none;stroke-width:1.4}
+.art-tag{position:absolute;top:12px;inset-inline-start:12px;background:var(--green);color:#fff;font-size:11.5px;font-weight:800;padding:5px 12px;border-radius:20px;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.art-t{font-size:23px;line-height:1.45;margin:16px 17px 8px;font-weight:800}
+.art-meta{display:flex;flex-wrap:wrap;gap:14px;margin:0 17px 12px;font-size:12px;color:var(--ink3);padding-bottom:12px;border-bottom:1px solid var(--line2)}
+.art-body{margin:0 17px}
+.art-body p{font-size:15.5px;line-height:1.95;color:var(--ink);margin:0 0 14px}
+.art-body p:first-child{font-size:16.5px;font-weight:600;color:var(--ink)}
+.art-body p:first-child::first-letter{font-size:2.6em;float:right;line-height:.9;margin-inline-start:8px;color:var(--green-dk);font-weight:800}
+.art-acts{display:flex;flex-wrap:wrap;gap:8px;padding:8px 17px 18px}
+/* أخبار المجمع */
+.news-grid{display:grid;gap:13px}
+.news-c{cursor:pointer;display:flex;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;animation:cardIn .45s both;transition:transform .18s,box-shadow .18s}
+.news-c:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.news-img{width:112px;flex:none;background:var(--line2);display:grid;place-items:center;overflow:hidden}
+.news-img img{width:100%;height:100%;object-fit:cover}
+.news-img.ph svg{width:34px;height:34px;stroke:var(--grey);fill:none;stroke-width:1.5}
+.news-b{flex:1;min-width:0;padding:13px 14px}
+.news-b b{display:block;font-size:15.5px;line-height:1.4}
+.news-b p{margin:6px 0 0;font-size:13px;color:var(--ink2);line-height:1.6}
+.news-f{display:flex;align-items:center;gap:12px;margin-top:9px;flex-wrap:wrap}
+.news-d{font-size:11.5px;color:var(--ink3)}
+.news-l{font-size:12.5px;font-weight:700;color:var(--green-dk);background:var(--green-l);padding:6px 11px;border-radius:9px;transition:background .18s}
+.news-c:hover .news-l{background:var(--green);color:#fff}
+/* أدوات صحتك */
+.res-big{display:flex;flex-direction:column;align-items:center;gap:3px;padding:16px;border-radius:var(--r);background:color-mix(in srgb,var(--rc) 10%,#fff);border:1.5px solid color-mix(in srgb,var(--rc) 35%,var(--line));margin-bottom:12px}
+.res-big .rv{font-size:38px;font-weight:800;color:var(--rc);line-height:1}
+.res-big .rl{font-size:12.5px;color:var(--ink2);font-weight:600}
+.bmi-bar{height:12px;border-radius:8px;background:linear-gradient(90deg,#EAAA00 0 18%,#05A854 18% 40%,#EAAA00 40% 56%,#EE2737 56% 100%);position:relative;margin:0 0 14px;overflow:hidden}
+.bmi-bar span{position:absolute;inset-block:0;inset-inline-start:0;width:0;background:rgba(255,255,255,.55);border-inline-end:3px solid var(--ink);transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.gr-row{background:var(--card);border:1px solid var(--line);border-radius:var(--rs);padding:12px 13px;margin-bottom:10px;animation:cardIn .4s both}
+.gr-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.gr-h b{font-size:14.5px}
+.gr-bar{position:relative;height:10px;border-radius:6px;background:linear-gradient(90deg,#EE2737,#EAAA00 15%,#05A854 50%,#EAAA00 85%,#EE2737);margin-bottom:7px}
+.gr-bar i{position:absolute;top:-4px;width:4px;height:18px;background:var(--ink);border-radius:3px;box-shadow:0 0 0 2px #fff}
+.vc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:13px 14px;margin-bottom:11px;animation:cardIn .4s both}
+.vc-a{display:inline-block;background:var(--green-dk);color:#fff;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:10px}
+.vc-i{display:flex;flex-wrap:wrap;gap:7px}
+/* مكتبة التوعية */
+.aw-hero{display:flex;align-items:center;gap:13px;background:linear-gradient(135deg,#0B4644,#0d5450);color:#fff;border-radius:var(--rl);padding:18px 17px;box-shadow:var(--sh2);animation:cardIn .45s both;transition:transform .2s}
+.aw-hero:hover{transform:translateY(-4px)}
+.aw-hero .aw-ic{width:52px;height:52px;border-radius:15px;background:rgba(255,255,255,.15);display:grid;place-items:center;flex:none;border:1px solid rgba(255,255,255,.22)}
+.aw-hero .aw-ic svg{width:27px;height:27px;stroke:#fff;fill:none;stroke-width:2}
+.aw-hero b{display:block;font-size:18px}
+.aw-hero span{display:block;font-size:12.5px;color:#BFE6D2;margin-top:3px}
+.aw-hero .aw-go{margin-inline-start:auto;font-size:20px;color:#05A854;font-weight:800}
+/* شريط الأخبار والتنبيهات */
+/* شاشة اختيار طريقة التوجيه */
+.nav-opt{display:flex;align-items:center;gap:14px;width:100%;text-align:start;background:var(--card);border:1.5px solid var(--line);
+ border-radius:var(--rl);padding:18px 16px;margin-bottom:13px;box-shadow:var(--sh);animation:cardIn .45s both;
+ transition:transform .2s cubic-bezier(.34,1.56,.44,1),box-shadow .2s,border-color .2s}
+.nav-opt:hover,.nav-opt:active{transform:translateY(-4px) scale(1.015);border-color:var(--nc);box-shadow:0 16px 34px -14px var(--nc)}
+.nav-ic{width:58px;height:58px;border-radius:17px;background:color-mix(in srgb,var(--nc) 14%,#fff);display:grid;place-items:center;flex:none;transition:transform .24s}
+.nav-opt:hover .nav-ic{transform:scale(1.1) rotate(-6deg)}
+.nav-ic svg{width:30px;height:30px;stroke:var(--nc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-t{flex:1;min-width:0}
+.nav-t b{display:block;font-size:17px;line-height:1.35}
+.nav-t>span{display:block;font-size:12.5px;color:var(--ink2);margin-top:5px;line-height:1.6}
+.nav-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.nav-tags i{font-style:normal;font-size:10.5px;font-weight:700;color:var(--nc);background:color-mix(in srgb,var(--nc) 10%,#fff);
+ border:1px solid color-mix(in srgb,var(--nc) 25%,var(--line));padding:3px 9px;border-radius:20px}
+.nav-go{flex:none;font-size:26px;font-weight:800;color:var(--nc)}
+.wk-switch{position:absolute;top:calc(56px + env(safe-area-inset-top));inset-inline-start:50%;transform:translateX(50%);
+ z-index:12;background:rgba(11,70,68,.94);color:#fff;font-size:12.5px;font-weight:700;padding:10px 16px;border-radius:22px;
+ box-shadow:0 6px 20px rgba(0,0,0,.3);backdrop-filter:blur(6px)}
+/* محرّر المشاهد */
+.sc-canvas{position:relative;width:100%;border:1.5px solid var(--line);border-radius:var(--rs);overflow:hidden;background:#0d1a17;cursor:crosshair;direction:ltr}
+.sc-canvas img{width:100%;display:block;user-select:none;-webkit-user-drag:none}
+.sc-layer{position:absolute;inset:0}
+.sc-pt{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;justify-content:center;
+ font-size:12px;font-weight:800;color:#fff;padding:5px 10px;border-radius:20px;cursor:grab;white-space:nowrap;touch-action:none;direction:rtl}
+.sc-pt.hs{background:#05A854;box-shadow:0 0 0 3px rgba(5,168,84,.35);font-size:16px;padding:6px 12px}
+.sc-pt.lb{background:rgba(11,70,68,.9);border:1px solid rgba(255,255,255,.3)}
+.sc-x{position:absolute;top:-9px;inset-inline-end:-9px;width:19px;height:19px;border-radius:50%;background:#EE2737;color:#fff;
+ font-size:11px;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+/* ══ التوجيه الواقعي 360° ══ */
+#wkwrap{position:fixed;inset:0;z-index:70;background:#0B4644;display:flex;flex-direction:column;overflow:hidden}
+.wk-top{flex:none;display:flex;align-items:center;gap:11px;padding:calc(9px + env(safe-area-inset-top)) 12px 9px;background:linear-gradient(180deg,rgba(11,70,68,.96),rgba(11,70,68,.72));backdrop-filter:blur(8px);color:#fff;z-index:4}
+.wk-b{width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;flex:none}
+.wk-b svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
+.wk-b.on{background:var(--green)}
+.wk-ttl{flex:1;min-width:0;text-align:center}
+.wk-ttl b{display:block;font-size:16px;line-height:1.3}
+.wk-ttl span{display:block;font-size:11px;color:#BFE6D2;margin-top:2px}
+.wk-prog{flex:none;height:4px;background:rgba(255,255,255,.18)}
+.wk-prog span{display:block;height:100%;background:linear-gradient(90deg,#05A854,#7BE3AC);width:0;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.wk-stage{position:relative;flex:1;overflow:hidden;touch-action:none;cursor:grab;background:#123}
+.wk-stage:active{cursor:grabbing}
+.wk-pano{position:absolute;inset:0;direction:ltr}
+.wk-pano img{position:absolute;top:50%;left:0;right:auto;max-width:none;user-select:none;-webkit-user-drag:none;will-change:transform}
+.wk-layer{position:absolute;inset:0;pointer-events:none;direction:ltr}
+.wk-layer>*{pointer-events:auto}
+.wk-lab{position:absolute;left:0;top:0;direction:rtl;transform:translate(-50%,-50%);background:rgba(11,70,68,.86);color:#fff;font-size:12.5px;font-weight:700;
+ padding:6px 12px;border-radius:20px;white-space:nowrap;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.wk-hs{position:absolute;left:0;top:0;direction:rtl;transform:translate(-50%,-50%);width:76px;height:76px;display:grid;place-items:center;background:none;padding:0}
+.wk-ring{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(5,168,84,.42),rgba(5,168,84,.1) 60%,transparent 70%);
+ border:3px solid #05A854;box-shadow:0 0 22px rgba(5,168,84,.6);animation:wkPulse 2s ease-in-out infinite}
+.wk-hs.bk .wk-ring{border-color:#B2BEC4;background:radial-gradient(circle,rgba(178,190,196,.3),transparent 70%);box-shadow:none;animation:none;opacity:.72}
+@keyframes wkPulse{0%,100%{transform:scale(.9);opacity:.85}50%{transform:scale(1.1);opacity:1}}
+.wk-arrow{position:relative;z-index:2;font-size:30px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.wk-hs-t{position:absolute;bottom:-24px;white-space:nowrap;font-size:11.5px;font-weight:800;color:#fff;background:rgba(11,70,68,.9);padding:4px 11px;border-radius:16px}
+.wk-hs.bk .wk-hs-t{background:rgba(60,70,68,.82)}
+.wk-err{position:absolute;inset:auto 16px 16px;background:rgba(134,31,65,.95);color:#fff;padding:16px;border-radius:14px;font-size:14px;text-align:center;line-height:1.7;z-index:20}
+.wk-fade{position:absolute;inset:0;background:#0B4644;opacity:0;pointer-events:none;transition:opacity .35s}
+.wk-bot{flex:none;background:var(--card);padding:12px 14px calc(12px + env(safe-area-inset-bottom));box-shadow:0 -8px 26px rgba(0,0,0,.22);z-index:4}
+.wk-step{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.wk-ic{width:46px;height:46px;border-radius:14px;background:var(--green);color:#fff;font-size:24px;font-weight:800;display:grid;place-items:center;flex:none}
+.wk-step b{display:block;font-size:16px;line-height:1.35}
+.wk-step span{display:block;font-size:12px;color:var(--ink3);margin-top:3px}
+.wk-acts{display:flex;gap:8px;flex-wrap:wrap}
+.wk-a{flex:1;min-width:96px;font-size:12.5px;font-weight:700;padding:11px 8px;border-radius:11px;background:var(--green-l);color:var(--green-dk)}
+.wk-a.end{background:#FDECEE;color:#A81B29}
+@media(prefers-reduced-motion:reduce){.wk-ring{animation:none}}
+.ticker{display:flex;align-items:center;gap:11px;margin-top:16px;padding:12px 14px;border-radius:var(--r);background:var(--card);
+ border:1px solid var(--line);border-inline-start:4px solid var(--tc);box-shadow:var(--sh);cursor:pointer;transition:opacity .28s,transform .18s}
+.ticker:hover{transform:translateY(-2px)}
+.tk-tag{flex:none;font-size:10.5px;font-weight:800;color:#fff;background:var(--tc);padding:4px 10px;border-radius:20px}
+.tk-b{flex:1;min-width:0}
+.tk-b b{display:block;font-size:13.5px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk-b span{display:block;font-size:11.5px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.tk-go{flex:none;color:var(--tc);font-size:22px;font-weight:800}
+/* عدّاد BMI ومخطط النمو */
+.gauge-wrap{position:relative;display:flex;flex-direction:column;align-items:center;margin-bottom:6px}
+.gauge{width:100%;max-width:250px}
+.gauge-v{font-size:34px;font-weight:800;line-height:1;margin-top:-30px}
+.gauge-l{font-size:12px;color:var(--ink3);font-weight:600;margin:4px 0 10px}
+.gchart{width:100%;background:#fff;border:1px solid var(--line);border-radius:10px;margin:8px 0}
+.gr-legend{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 8px}
+.gr-legend span{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;color:var(--ink3)}
+.gr-legend i{width:10px;height:3px;border-radius:2px;display:inline-block}
+/* الفحوصات الوقائية */
+.scr-c{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--gc);border-radius:var(--rs);padding:13px 14px;margin-bottom:10px;animation:cardIn .4s both}
+.scr-g{flex:none;width:34px;height:34px;border-radius:10px;background:var(--gc);color:#fff;font-weight:800;font-size:16px;display:grid;place-items:center}
+.scr-c b{display:block;font-size:14.5px}
+.scr-c p{margin:4px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.55}
+.scr-lv{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:700;color:var(--gc);background:color-mix(in srgb,var(--gc) 12%,#fff);padding:3px 9px;border-radius:20px}
+.svc-chips{display:flex;flex-wrap:wrap;gap:8px}
+.svc-chip{display:inline-flex;align-items:center;gap:7px;background:color-mix(in srgb,var(--sc) 10%,#fff);border:1px solid color-mix(in srgb,var(--sc) 28%,var(--line));color:var(--ink);font-size:13px;font-weight:600;padding:9px 13px;border-radius:11px;transition:transform .16s}
+.svc-chip:hover{transform:translateY(-2px)}
+.svc-chip svg{width:14px;height:14px;stroke:var(--sc);fill:none;stroke-width:2.6;flex:none}
 .ph-note{font-size:12px;color:var(--ink3);background:var(--line2);border-radius:10px;padding:10px 12px;margin-top:8px}
 /* حقوق المريض — عرض بصري */
 .rights-grid{display:grid;grid-template-columns:1fr;gap:10px}
@@ -442,7 +613,7 @@ const VIDEO_URL = "";                 /* فيديو رحلة المريض الع
 const METERS_PER_100 = 170;           /* معايرة: كم متراً يعادل 100 وحدة خريطة (قِس ممراً واعدّله) */
 const WALK_SPEED = 1.0;               /* م/ث */
 
-const HOURS = { pharmacy:{open24:true}, lab:{from:"08:00",to:"11:30"}, xray:{open24:true,bookTo:"16:00"} };
+const HOURS = { pharmacy:{open24:true}, lab:{from:"08:00",to:"23:30"}, xray:{open24:true,bookTo:"16:00"} };
 
 /* معلومات القسم — تُعرض في تبويب "معلومات". عدّل النص بحرية */
 const ABOUT = {
@@ -1622,7 +1793,7 @@ async function initFirebase(){
   if(!firebase.apps.length)firebase.initializeApp(cfg);
   FB=firebase.database(); fbReady=true; FB_ERR='';
   FB.ref('content').on('value',snap=>{const d=snap.val()||{};let changed=false;
-   ['kb','depts','contacts','policies','alerts','services'].forEach(k=>{if(d[k]){try{localStorage.setItem('kfmmc_ov_'+k,JSON.stringify(d[k]));changed=true}catch(e){}}});
+   ['kb','depts','contacts','policies','alerts','services','news'].forEach(k=>{if(d[k]){try{localStorage.setItem('kfmmc_ov_'+k,JSON.stringify(d[k]));changed=true}catch(e){}}});
    if(changed)syncData();
   },err=>{FB_ERR='رُفض الوصول — راجع قواعد Realtime Database';console.warn(FB_ERR,err)});
   return true;
@@ -1652,7 +1823,7 @@ let CONTACTS=[],POLICIES=[];
 function syncData(){KB=ov('kb',KB_DEF);DEPTS=ov('depts',DEPTS_DEF);CONTACTS=ov('contacts',CONTACTS_DEF);POLICIES=ov('policies',POLICIES_DEF);try{const s=ov('services',null);if(s&&s.length&&SERVICES_DEF)SERVICES=s}catch(e){}}
 
 /* أوقات العمل — من بيانات المشروع الحالية فقط */
-const HOURS={ pharmacy:{o24:true}, lab:{from:"08:00",to:"11:30"}, xray:{o24:true,bookTo:"16:00"} };
+const HOURS={ pharmacy:{o24:true}, lab:{from:"08:00",to:"23:30"}, xray:{o24:true,bookTo:"16:00"} };
 function nowMin(){const d=new Date();return d.getHours()*60+d.getMinutes()}
 function hm(t){const[a,b]=t.split(':').map(Number);return a*60+b}
 function svcState(h){ if(!h)return null; if(h.o24)return{s:'open',t:'مفتوح الآن (24 ساعة)'};
@@ -1683,30 +1854,38 @@ const ICN={
  oth:'<circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>'
 };
 const catIcon=cat=>ICN[cat]||ICN.oth;
+/* أيقونات أدوات صحتك — معبّرة عن معنى كل أداة */
+const TICN={
+ bmi:'<path d="M12 3v3"/><circle cx="12" cy="12" r="9"/><path d="M12 12l4.5-4"/><path d="M4.6 15.2h2M17.4 15.2h2M6.4 8.6l1.4 1.4M17.6 8.6l-1.4 1.4"/>',
+ growth:'<path d="M3 21V6a2 2 0 0 1 2-2h3v17"/><path d="M8 8h2M8 12h2M8 16h2"/><path d="M13 21c0-4 2-6 4.5-6"/><circle cx="18.5" cy="10" r="2.4"/><path d="M14 21h7"/>',
+ screen:'<path d="M12 3l7 3v6c0 4.2-3 7.7-7 9-4-1.3-7-4.8-7-9V6z"/><path d="M12 8.5v3.5M12 15.2h.01"/><path d="M9.2 11.6l1.9 1.9 3.7-3.7" opacity=".55"/>',
+ vacc:'<path d="M16.5 3.5l4 4"/><path d="M14.4 5.6l4 4"/><path d="M18 8L9.4 16.6a2 2 0 0 1-1 .55l-3 .75.75-3a2 2 0 0 1 .55-1L15.3 5.3"/><path d="M11 9.6l3.4 3.4"/><path d="M5.5 18.5L3 21"/>',
+ lab:'<path d="M9 2.5h6"/><path d="M10.5 2.5v6.2L5.6 17a2.4 2.4 0 0 0 2.1 3.6h8.6a2.4 2.4 0 0 0 2.1-3.6l-4.9-8.3V2.5"/><path d="M7.6 14.2h8.8"/><circle cx="10.6" cy="17" r=".9" fill="currentColor" stroke="none"/><circle cx="13.6" cy="18.4" r=".7" fill="currentColor" stroke="none"/>'
+};
 
 /* ── الأقسام والمواقع (من الخريطة الحالية «وصلني» — لا اختراع) ── */
 let DEPTS=[
- {id:'reception',ar:'الاستقبال وأهلية العلاج',cat:'rec',desc:'تسجيل الدخول والتحقق من الأهلية',loc:'reception'},
- {id:'psvc',ar:'شؤون المرضى',cat:'rec',desc:'خدمات المرضى والتنسيق',loc:'psvc'},
- {id:'clinics',ar:'عيادات طب الأسرة',cat:'cli',desc:'العيادات الرئيسية لطب الأسرة',loc:'clinics'},
- {id:'pharm',ar:'الصيدلية الخارجية',cat:'ph',desc:'صرف الأدوية للمرضى الخارجيين',loc:'pharm',hours:'pharmacy'},
- {id:'labr',ar:'المختبر — استقبال العينات',cat:'lab',desc:'استلام عينات التحاليل',loc:'labr',hours:'lab'},
- {id:'bldm',ar:'سحب الدم — رجال',cat:'lab',desc:'سحب عينات الدم (رجال)',loc:'bldm',hours:'lab'},
- {id:'bldf',ar:'سحب الدم — نساء',cat:'lab',desc:'سحب عينات الدم (نساء)',loc:'bldf',hours:'lab'},
- {id:'xray',ar:'الأشعة التشخيصية',cat:'lab',desc:'التصوير الطبي والأشعة',loc:'xray',hours:'xray'},
- {id:'nursem',ar:'العلامات الحيوية — رجال',cat:'wm',desc:'قياس العلامات الحيوية (رجال)',loc:'nursem'},
- {id:'nursef',ar:'العلامات الحيوية — نساء',cat:'wf',desc:'قياس العلامات الحيوية (نساء)',loc:'nursef'},
- {id:'waitm',ar:'انتظار الرجال',cat:'wm',desc:'منطقة انتظار الرجال',loc:'waitm'},
- {id:'waitf',ar:'انتظار النساء',cat:'wf',desc:'منطقة انتظار النساء',loc:'waitf'},
- {id:'treat',ar:'غرفة العلاج',cat:'prc',desc:'إجراءات علاجية وحقن',loc:'treat'},
- {id:'dress',ar:'غرفة الغيار',cat:'prc',desc:'تغيير الضمادات والجروح',loc:'dress'},
- {id:'vacc',ar:'التطعيمات والطفل السليم',cat:'prc',desc:'تطعيمات ومتابعة الطفل السليم',loc:'vacc'},
- {id:'dent',ar:'قسم الأسنان',cat:'oth',desc:'خدمات الأسنان',loc:'dent'},
- {id:'spec',ar:'العيادات التخصصية',cat:'oth',desc:'عيادات تخصصية ومواعيد',loc:'spec'},
- {id:'physio',ar:'العلاج الطبيعي',cat:'oth',desc:'وحدة العلاج الطبيعي',loc:'physio'},
- {id:'er',ar:'الطوارئ والحوادث',cat:'urg',desc:'قسم الطوارئ والحوادث',loc:'er'},
- {id:'parking',ar:'مواقف السيارات',cat:'io',desc:'مواقف الزوّار العامة',loc:'parking'},
- {id:'parkh',ar:'مواقف ذوي الإعاقة',cat:'acc',desc:'مواقف مخصّصة قرب المدخل',loc:'parkh'}
+ {id:'reception',ar:'الاستقبال وأهلية العلاج',cat:'rec',desc:'تسجيل الدخول والتحقق من الأهلية',services:'تسجيل الدخول · التحقق من الأهلية · توجيه المراجعين · فتح ملف جديد',loc:'reception'},
+ {id:'psvc',ar:'شؤون المرضى',cat:'rec',desc:'خدمات المرضى والتنسيق',services:'إصدار التقارير الطبية · نسخ الملف الطبي · التحويلات الخارجية · تحديث البيانات',loc:'psvc'},
+ {id:'clinics',ar:'عيادات طب الأسرة',cat:'cli',desc:'العيادات الرئيسية لطب الأسرة',services:'الكشف العام · متابعة الأمراض المزمنة · الفحوصات الوقائية · الإجازات المرضية · التحويل للتخصصي',loc:'clinics'},
+ {id:'pharm',ar:'الصيدلية الخارجية',cat:'ph',desc:'صرف الأدوية للمرضى الخارجيين',services:'صرف الأدوية بالوصفة · إعادة صرف المزمن · استشارة صيدلي · مستلزمات طبية',loc:'pharm',hours:'pharmacy'},
+ {id:'labr',ar:'المختبر — استقبال العينات',cat:'lab',desc:'استلام عينات التحاليل',services:'استقبال العينات · تحاليل الدم والبول · التحاليل الدورية · تسليم النتائج',loc:'labr',hours:'lab'},
+ {id:'bldm',ar:'سحب الدم — رجال',cat:'lab',desc:'سحب عينات الدم (رجال)',services:'سحب عينات الدم للرجال · تحاليل الصيام · التحاليل العاجلة',loc:'bldm',hours:'lab'},
+ {id:'bldf',ar:'سحب الدم — نساء',cat:'lab',desc:'سحب عينات الدم (نساء)',services:'سحب عينات الدم للنساء · تحاليل الصيام · تحاليل الحمل',loc:'bldf',hours:'lab'},
+ {id:'xray',ar:'الأشعة التشخيصية',cat:'lab',desc:'التصوير الطبي والأشعة',services:'الأشعة السينية · الأشعة المقطعية · السونار · تقارير الأشعة',loc:'xray',hours:'xray'},
+ {id:'nursem',ar:'العلامات الحيوية — رجال',cat:'wm',desc:'قياس العلامات الحيوية (رجال)',services:'قياس الضغط والحرارة · الوزن والطول · نسبة الأكسجين (رجال)',loc:'nursem'},
+ {id:'nursef',ar:'العلامات الحيوية — نساء',cat:'wf',desc:'قياس العلامات الحيوية (نساء)',services:'قياس الضغط والحرارة · الوزن والطول · نسبة الأكسجين (نساء)',loc:'nursef'},
+ {id:'waitm',ar:'انتظار الرجال',cat:'wm',desc:'منطقة انتظار الرجال',services:'مقاعد انتظار · شاشة النداء · خدمات المرافقين (رجال)',loc:'waitm'},
+ {id:'waitf',ar:'انتظار النساء',cat:'wf',desc:'منطقة انتظار النساء',services:'مقاعد انتظار · شاشة النداء · خدمات المرافقات (نساء)',loc:'waitf'},
+ {id:'treat',ar:'غرفة العلاج',cat:'prc',desc:'إجراءات علاجية وحقن',services:'الحقن والإبر · المحاليل الوريدية · الإجراءات البسيطة · متابعة العلامات',loc:'treat'},
+ {id:'dress',ar:'غرفة الغيار',cat:'prc',desc:'تغيير الضمادات والجروح',services:'تنظيف الجروح · تغيير الضمادات · إزالة الغرز · العناية بالقدم السكرية',loc:'dress'},
+ {id:'vacc',ar:'التطعيمات والطفل السليم',cat:'prc',desc:'تطعيمات ومتابعة الطفل السليم',services:'تطعيمات الأطفال · الطفل السليم · تطعيم الإنفلونزا · شهادات التطعيم',loc:'vacc'},
+ {id:'dent',ar:'قسم الأسنان',cat:'oth',desc:'خدمات الأسنان',services:'الكشف والتنظيف · الحشوات · علاج العصب · الخلع · طوارئ الأسنان',loc:'dent'},
+ {id:'spec',ar:'العيادات التخصصية',cat:'oth',desc:'عيادات تخصصية ومواعيد',services:'العيادات التخصصية بالتحويل · المتابعة بعد العمليات · الاستشارات',loc:'spec'},
+ {id:'physio',ar:'العلاج الطبيعي',cat:'oth',desc:'وحدة العلاج الطبيعي',services:'العلاج الطبيعي · إعادة التأهيل · تمارين علاجية · العلاج بعد الإصابات',loc:'physio'},
+ {id:'er',ar:'الطوارئ والحوادث',cat:'urg',desc:'قسم الطوارئ والحوادث',services:'الحالات الطارئة 24 ساعة · الفرز حسب الخطورة · الإسعافات · الإصابات',loc:'er'},
+ {id:'parking',ar:'مواقف السيارات',cat:'io',desc:'مواقف الزوّار العامة',services:'مواقف الزوّار · مواقف مظللة · مسار المشاة للمبنى',loc:'parking'},
+ {id:'parkh',ar:'مواقف ذوي الإعاقة',cat:'acc',desc:'مواقف مخصّصة قرب المدخل',services:'مواقف مخصّصة قرب المدخل · مسار خالٍ من العوائق · كراسٍ متحركة',loc:'parkh'}
 ];
 const dById=id=>DEPTS.find(d=>d.id===id);
 
@@ -1735,7 +1914,7 @@ let KB=[
  {id:"loc-parking",cat:"location",aud:"all",intent:"مكان",q:"أين مواقف السيارات العامة؟",alts:["وين مواقف السيارات العامة","أين مواقف السيارات العامة","مكان مواقف السيارات العامة","فين مواقف السيارات العامة","مواقف السيارات العامة وين","كيف أوصل مواقف السيارات العامة","وين اركن","مكان المواقف","احط سيارتي وين"],kw:["موقف","مواقف","سيارة","ركن","parking"],short:"مواقف الزوّار في الساحة أمام مبنى العيادات — افتحها في «وصلني».",dept:"parking",loc:"parking",act:["map"],src:"خريطة المشروع الحالية",status:"approved"},
  {id:"loc-parkh",cat:"location",aud:"all",intent:"مكان",q:"أين مواقف ذوي الإعاقة؟",alts:["وين مواقف ذوي الإعاقة","أين مواقف ذوي الإعاقة","مكان مواقف ذوي الإعاقة","فين مواقف ذوي الإعاقة","مواقف ذوي الإعاقة وين","كيف أوصل مواقف ذوي الإعاقة","وين مواقف المعاقين","موقف ذوي الاعاقة","مواقف خاصة"],kw:["موقف","مواقف","اعاقة","إعاقة","معاقين","ذوي الاحتياجات","disabled","accessible"],short:"مواقف ذوي الإعاقة مخصّصة قرب مدخل العيادات — افتحها في «وصلني».",dept:"parkh",loc:"parkh",act:["map"],src:"خريطة المشروع الحالية",status:"approved"},
  {id:"hrs-pharm",cat:"hours",aud:"all",intent:"وقت",q:"متى تفتح الصيدلية؟",alts:["الصيدلية فاتحة الان","وقت الصيدلية","دوام الصيدلية","الصيدليه مفتوحه","pharmacy hours","الصيدلية 24 ساعة"],kw:["صيدلية","وقت","دوام","ساعات","فاتحة","مفتوحة"],short:"الصيدلية الخارجية تعمل على مدار 24 ساعة.",dept:"pharm",loc:"pharm",hours:"pharmacy",act:["map"],src:"أوقات العمل المعتمدة",status:"approved"},
- {id:"hrs-lab",cat:"hours",aud:"all",intent:"وقت",q:"متى يفتح المختبر ومتى يغلق؟",alts:["وقت المختبر","متى بريك المختبر","دوام سحب الدم","المختبر فاتح الان","سحب الدم لين متى","lab hours","متى يقفل المختبر"],kw:["مختبر","وقت","بريك","استراحة","دوام","ساعات","سحب","يقفل"],short:"سحب عينات المختبر من الساعة 08:00 صباحًا حتى 11:30 ظهرًا.",detail:"يُفضّل الحضور مبكرًا؛ بعد 11:30 يتوقف استقبال العينات العام لهذا اليوم.",dept:"labr",loc:"labr",hours:"lab",act:["map"],src:"أوقات العمل المعتمدة",status:"approved"},
+ {id:"hrs-lab",cat:"hours",aud:"all",intent:"وقت",q:"متى يفتح المختبر ومتى يغلق؟",alts:["وقت المختبر","متى بريك المختبر","دوام سحب الدم","المختبر فاتح الان","سحب الدم لين متى","lab hours","متى يقفل المختبر"],kw:["مختبر","وقت","بريك","استراحة","دوام","ساعات","سحب","يقفل"],short:"المختبر يعمل من الساعة 08:00 صباحًا حتى 11:30 ليلًا.",detail:"يُفضّل الحضور مبكرًا لتجنّب الازدحام.",dept:"labr",loc:"labr",hours:"lab",act:["map"],src:"أوقات العمل المعتمدة",status:"approved"},
  {id:"hrs-xray",cat:"hours",aud:"all",intent:"وقت",q:"متى تفتح الأشعة؟",alts:["وقت الاشعة","الاشعة فاتحة","دوام الاشعة","radiology hours","حجز الاشعة"],kw:["أشعة","اشعة","وقت","دوام","ساعات","تصوير","حجز"],short:"الأشعة تعمل على مدار 24 ساعة، وحجز مواعيد التصوير حتى الساعة 16:00.",dept:"xray",loc:"xray",hours:"xray",act:["map"],src:"أوقات العمل المعتمدة",status:"approved"},
  {id:"path-clinics",cat:"guide",aud:"all",intent:"إرشاد",q:"كيف أوصل للعيادات من المواقف؟",alts:["من المواقف للعيادات","وين ابدأ لما اوصل","دخول العيادات","كيف ادخل العيادات","اول ما اوصل وين اروح"],kw:["مواقف","دخول","بوابة","بداية","ابدأ","مدخل"],short:"من المواقف ادخل بوابة العيادات ثم توجّه للاستقبال وأهلية العلاج للبدء.",detail:"المسار: المواقف ← بوابة العيادات ← الاستقبال ← العلامات الحيوية ← عيادة طب الأسرة.",dept:"reception",loc:"reception",act:["map"],src:"خريطة المشروع الحالية",status:"approved"},
  {id:"emergency",cat:"safety",aud:"all",intent:"طوارئ",q:"ماذا أفعل في حالة طارئة؟",alts:["الم في الصدر","ضيق تنفس","دوخة شديدة","اسعاف","حالة طارئة","طوارئ","اغماء"],kw:["طارئ","طوارئ","الم","صدر","تنفس","دوخة","اغماء","خطر"],short:"إذا شعرت بألم في الصدر أو ضيق تنفّس أو دوخة شديدة — أخبر أقرب موظف فورًا ولا تنتظر دورك، أو توجّه لقسم الطوارئ.",dept:"er",loc:"er",act:["map"],src:"إرشادات السلامة",status:"approved"},
@@ -1868,7 +2047,7 @@ const EXAMPLES=['وين الصيدلية؟','المختبر فاتح الآن؟'
 function chipPop(){try{return JSON.parse(localStorage.getItem('kfmmc_qpop')||'{}')}catch(e){return{}}}
 function bumpChip(t){try{const p=chipPop();p[t]=(p[t]||0)+1;localStorage.setItem('kfmmc_qpop',JSON.stringify(p))}catch(e){}}
 let SERVICES=[
- {t:'وصلني — الخريطة التفاعلية',s:'اعرف موقعك وخلنا نوصلك',c:'#0B4644',r:'map',big:1,ic:'map',hero:1},
+ {t:'وصلني — دليلك للوصول',s:'اعرف موقعك وخلنا نوصلك',c:'#0B4644',r:'nav',big:1,ic:'map',hero:1},
  {t:'معلومات الأقسام',s:'كل قسم وخدماته وموقعه في بطاقة واحدة',c:'#004C97',r:'info',ic:'rec'},
  {t:'خطط زيارتي',s:'رتّب محطات زيارتك خطوة بخطوة',c:'#29504D',r:'plan',ic:'route'},
  {t:'حقوقك وواجباتك',s:'ما لك وما عليك كمريض داخل المستشفى',c:'#5F259F',r:'rights',ic:'shield'},
@@ -1894,12 +2073,44 @@ PAGES.home=function(){
  </div>
  <div class="chips" id="chips"></div>
  <div class="grid" id="grid"></div>
+ <div class="grat-wrap" id="gratWrap"></div>
+ <div class="ticker" id="ticker" hidden></div>
  <div class="emg" id="emg"><div class="d"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></div>
   <div><b id="emgT">في حالة الطوارئ</b><span id="emgS">إذا شعرت بألم في الصدر أو ضيق تنفّس أو دوخة شديدة — أخبر أقرب موظف فورًا ولا تنتظر دورك.</span></div></div>`;
  $('app').appendChild(el);
+// ── امتنان: قلب مركزي تحيط به أيقونات سريعة ──
+ const gw=el.querySelector('#gratWrap');
+ if(gw){
+  const ORB=[
+   {ic:'rec',c:'#004C97',r:'info',t:'الأقسام'},
+   {ic:'route',c:'#29504D',r:'plan',t:'خطط زيارتي'},
+   {ic:'lab',c:'#05A854',r:'tools',t:'أدوات صحتك'},
+   {ic:'doc',c:'#009CDE',r:'guides',t:'تعليمات'},
+   {ic:'shield',c:'#5F259F',r:'rights',t:'حقوقك'},
+   {ic:'bell',c:'#EAAA00',r:'alerts',t:'أخبار وتنبيهات'},
+   {ic:'cli',c:'#861F41',url:'https://ehealthlibrary.my.canva.site/library',t:'مكتبة التوعية'},
+   {ic:'chat',c:'#6B767B',r:'complaints',t:'ملاحظاتك'}
+  ];
+  const R=132, orbHTML=ORB.map((o,i)=>{
+   const a=(-90+(360/ORB.length)*i)*Math.PI/180;
+   const x=Math.cos(a)*R, y=Math.sin(a)*R;
+   const tag=o.url?'a':'button', attr=o.url?`href="${o.url}" target="_blank" rel="noopener"`:`data-r="${o.r}"`;
+   return `<${tag} class="orb-i" ${attr} style="--oc:${o.c};left:calc(50% + ${x.toFixed(0)}px - 26px);top:calc(50% + ${y.toFixed(0)}px - 26px);animation-delay:${i*0.34}s" aria-label="${o.t}"><svg viewBox="0 0 24 24">${ICN[o.ic]||ICN.oth}</svg><span class="tip">${o.t}</span></${tag}>`;
+  }).join('');
+  gw.innerHTML=`<div style="position:relative;width:100%;max-width:330px;height:330px;display:grid;place-items:center">
+    <span class="grat-halo"></span>
+    <button class="grat-btn" id="gratBtn" aria-label="امتنان — شكر وتقدير لموظف">
+      <span class="grat-heart"></span>
+      <span class="grat-in"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><b>امتنان</b></span>
+    </button>
+    <div class="orbit">${orbHTML}</div>
+  </div>`;
+  gw.querySelector('#gratBtn').onclick=()=>go('gratitude');
+  gw.querySelectorAll('.orb-i[data-r]').forEach(b=>b.onclick=()=>go(b.dataset.r));
+ }
  // خدمات
  const g=el.querySelector('#grid');
- SERVICES.forEach((s,i)=>{
+ SERVICES.filter(s=>s.big).forEach((s,i)=>{
   const a=document.createElement('button');
   a.className='svc'+(s.big?' big':'');
   a.style.setProperty('--sc',s.c); a.style.animationDelay=(i*45)+'ms';
@@ -1917,6 +2128,21 @@ PAGES.home=function(){
  // تدوير النص المساعد
  const q=el.querySelector('#q');
  setInterval(()=>{ if(document.activeElement!==q){ex=(ex+1)%EXAMPLES.length;q.placeholder=EXAMPLES[ex]}},2600);
+ // شريط متناوب: تنبيهات الخدمات وأخبار المجمع
+ (function(){ const tk=el.querySelector('#ticker'); if(!tk)return;
+  const items=[]; 
+  try{getAlerts().forEach(a=>items.push({k:a.type,t:ALERT_TP[a.type]||'تنبيه',x:a.title,d:a.desc,go:'alerts'}))}catch(e){}
+  try{getNews().forEach(n=>items.push({k:'news',t:'خبر',x:n.title,d:n.desc,go:'alerts'}))}catch(e){}
+  if(!items.length)return; tk.hidden=false;
+  const CL={maintenance:'#EAAA00',new:'#05A854',info:'#004C97',news:'#5F259F'};
+  let ti=0;
+  const paint=()=>{const it=items[ti];
+   tk.style.setProperty('--tc',CL[it.k]||'#05A854');
+   tk.innerHTML=`<span class="tk-tag">${esc(it.t)}</span><div class="tk-b"><b>${esc(it.x)}</b><span>${esc((it.d||'').slice(0,80))}</span></div><span class="tk-go">›</span>`;
+   tk.onclick=()=>go(it.go);};
+  paint();
+  setInterval(()=>{tk.style.opacity='0';setTimeout(()=>{ti=(ti+1)%items.length;paint();tk.style.opacity='1'},280)},7000);
+ })();
  // رسائل السلامة والإرشاد — مصنّفة بالألوان
  const EMG=[
   // ── طوارئ (أحمر) — علامات تستوجب الذهاب للطوارئ فورًا
@@ -2046,6 +2272,26 @@ function answerCard(e){
 }
 
 /* ═══════════════ وصلني — الخريطة داخل المنصة (إطار مدمج) ═══════════════ */
+PAGES.nav=function(){
+ const el=document.createElement('div');el.className='wrap page';
+ el.innerHTML=`<h2>وصلني</h2><p class="lead">اختر الطريقة التي تناسبك للوصول إلى وجهتك.</p>
+  <button class="nav-opt" id="optMap">
+   <span class="nav-ic" style="--nc:#05A854"><svg viewBox="0 0 24 24">${ICN.map}</svg></span>
+   <div class="nav-t"><b>الخريطة التفاعلية</b><span>خريطة كاملة للمبنى مع البحث والاتجاهات وتخطيط المحطات وحفظ موقف سيارتك.</span>
+    <div class="nav-tags"><i>بحث عن قسم</i><i>مسار متعدد المحطات</i><i>المواقف</i><i>وضع ليلي</i></div></div>
+   <span class="nav-go">›</span></button>
+  <button class="nav-opt" id="optWalk">
+   <span class="nav-ic" style="--nc:#0B4644"><svg viewBox="0 0 24 24">${ICN.route}</svg></span>
+   <div class="nav-t"><b>التجوّل الواقعي 360°</b><span>مشاهد حقيقية من داخل المستشفى تتحرك بينها خطوة بخطوة كأنك تمشي فعلًا.</span>
+    <div class="nav-tags"><i>مشهد 360°</i><i>خطوة بخطوة</i><i>تعليمات صوتية</i><i>تجريبي</i></div></div>
+   <span class="nav-go">›</span></button>
+  <div class="ph-note">الطريقتان متاحتان دائمًا — جرّب أيهما أنسب لك، ويمكنك التبديل في أي وقت.</div>`;
+ $('app').appendChild(el);
+ el.querySelector('#optMap').onclick=()=>go('map');
+ el.querySelector('#optWalk').onclick=()=>go('walk');
+};
+PAGES.nav.title='وصلني';
+
 PAGES.map=function(arg,fromArg){
  document.body.classList.add('mapview');
  const el=document.createElement('div');el.id='mapwrap';
@@ -2053,7 +2299,9 @@ PAGES.map=function(arg,fromArg){
   <iframe id="mapf" title="وصلني — الخريطة التفاعلية" allow="geolocation"></iframe>
   <div class="maperr" id="maperr" hidden>تعذّر تحميل الخريطة. حدّث الصفحة، أو <a href="${MAP_URL}" style="color:#fff;text-decoration:underline">افتحها مباشرةً</a>.</div>`;
  $('app').appendChild(el);
- el.querySelector('#mback').onclick=()=>{ location.hash='#home'; };
+ el.querySelector('#mback').onclick=()=>{ location.hash='#nav'; };
+ const sw=document.createElement('button');sw.className='wk-switch';sw.textContent='🚶 جرّب التجوّل الواقعي';
+ sw.onclick=()=>go('walk'); el.appendChild(sw);
  const f=el.querySelector('#mapf');
  let ok=false; f.addEventListener('load',()=>{ok=true});
  try{
@@ -2063,7 +2311,9 @@ PAGES.map=function(arg,fromArg){
   const blob=new Blob([html],{type:'text/html;charset=utf-8'});
   f.src=URL.createObjectURL(blob);
  }catch(e){ f.src=MAP_URL+(arg?('?to='+encodeURIComponent(arg)):''); }
- setTimeout(()=>{ if(!ok)el.querySelector('#maperr').hidden=false; },5000);
+ setTimeout(()=>{ if(!ok){ try{ f.src=MAP_URL; }catch(e){} } },3500);
+ setTimeout(()=>{ if(!ok){ const eb=el.querySelector('#maperr'); if(eb){eb.hidden=false;
+   eb.innerHTML='تعذّر فتح الخريطة. جرّب تحديث الصفحة، أو <a href="'+MAP_URL+'" style="color:#fff;text-decoration:underline">افتحها في صفحة مستقلة</a>.';} } },8000);
 };
 PAGES.map.title='وصلني';
 
@@ -2194,8 +2444,9 @@ PAGES.dinfo=function(arg){
  if(st) rows+=`<div class="arow"><span class="k">الحالة الآن</span><span class="v"><span class="badge ${st.s}">${st.t}</span></span></div>`;
  if(d.contact) rows+=`<div class="arow"><span class="k">التواصل</span><span class="v">${esc(d.contact)}</span></div>`;
  el.innerHTML=`<div class="dhero" style="--sc:${c}"><span class="dhic"><svg viewBox="0 0 24 24">${catIcon(d.cat)}</svg></span><div><b>${esc(d.ar)}</b><span>${esc(d.desc||'')}</span></div></div>
+  ${d.services?`<div class="card"><h3 style="font-size:16px;margin-bottom:10px">الخدمات المقدَّمة</h3><div class="svc-chips">${String(d.services).split('·').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="svc-chip" style="--sc:${c}"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>${esc(s)}</span>`).join('')}</div></div>`:''}
   <div class="card">${rows||'<div class="mini">لا معلومات إضافية معتمدة بعد.</div>'}
-   <div class="acts" style="border:0;padding:12px 0 0">${d.loc?`<a class="act p" href="#map/${d.loc}">افتح في وصلني</a>`:''}<button class="act b" onclick="openCall()">اتصل 943</button></div></div>
+   <div class="acts" style="border:0;padding:12px 0 0">${d.loc?`<a class="act p" href="#map/${d.loc}">افتح في وصلني</a>`:''}${LOC2SCENE[d.loc]?`<a class="act" style="background:var(--green-dk);color:#fff" href="#walk/pharm/${d.loc}">🚶 تجوّل واقعي</a>`:''}<button class="act b" onclick="openCall()">اتصل 943</button></div></div>
   ${kb.length?`<h3 style="margin:16px 4px 10px;font-size:16px;color:var(--green-dk)">أسئلة شائعة</h3>`+kb.map(k=>`<div class="card" style="padding:13px 15px"><b style="font-size:14.5px">${esc(k.q)}</b><div class="mini" style="margin-top:5px;line-height:1.6">${esc(k.short)}</div></div>`).join(''):''}`;
  $('app').appendChild(el);
 };
@@ -2297,6 +2548,11 @@ PAGES.complaints.title='الشكاوى والملاحظات';
 
 /* صفحات معلوماتية إضافية (هيكل جاهز، المحتوى يُعتمد) */
 /* ── تنبيهات وتحديثات الخدمات (تحت الصيانة / جديد) — تُدار من لوحة الإدارة ── */
+const NEWS_SEED=[
+ {title:'مثال: افتتاح عيادة جديدة في طب الأسرة',desc:'أُضيفت عيادة لمتابعة الأمراض المزمنة ضمن قسم طب الأسرة لخدمة المراجعين.',img:'',link:'',date:''},
+ {title:'مثال: حملة التطعيم الموسمي',desc:'انطلاق حملة تطعيم الإنفلونزا الموسمية لمنسوبي المجمع والمراجعين.',img:'',link:'',date:''}
+];
+function getNews(){return ov('news',NEWS_SEED)}
 const ALERTS_SEED=[
  {type:'maintenance',title:'مثال: صيانة جهاز الأشعة المقطعية',desc:'قد يحدث تأخّر مؤقت في مواعيد الأشعة المقطعية. (مثال توضيحي — يُحدَّث من لوحة الإدارة).'},
  {type:'new',title:'مثال: خدمة جديدة — عيادة الإقلاع عن التدخين',desc:'أُضيفت خدمة ضمن طب الأسرة. (مثال توضيحي — يُحدَّث من لوحة الإدارة).'},
@@ -2306,13 +2562,51 @@ function getAlerts(){return ov('alerts',ALERTS_SEED)}
 const ALERT_TP={maintenance:'تحت الصيانة',new:'جديد',info:'تنبيه'};
 PAGES.alerts=function(){
  const el=document.createElement('div');el.className='wrap page';
- const al=getAlerts();
- let cards=al.map(a=>`<div class="alert-c ${a.type}"><div class="top"><span class="tp">${ALERT_TP[a.type]||'تنبيه'}</span></div><b>${esc(a.title)}</b><div class="d">${esc(a.desc)}</div></div>`).join('');
- el.innerHTML=`<h2>تنبيهات وتحديثات الخدمات</h2><p class="lead">الخدمات المتوقّفة مؤقتًا للصيانة، والتغييرات والخدمات الجديدة.</p>${cards}
-  <div class="ph-note">هذه أمثلة توضيحية. تُضاف التنبيهات الحقيقية وتُدار من لوحة الإدارة (تحت الصيانة / جديد / تنبيه).</div>`;
+ const al=getAlerts(), nw=getNews();
+ const alertsHTML=al.map(a=>`<div class="alert-c ${a.type}"><div class="top"><span class="tp">${ALERT_TP[a.type]||'تنبيه'}</span></div><b>${esc(a.title)}</b><div class="d">${esc(a.desc)}</div></div>`).join('')||'<div class="card"><div class="mini">لا تنبيهات حاليًا.</div></div>';
+ const newsHTML=nw.map((n,i)=>`<article class="news-c" style="animation-delay:${i*60}ms" onclick="go('news/${i}')">
+   ${n.img?`<div class="news-img"><img src="${esc(n.img)}" alt="${esc(n.title)}" loading="lazy"></div>`:`<div class="news-img ph"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div>`}
+   <div class="news-b"><b>${esc(n.title)}</b><p>${esc(n.desc||'')}</p>
+    <div class="news-f">${n.date?`<span class="news-d">${esc(n.date)}</span>`:''}<span class="news-l">اقرأ الخبر ›</span></div></div>
+  </article>`).join('')||'<div class="card"><div class="mini">لا أخبار منشورة بعد.</div></div>';
+ el.innerHTML=`<h2>تنبيهات وأخبار</h2><p class="lead">حالة الخدمات وآخر أخبار المجمع.</p>
+  <div class="chips" id="anTabs" style="margin-bottom:14px">
+   <button class="chip on" data-t="al">🛠️ تنبيهات الخدمات</button>
+   <button class="chip" data-t="nw">📰 أخبار المجمع</button></div>
+  <div id="anBody"></div>`;
+ $('app').appendChild(el);
+ const body=el.querySelector('#anBody');
+ const show=t=>{body.innerHTML = t==='nw' ? `<div class="news-grid">${newsHTML}</div>` : alertsHTML;
+  el.querySelectorAll('#anTabs .chip').forEach(b=>b.classList.toggle('on',b.dataset.t===t))};
+ el.querySelectorAll('#anTabs .chip').forEach(b=>b.onclick=()=>show(b.dataset.t));
+ show('al');
+};
+PAGES.alerts.title='تنبيهات وأخبار';
+
+/* ── صفحة الخبر الكاملة (نمط الجريدة) ── */
+PAGES.news=function(arg){
+ const el=document.createElement('div');el.className='wrap page';
+ const nw=getNews(), n=nw[+arg];
+ if(!n){el.innerHTML='<div class="card">الخبر غير موجود.</div>';$('app').appendChild(el);return}
+ const others=nw.map((x,i)=>({x,i})).filter(o=>o.i!==+arg).slice(0,3);
+ el.innerHTML=`<article class="art">
+   ${n.img?`<div class="art-hero"><img src="${esc(n.img)}" alt="${esc(n.title)}"><span class="art-tag">خبر المجمع</span></div>`:`<div class="art-hero ph"><svg viewBox="0 0 24 24">${ICN.doc}</svg><span class="art-tag">خبر المجمع</span></div>`}
+   <h1 class="art-t">${esc(n.title)}</h1>
+   <div class="art-meta">${n.date?`<span>📅 ${esc(n.date)}</span>`:''}<span>🏥 مجمع الملك فهد الطبي العسكري</span></div>
+   <div class="art-body">${String(n.desc||'').split(/\n+/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('')||'<p class="mini">لا تفاصيل إضافية.</p>'}</div>
+   <div class="art-acts">
+     ${n.link?`<a class="act p" href="${esc(n.link)}" target="_blank" rel="noopener">المصدر الكامل ↗</a>`:''}
+     <button class="act" onclick="speakText(document.querySelector('.art-body').innerText,this)"><svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4zM15.5 8.5a5 5 0 010 7"/></svg><span class="slabel">استمع</span></button>
+     <button class="act" onclick="navigator.share?navigator.share({title:'${esc(n.title).replace(/'/g,'')}',text:'خبر من دليلك'}):alert('انسخ الرابط للمشاركة')">مشاركة</button>
+   </div>
+  </article>
+  ${others.length?`<h3 style="margin:20px 4px 12px;font-size:16px;color:var(--green-dk)">أخبار أخرى</h3>
+   <div class="news-grid">${others.map(o=>`<article class="news-c" onclick="go('news/${o.i}')">
+     ${o.x.img?`<div class="news-img"><img src="${esc(o.x.img)}" alt=""></div>`:`<div class="news-img ph"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div>`}
+     <div class="news-b"><b>${esc(o.x.title)}</b><div class="news-f"><span class="news-l">اقرأ ›</span></div></div></article>`).join('')}</div>`:''}`;
  $('app').appendChild(el);
 };
-PAGES.alerts.title='تنبيهات وتحديثات الخدمات';
+PAGES.news.title='خبر المجمع';
 function stubPage(title,intro,examples){return function(){const el=document.createElement('div');el.className='wrap page';
  let cards=(examples||[]).map(x=>`<div class="card"><h3>${esc(x.t)} <span class="badge unrev">مثال</span></h3><div>${esc(x.d)}</div><div class="note-src">مثال توضيحي — يُستبدل بالمحتوى المعتمد.</div></div>`).join('');
  el.innerHTML=`<h2>${title}</h2><p class="lead">${intro}</p>${cards}<div class="card"><h3>تحتاج موقعًا داخل المبنى؟</h3><div>افتح الخريطة التفاعلية «وصلني».</div><div class="acts" style="border:0;padding:12px 0 0"><a class="act p" href="#map">افتح وصلني</a></div></div>`;
@@ -2402,7 +2696,7 @@ PAGES.admin=function(){
   return;
  }
  syncData();
- const tabs=[['use','📊 الاستخدام'],['msgs','📨 الرسائل'],['cards','🏠 بطاقات الرئيسية'],['kb','❓ الأسئلة'],['dept','🏥 الأقسام'],['contacts','☎️ الأرقام'],['policies','📄 السياسات'],['alerts','🛠️ التنبيهات'],['io','⇄ استيراد/تصدير'],['set','⚙️ الإعدادات']];
+ const tabs=[['use','📊 الاستخدام'],['msgs','📨 الرسائل'],['cards','🏠 بطاقات الرئيسية'],['kb','❓ الأسئلة'],['dept','🏥 الأقسام'],['contacts','☎️ الأرقام'],['policies','📄 السياسات'],['alerts','🛠️ التنبيهات'],['news','📰 الأخبار'],['scenes','🎬 مشاهد التجوّل'],['io','⇄ استيراد/تصدير'],['set','⚙️ الإعدادات']];
  let cur=window._adTab||'use';
  el.innerHTML=`<h2>لوحة الإدارة</h2><div class="chips" id="adtabs" style="margin:6px 0 16px"></div><div id="adbody"></div>`;
  $('app').appendChild(el);
@@ -2455,9 +2749,13 @@ function renderAdTab(cur,body){
  }
  else if(cur==='cards') mkEditor(body,{key:'services',def:SERVICES_DEF,title:'بطاقة',titleField:'t',noStatus:1,fields:[{k:'t',label:'اسم البطاقة'},{k:'s',label:'الوصف تحت الاسم'},{k:'c',label:'اللون',type:'select',opts:[['#05A854','أخضر'],['#0B4644','أخضر غامق'],['#29504D','زيتي'],['#004C97','أزرق'],['#009CDE','أزرق فاتح'],['#5F259F','بنفسجي'],['#EAAA00','أصفر'],['#861F41','أحمر غامق'],['#EE2737','أحمر'],['#B2BEC4','رمادي']]},{k:'ic',label:'الأيقونة',type:'select',opts:[['map','خريطة'],['rec','معلومات'],['route','مسار'],['shield','درع/حقوق'],['doc','ملف'],['bell','تنبيه'],['heart','قلب/امتنان'],['chat','محادثة'],['cli','عيادة'],['ph','صيدلية'],['lab','مختبر'],['lock','قفل']]},{k:'r',label:'الوجهة عند الضغط',type:'select',opts:[['map','وصلني (الخريطة)'],['info','معلومات الأقسام'],['plan','خطط زيارتي'],['rights','حقوقك وواجباتك'],['guides','تعليمات وأدلة'],['alerts','التنبيهات'],['gratitude','امتنان'],['complaints','الشكاوى'],['ask','اسأل دليلك'],['dept','دليل الأقسام']]}]});
  else if(cur==='kb') mkEditor(body,{key:'kb',def:KB_DEF,title:'سؤال',titleField:'q',fields:[{k:'q',label:'السؤال الأساسي'},{k:'alts',label:'صياغات بديلة (افصل بفاصلة)',split:1},{k:'kw',label:'كلمات مفتاحية (افصل بفاصلة)',split:1},{k:'short',label:'الإجابة المختصرة',type:'textarea'},{k:'detail',label:'تفاصيل (اختياري)',type:'textarea'},{k:'dept',label:'القسم المرتبط',type:'select',opts:depOpts},{k:'loc',label:'الموقع في وصلني (المعرّف)'},{k:'src',label:'المصدر'}],onchange:()=>{}});
- else if(cur==='dept') mkEditor(body,{key:'depts',def:DEPTS_DEF,title:'قسم',titleField:'ar',fields:[{k:'ar',label:'اسم القسم'},{k:'desc',label:'وصف مختصر',type:'textarea'},{k:'building',label:'المبنى/الطابق'},{k:'loc',label:'الموقع في وصلني (المعرّف)'},{k:'contact',label:'رقم تواصل'},{k:'cat',label:'التصنيف (اللون والأيقونة)',type:'select',opts:[['rec','استقبال وتسجيل'],['cli','عيادات'],['ph','صيدلية'],['lab','مختبر وأشعة'],['prc','إجراءات وتطعيمات'],['wm','مناطق رجال'],['wf','مناطق نساء'],['urg','طوارئ'],['io','دخول ومواقف'],['acc','ذوي الإعاقة'],['oth','أخرى']]},{k:'hours',label:'ربط الأوقات',type:'select',opts:[['','— بدون —'],['pharmacy','الصيدلية (24 ساعة)'],['lab','المختبر (08:00–11:30)'],['xray','الأشعة (24 ساعة)']]}]});
+ else if(cur==='dept') mkEditor(body,{key:'depts',def:DEPTS_DEF,title:'قسم',titleField:'ar',fields:[{k:'ar',label:'اسم القسم'},{k:'desc',label:'وصف مختصر',type:'textarea'},{k:'building',label:'المبنى/الطابق'},{k:'loc',label:'الموقع في وصلني (المعرّف)'},{k:'contact',label:'رقم تواصل'},{k:'services',label:'الخدمات المقدَّمة (افصل بـ ·)',type:'textarea'},{k:'cat',label:'التصنيف (اللون والأيقونة)',type:'select',opts:[['rec','استقبال وتسجيل'],['cli','عيادات'],['ph','صيدلية'],['lab','مختبر وأشعة'],['prc','إجراءات وتطعيمات'],['wm','مناطق رجال'],['wf','مناطق نساء'],['urg','طوارئ'],['io','دخول ومواقف'],['acc','ذوي الإعاقة'],['oth','أخرى']]},{k:'hours',label:'ربط الأوقات',type:'select',opts:[['','— بدون —'],['pharmacy','الصيدلية (24 ساعة)'],['lab','المختبر (08:00–11:30)'],['xray','الأشعة (24 ساعة)']]}]});
  else if(cur==='contacts') mkEditor(body,{key:'contacts',def:CONTACTS_DEF,title:'رقم',titleField:'entity',fields:[{k:'entity',label:'الجهة'},{k:'number',label:'الرقم'},{k:'ext',label:'تحويلة'},{k:'hours',label:'أوقات الرد'}]});
  else if(cur==='policies') mkEditor(body,{key:'policies',def:POLICIES_DEF,title:'سياسة/ملف',titleField:'title',fields:[{k:'title',label:'العنوان'},{k:'kind',label:'النوع',type:'select',opts:[['pdf','ملف PDF'],['video','فيديو'],['image','صورة'],['text','نص']]},{k:'link',label:'رابط الملف/الفيديو/الصورة'},{k:'dept',label:'القسم المرتبط'},{k:'note',label:'ملخص/ملاحظة',type:'textarea'}]});
+ else if(cur==='scenes') sceneEditor(body);
+ else if(cur==='news') mkEditor(body,{key:'news',def:NEWS_SEED,title:'خبر',titleField:'title',noStatus:1,fields:[
+   {k:'title',label:'عنوان الخبر'},{k:'desc',label:'نص الخبر',type:'textarea'},
+   {k:'img',label:'رابط صورة (اختياري)'},{k:'link',label:'رابط خارجي للخبر (اختياري)'},{k:'date',label:'التاريخ (اختياري)'}]});
  else if(cur==='alerts') mkEditor(body,{key:'alerts',def:ALERTS_SEED,title:'تنبيه',titleField:'title',noStatus:1,fields:[{k:'type',label:'النوع',type:'select',opts:[['maintenance','تحت الصيانة'],['new','جديد'],['info','تنبيه']]},{k:'title',label:'العنوان'},{k:'desc',label:'الوصف',type:'textarea'}]});
  else if(cur==='io'){
   body.innerHTML=`<div class="card"><h3>استيراد ملف Excel المعبّأ</h3><div class="mini" style="margin-bottom:10px">ارفع قالب «دليلك-قالب-جمع-البيانات.xlsx» بعد تعبئته — تُقرأ الأقسام والأرقام والسياسات والأسئلة والتنبيهات تلقائيًا.</div>
@@ -2540,6 +2838,623 @@ function exportCSV(key){const a=loadRecs(key);if(!a.length){alert('لا بيان
  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const u=URL.createObjectURL(blob);const x=document.createElement('a');x.href=u;x.download=key+'.csv';x.click();}
 window.exportCSV=exportCSV;
 window.exportJSON=exportJSON;window.go=go;
+
+
+/* ══════════════ أدوات صحتك ══════════════ */
+const LAB_INFO=[
+ {n:'صورة الدم الكاملة (CBC)',why:'فحص كريات الدم البيضاء والحمراء والهيموغلوبين والصفائح.',sym:'تعب مستمر · شحوب · تكرار العدوى · نزف أو كدمات سهلة',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'السكر الصائم (FBS)',why:'تشخيص ومتابعة السكري وما قبل السكري.',sym:'عطش زائد · كثرة تبوّل · فقدان وزن · تعب',fast:'نعم — 8 ساعات',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'تجنّب القهوة والتدخين قبل السحب.',loc:'labr'},
+ {n:'السكر التراكمي (HbA1c)',why:'متوسط السكر خلال 2–3 أشهر.',sym:'متابعة مرضى السكري · تقييم ضبط العلاج',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'دهون الدم (Lipid Profile)',why:'الكولسترول والدهون الثلاثية لتقدير خطر القلب.',sym:'تقييم خطر القلب · السمنة · التاريخ العائلي',fast:'غالبًا 9–12 ساعة',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'تجنّب الوجبات الدسمة مساء اليوم السابق.',loc:'labr'},
+ {n:'وظائف الكلى (Urea/Creatinine)',why:'تقييم كفاءة الكلى.',sym:'تورّم القدمين · قلة أو كثرة التبوّل · ارتفاع الضغط',fast:'لا عادةً',water:'مسموح ويُنصح به',sample:'دم وريدي',best:'أي وقت',prep:'اشرب ماءً كافيًا.',loc:'labr'},
+ {n:'وظائف الكبد (LFT)',why:'إنزيمات الكبد والبيليروبين والألبومين.',sym:'اصفرار العين · ألم أعلى البطن اليمين · غثيان · تعب',fast:'قد يُطلب مع تحاليل صائمة',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'أخبر الطبيب بأدويتك ومكمّلاتك.',loc:'labr'},
+ {n:'الغدة الدرقية (TSH)',why:'تقييم نشاط الغدة الدرقية.',sym:'تعب · تغيّر وزن · تساقط شعر · خفقان · برودة أو تعرّق',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'أخبر المختبر إن كنت تأخذ دواء غدة.',loc:'labr'},
+ {n:'الغدة الدرقية الكامل (T3/T4)',why:'تفصيل هرمونات الغدة عند وجود خلل.',sym:'متابعة خلل الغدة المؤكّد',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'اتبع تعليمات طبيبك حول توقيت الدواء.',loc:'labr'},
+ {n:'فيتامين د (25-OH)',why:'قياس مستوى فيتامين د.',sym:'آلام عظام وعضلات · تعب · ضعف عام',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'فيتامين B12',why:'تقييم نقص B12 وفقر الدم.',sym:'تنميل الأطراف · ضعف تركيز · شحوب · تعب',fast:'يُفضّل الصيام',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'أوقف مكمّلات B12 حسب توجيه الطبيب.',loc:'labr'},
+ {n:'مخزون الحديد (Ferritin)',why:'تقييم مخزون الحديد وفقر الدم.',sym:'تعب · شحوب · تساقط شعر · ضيق نفس عند الجهد',fast:'يُفضّل صباحًا',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'أوقف مكمّلات الحديد قبلها حسب توجيه طبيبك.',loc:'labr'},
+ {n:'دراسة الحديد (Iron/TIBC)',why:'تفصيل حالة الحديد في الدم.',sym:'فقر دم غير مفسّر',fast:'نعم — صباحًا',water:'مسموح',sample:'دم وريدي',best:'صباحًا باكرًا',prep:'لا تأخذ حديدًا في اليوم نفسه.',loc:'labr'},
+ {n:'الأملاح والكهارل (Electrolytes)',why:'الصوديوم والبوتاسيوم والكلورايد.',sym:'تشنّج عضلات · دوخة · اضطراب نبض · قيء أو إسهال شديد',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'الكالسيوم',why:'تقييم مستوى الكالسيوم وصحة العظام.',sym:'تنميل · تشنّجات · آلام عظام · حصوات كلى',fast:'يُفضّل الصيام',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'أخبر الطبيب بمكمّلات الكالسيوم.',loc:'labr'},
+ {n:'حمض اليوريك (Uric Acid)',why:'تشخيص ومتابعة النقرس.',sym:'ألم وتورّم مفاجئ في المفاصل خاصة إبهام القدم',fast:'يُفضّل 8 ساعات',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'تجنّب اللحوم الحمراء قبلها بيوم.',loc:'labr'},
+ {n:'تحليل البول (Urinalysis)',why:'كشف الالتهابات والسكر والبروتين والدم.',sym:'حرقة بول · تكرار تبوّل · ألم أسفل الظهر · حرارة',fast:'لا',water:'مسموح',sample:'بول — منتصف التبوّل',best:'صباحًا',prep:'نظّف المنطقة، ابدأ التبوّل ثم اجمع من المنتصف.',loc:'labr'},
+ {n:'مزرعة البول (Urine Culture)',why:'تحديد نوع البكتيريا والمضاد المناسب.',sym:'التهاب بولي متكرر أو لم يستجب للعلاج',fast:'لا',water:'مسموح',sample:'بول معقّم',best:'صباحًا قبل المضاد الحيوي',prep:'يُفضّل قبل بدء المضاد الحيوي.',loc:'labr'},
+ {n:'تحليل البراز',why:'كشف الطفيليات والدم الخفي والعدوى.',sym:'إسهال مستمر · ألم بطن · دم في البراز',fast:'لا',water:'مسموح',sample:'عيّنة براز',best:'أي وقت',prep:'استخدم الحاوية المخصّصة من المختبر.',loc:'labr'},
+ {n:'تحليل الحمل (β-hCG)',why:'تأكيد الحمل أو متابعته.',sym:'تأخر الدورة · غثيان · تغيّرات الثدي',fast:'لا',water:'مسموح',sample:'دم أو بول',best:'صباحًا (أدق للبول)',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'سرعة الترسيب (ESR)',why:'مؤشر عام على وجود التهاب.',sym:'حرارة مستمرة · آلام مفاصل · تعب غير مفسّر',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'البروتين التفاعلي (CRP)',why:'كشف الالتهاب الحاد ومتابعته.',sym:'حرارة · التهاب حاد · متابعة العدوى',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'تخثّر الدم (PT/INR)',why:'متابعة مميّعات الدم وتقييم التخثّر.',sym:'متابعة الوارفارين · نزف أو كدمات',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'حسب موعد الطبيب',prep:'أخبر المختبر بجرعة المميّع ووقتها.',loc:'labr'},
+ {n:'فحص فقر الدم المنجلي/الثلاسيميا',why:'كشف أمراض الدم الوراثية.',sym:'فقر دم مزمن · تاريخ عائلي · فحص ما قبل الزواج',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'التهاب الكبد B و C',why:'كشف العدوى الفيروسية للكبد.',sym:'اصفرار · تعب مزمن · ارتفاع إنزيمات الكبد',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'أي وقت',prep:'لا يحتاج تحضيرًا.',loc:'labr'},
+ {n:'مستضد البروستاتا (PSA)',why:'تقييم صحة البروستاتا.',sym:'صعوبة تبوّل · تكرار ليلي · ضعف تدفق البول',fast:'لا',water:'مسموح',sample:'دم وريدي',best:'صباحًا',prep:'تجنّب ركوب الدراجة والعلاقة الزوجية 48 ساعة قبلها.',loc:'labr'},
+ {n:'زراعة الحلق/المسحة',why:'تحديد سبب التهاب الحلق.',sym:'ألم حلق شديد · حرارة · صعوبة بلع',fast:'لا',water:'مسموح',sample:'مسحة من الحلق',best:'قبل المضاد الحيوي',prep:'لا تتمضمض بمطهّر قبلها.',loc:'labr'}
+];
+const VACC_SCHED=[
+ {age:'عند الولادة',items:['الدرن (BCG)','التهاب الكبد B — الجرعة الأولى']},
+ {age:'شهران',items:['خماسي/سداسي — الأولى','شلل الأطفال المعطّل','المكوّرات الرئوية — الأولى','الروتا — الأولى']},
+ {age:'4 أشهر',items:['خماسي/سداسي — الثانية','شلل الأطفال','المكوّرات الرئوية — الثانية','الروتا — الثانية']},
+ {age:'6 أشهر',items:['خماسي/سداسي — الثالثة','شلل الأطفال','المكوّرات الرئوية — الثالثة']},
+ {age:'9 أشهر',items:['الحصبة — الجرعة الأولى','المكوّرات السحائية']},
+ {age:'12 شهرًا',items:['الحصبة والنكاف والحصبة الألمانية (MMR)','الجديري المائي','المكوّرات الرئوية — منشّطة']},
+ {age:'18 شهرًا',items:['MMR — الثانية','الجديري — الثانية','خماسي — منشّطة','شلل الأطفال — منشّطة','التهاب الكبد A']},
+ {age:'24 شهرًا',items:['التهاب الكبد A — الثانية']},
+ {age:'4–6 سنوات',items:['الثلاثي البكتيري — منشّطة','شلل الأطفال — منشّطة','MMR — منشّطة']},
+ {age:'البالغون',items:['الإنفلونزا الموسمية سنويًا','التطعيمات حسب الحالة الصحية والسفر']}
+];
+/* جداول WHO مختصرة (L,M,S) — تقديرية للاسترشاد */
+const LMS={
+ wfa:{m:{0:[.3487,3.3464,.14602],1:[.2297,4.4709,.13395],2:[.197,5.5675,.12385],3:[.1738,6.3762,.11727],6:[.1257,7.934,.10958],9:[.1005,8.9014,.10827],12:[.0842,9.6479,.10836],18:[.0629,10.9385,.10986],24:[.0487,12.1515,.11163],36:[.0269,14.3429,.1153],48:[.0106,16.3489,.11891],60:[-.0031,18.3366,.12237]},
+     f:{0:[.3809,3.2322,.14171],1:[.1714,4.1873,.13724],2:[.0962,5.1282,.13],3:[.0402,5.8458,.12619],6:[-.0756,7.297,.12204],9:[-.16,8.2254,.12178],12:[-.2024,8.9481,.12204],18:[-.2751,10.2315,.12446],24:[-.3242,11.4775,.12719],36:[-.3936,13.8556,.13297],48:[-.4381,16.07,.13853],60:[-.4695,18.2193,.1434]}},
+ hfa:{m:{0:[1,49.8842,.03795],1:[1,54.7244,.03557],2:[1,58.4249,.03424],3:[1,61.4292,.03328],6:[1,67.6236,.03165],9:[1,72.0,.03082],12:[1,75.7488,.03034],18:[1,82.2587,.03035],24:[1,87.1161,.03068],36:[1,96.0835,.03177],48:[1,103.3273,.03306],60:[1,110.0,.03426]},
+      f:{0:[1,49.1477,.0379],1:[1,53.6872,.0364],2:[1,57.0673,.03568],3:[1,59.8029,.03518],6:[1,65.7311,.03395],9:[1,70.1435,.03352],12:[1,74.0,.03328],18:[1,80.7079,.03335],24:[1,85.7153,.03383],36:[1,95.0,.0349],48:[1,102.7,.0362],60:[1,109.4,.0375]}},
+ hca:{m:{0:[1,34.4618,.03686],3:[1,40.5334,.03257],6:[1,43.3306,.03204],12:[1,45.7761,.03165],24:[1,48.2622,.0314]},
+      f:{0:[1,33.8787,.03496],3:[1,39.5328,.03209],6:[1,42.1995,.0318],12:[1,44.5,.0316],24:[1,47.1,.0315]}}
+};
+function lmsAt(tbl,sex,months){const t=tbl[sex];const ks=Object.keys(t).map(Number).sort((a,b)=>a-b);
+ if(months<=ks[0])return t[ks[0]]; if(months>=ks[ks.length-1])return t[ks[ks.length-1]];
+ let lo=ks[0],hi=ks[ks.length-1];
+ for(let i=0;i<ks.length-1;i++){if(months>=ks[i]&&months<=ks[i+1]){lo=ks[i];hi=ks[i+1];break}}
+ const f=(months-lo)/(hi-lo),a=t[lo],b=t[hi];
+ return [a[0]+(b[0]-a[0])*f, a[1]+(b[1]-a[1])*f, a[2]+(b[2]-a[2])*f];}
+function zScore(v,[L,M,S]){return L===0? Math.log(v/M)/S : (Math.pow(v/M,L)-1)/(L*S)}
+function zToPct(z){const p=0.5*(1+erf(z/Math.SQRT2));return Math.round(p*1000)/10}
+function erf(x){const s=x<0?-1:1;x=Math.abs(x);const a1=.254829592,a2=-.284496736,a3=1.421413741,a4=-1.453152027,a5=1.061405429,p=.3275911;
+ const t=1/(1+p*x),y=1-(((((a5*t+a4)*t)+a3)*t+a2)*t+a1)*t*Math.exp(-x*x);return s*y}
+function zBadge(z){const a=Math.abs(z);
+ if(a<=1)return['ضمن المعدل الطبيعي','open'];
+ if(a<=2)return['ضمن الحدود المقبولة','open'];
+ if(a<=3)return['يحتاج متابعة مع الطبيب','wait'];
+ return['يُنصح بمراجعة الطبيب','closed'];}
+
+PAGES.tools=function(){
+ const el=document.createElement('div');el.className='wrap page';
+ const T=[
+  {id:'bmi',t:'مؤشر كتلة الجسم',s:'احسب وزنك المثالي',ic:'bmi',c:'#05A854'},
+  {id:'growth',t:'مخطط نمو الأطفال',s:'الوزن والطول حسب العمر',ic:'growth',c:'#5F259F'},
+  {id:'screen',t:'الفحوصات الوقائية',s:'ما الذي قد تحتاجه؟',ic:'screen',c:'#004C97'},
+  {id:'vacc',t:'دليل التطعيمات',s:'جدول التطعيمات حسب العمر',ic:'vacc',c:'#EAAA00'},
+  {id:'lab',t:'اعرف تحليلك',s:'قبل إجراء التحليل',ic:'lab',c:'#861F41'}
+ ];
+ el.innerHTML=`<h2>أدوات صحتك</h2><p class="lead">أدوات تفاعلية بسيطة للاسترشاد — لا تُغني عن رأي الطبيب.</p>
+  <div class="info-grid">${T.map((x,i)=>`<button class="icard" style="--sc:${x.c};animation-delay:${i*40}ms" data-id="${x.id}"><span class="glow"></span><span class="bar" style="background:${x.c}"></span><span class="iic tool"><svg viewBox="0 0 24 24">${TICN[x.ic]||ICN[x.ic]||ICN.oth}</svg></span><b>${x.t}</b><span class="mini" style="margin-top:4px">${x.s}</span></button>`).join('')}</div>
+  <div id="toolBox" style="margin-top:16px"></div>
+  <div class="ph-note" style="margin-top:14px">النتائج تقديرية للاسترشاد فقط، ولا تُعد تشخيصًا. راجع طبيب الأسرة لتفسيرها.</div>`;
+ $('app').appendChild(el);
+ const box=el.querySelector('#toolBox');
+ el.querySelectorAll('.icard').forEach(b=>b.onclick=()=>{renderTool(b.dataset.id,box);box.scrollIntoView({behavior:'smooth',block:'start'})});
+ renderTool('bmi',box);
+};
+PAGES.tools.title='أدوات صحتك';
+
+PAGES.awareness=function(){
+ const el=document.createElement('div');el.className='wrap page';
+ const URL='https://ehealthlibrary.my.canva.site/library';
+ const CATS=[['الصحة العامة','#05A854','shield'],['الأمراض المزمنة','#861F41','heart'],['صحة الطفل','#009CDE','cli'],['صحة المرأة والأم','#5F259F','heart'],['العمليات الجراحية','#0B4644','prc'],['الرعاية المنزلية','#EAAA00','rec']];
+ el.innerHTML=`<h2>مكتبة التوعية الصحية</h2><p class="lead">محتوى توعوي معتمد من قسم التثقيف الصحي بالمجمع.</p>
+  <a class="aw-hero" href="${URL}" target="_blank" rel="noopener">
+    <span class="aw-ic"><svg viewBox="0 0 24 24">${ICN.doc}</svg></span>
+    <div><b>المكتبة الصحية</b><span>مقالات وأدلة توعوية بإشراف المجمع</span></div>
+    <span class="aw-go">↗</span></a>
+  <h3 style="margin:18px 4px 12px;font-size:16px;color:var(--green-dk)">أقسام المكتبة</h3>
+  <div class="info-grid">${CATS.map((c,i)=>`<a class="icard" href="${URL}" target="_blank" rel="noopener" style="--sc:${c[1]};animation-delay:${i*40}ms"><span class="glow"></span><span class="bar" style="background:${c[1]}"></span><span class="iic"><svg viewBox="0 0 24 24">${ICN[c[2]]||ICN.oth}</svg></span><b>${c[0]}</b></a>`).join('')}</div>
+  <div class="ph-note" style="margin-top:14px">يفتح المحتوى في المكتبة الصحية الرسمية للمجمع.</div>`;
+ $('app').appendChild(el);
+};
+PAGES.awareness.title='مكتبة التوعية';
+
+function renderTool(id,box){
+ if(id==='bmi'){
+  box.innerHTML=`<div class="card form"><h3>مؤشر كتلة الجسم (BMI)</h3>
+   <div class="row2"><div><label>الطول (سم)</label><input type="number" id="bh" inputmode="decimal" placeholder="170"></div>
+   <div><label>الوزن (كجم)</label><input type="number" id="bw" inputmode="decimal" placeholder="70"></div></div>
+   <button class="submit" id="bgo">احسب</button><div id="bres" style="margin-top:16px"></div></div>`;
+  box.querySelector('#bgo').onclick=()=>{
+   const hh=+box.querySelector('#bh').value, w=+box.querySelector('#bw').value;
+   const r=box.querySelector('#bres');
+   if(!hh||!w||hh<80||hh>250||w<10||w>400){r.innerHTML='<div class="ph-note">أدخل طولًا ووزنًا صحيحين.</div>';return}
+   const m=hh/100, bmi=w/(m*m);
+   const BANDS=[[0,18.5,'#009CDE','نقص في الوزن'],[18.5,25,'#05A854','وزن طبيعي'],[25,30,'#EAAA00','زيادة في الوزن'],[30,35,'#F08C00','سمنة — الأولى'],[35,40,'#EE2737','سمنة — الثانية'],[40,60,'#861F41','سمنة — الثالثة']];
+   const b=BANDS.find(x=>bmi>=x[0]&&bmi<x[1])||BANDS[BANDS.length-1];
+   const TIP={'نقص في الوزن':'قد تحتاج زيادة السعرات بطريقة صحية — استشر أخصائي تغذية.','وزن طبيعي':'ممتاز! حافظ على نشاطك البدني وغذائك المتوازن.','زيادة في الوزن':'إنقاص 5–10% من وزنك يحسّن صحتك كثيرًا.','سمنة — الأولى':'يُنصح بمراجعة طبيب الأسرة لخطة إنقاص وزن.','سمنة — الثانية':'راجع طبيب الأسرة لتقييم شامل وخطة علاجية.','سمنة — الثالثة':'يُنصح بمراجعة طبية لتقييم الخيارات العلاجية.'};
+   const lo=(18.5*m*m).toFixed(1), hi=(24.9*m*m).toFixed(1);
+   /* عدّاد نصف دائري */
+   const R=86,CX=104,CY=104,SW=20;
+   const val=Math.max(12,Math.min(45,bmi));
+   const ang=(v)=>Math.PI*(1-(Math.max(12,Math.min(45,v))-12)/33);
+   const pt=(v,rad)=>[CX+rad*Math.cos(ang(v)),CY-rad*Math.sin(ang(v))];
+   let arcs='';
+   BANDS.forEach(bd=>{const s=Math.max(12,bd[0]),e=Math.min(45,bd[1]); if(e<=s)return;
+    const [x1,y1]=pt(s,R),[x2,y2]=pt(e,R);
+    arcs+=`<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} A${R} ${R} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}" stroke="${bd[2]}" stroke-width="${SW}" fill="none" stroke-linecap="butt"/>`;});
+   const [nx,ny]=pt(val,R-SW/2-16), [bx,by]=pt(val,10);
+   r.innerHTML=`<div class="gauge-wrap">
+     <svg viewBox="0 0 208 124" class="gauge">
+      ${arcs}
+      <line x1="${CX}" y1="${CY}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="#0F1D1B" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="${CX}" cy="${CY}" r="9" fill="#0F1D1B"/><circle cx="${CX}" cy="${CY}" r="4" fill="#fff"/>
+      <text x="18" y="120" font-size="10" fill="#76858A">12</text><text x="186" y="120" font-size="10" fill="#76858A">45</text>
+     </svg>
+     <div class="gauge-v" style="color:${b[2]}">${bmi.toFixed(1)}</div>
+     <div class="gauge-l">مؤشر كتلة الجسم</div>
+    </div>
+    <div style="text-align:center;margin:-4px 0 12px"><span class="badge" style="background:${b[2]}22;color:${b[2]};font-size:13px;padding:6px 14px">${b[3]}</span></div>
+    <div class="arow"><span class="k">الوزن الصحي</span><span class="v">${lo} – ${hi} كجم</span></div>
+    <div class="arow"><span class="k">الفرق</span><span class="v">${bmi<18.5?('يُنصح بزيادة ~'+(+lo-w).toFixed(1)+' كجم'):bmi>=25?('يُنصح بإنقاص ~'+(w-+hi).toFixed(1)+' كجم'):'وزنك ضمن النطاق الصحي'}</span></div>
+    <div class="arow"><span class="k">نصيحة</span><span class="v">${TIP[b[3]]}</span></div>
+    <div class="ph-note">BMI مؤشر عام ولا يفرّق بين الدهون والعضلات — ناقش نتيجتك مع طبيب الأسرة.</div>`;
+  };
+ }
+ else if(id==='growth'){
+  box.innerHTML=`<div class="card form"><h3>مخطط نمو الأطفال</h3>
+   <div class="mini" style="margin-bottom:8px">وفق مراجع منظمة الصحة العالمية (0–5 سنوات) — تقديري للاسترشاد.</div>
+   <div class="row2"><div><label>تاريخ الميلاد</label><input type="date" id="gdob"></div>
+    <div><label>الجنس</label><select id="gsex"><option value="m">ذكر</option><option value="f">أنثى</option></select></div></div>
+   <div class="row2"><div><label>الوزن (كجم)</label><input type="number" id="gw" inputmode="decimal" placeholder="12"></div>
+    <div><label>الطول (سم)</label><input type="number" id="gh" inputmode="decimal" placeholder="86"></div></div>
+   <label>محيط الرأس (سم) — لمن دون سنتين</label><input type="number" id="ghc" inputmode="decimal" placeholder="46">
+   <button class="submit" id="ggo">احسب واعرض المنحنى</button><div id="gres" style="margin-top:14px"></div></div>`;
+  box.querySelector('#ggo').onclick=()=>{
+   const dob=box.querySelector('#gdob').value, sex=box.querySelector('#gsex').value;
+   const w=+box.querySelector('#gw').value, ht=+box.querySelector('#gh').value, hc=+box.querySelector('#ghc').value;
+   const r=box.querySelector('#gres');
+   if(!dob){r.innerHTML='<div class="ph-note">أدخل تاريخ الميلاد.</div>';return}
+   const months=(Date.now()-new Date(dob).getTime())/(1000*60*60*24*30.4375);
+   if(months<0||months>60){r.innerHTML='<div class="ph-note">هذه الأداة للأعمار من الولادة حتى 5 سنوات.</div>';return}
+   let out=`<div class="arow"><span class="k">العمر</span><span class="v">${Math.floor(months)} شهرًا (${(months/12).toFixed(1)} سنة)</span></div>`;
+   const EXPL={wfa:'يقارن وزن الطفل بأقرانه في نفس العمر والجنس.',hfa:'يقارن طول الطفل بأقرانه — مؤشر على النمو طويل المدى.',hca:'يتابع نمو الرأس والدماغ في السنتين الأوليين.'};
+   const chart=(tbl,val,lbl,unit)=>{
+    const W=320,H=190,PL=34,PR=10,PT=12,PB=26, maxM=Math.min(60,Math.max(24,Math.ceil(months/12)*12+12));
+    const PC=[[-1.881,'#EE2737','3'],[-1.036,'#EAAA00','15'],[0,'#05A854','50'],[1.036,'#EAAA00','85'],[1.881,'#EE2737','97']];
+    const vals=[]; for(let m=0;m<=maxM;m++){const L=lmsAt(LMS[tbl],sex,m); PC.forEach((p,pi)=>{const v=L[0]===0?L[1]*Math.exp(L[2]*p[0]):L[1]*Math.pow(1+L[0]*L[2]*p[0],1/L[0]); (vals[pi]=vals[pi]||[]).push([m,v])})}
+    const all=vals.flat().map(x=>x[1]); const mn=Math.min(...all,val||Infinity)*0.92, mx=Math.max(...all,val||0)*1.05;
+    const X=m=>PL+(m/maxM)*(W-PL-PR), Y=v=>PT+(1-(v-mn)/(mx-mn))*(H-PT-PB);
+    let paths=PC.map((p,pi)=>`<path d="${vals[pi].map((pt,i)=>(i?'L':'M')+X(pt[0]).toFixed(1)+' '+Y(pt[1]).toFixed(1)).join(' ')}" fill="none" stroke="${p[1]}" stroke-width="${p[2]==='50'?2:1.2}" opacity="${p[2]==='50'?1:.55}" ${p[2]==='50'?'':'stroke-dasharray="3 3"'}/>`).join('');
+    let labels=PC.map((p,pi)=>{const last=vals[pi][vals[pi].length-1];return `<text x="${(W-PR-2).toFixed(0)}" y="${(Y(last[1])+3).toFixed(0)}" font-size="8" fill="${p[1]}" text-anchor="end">${p[2]}</text>`}).join('');
+    let ticks=''; for(let m=0;m<=maxM;m+=12) ticks+=`<line x1="${X(m)}" y1="${PT}" x2="${X(m)}" y2="${H-PB}" stroke="#E1E6E5" stroke-width="1"/><text x="${X(m)}" y="${H-PB+13}" font-size="8" fill="#76858A" text-anchor="middle">${m/12}س</text>`;
+    const dot = val?`<circle cx="${X(months).toFixed(1)}" cy="${Y(val).toFixed(1)}" r="5.5" fill="#0B4644" stroke="#fff" stroke-width="2.5"/>`:'';
+    return `<svg viewBox="0 0 ${W} ${H}" class="gchart">${ticks}${paths}${labels}${dot}
+      <text x="${PL-4}" y="${PT+8}" font-size="8" fill="#76858A" text-anchor="end">${mx.toFixed(0)}</text>
+      <text x="${PL-4}" y="${H-PB}" font-size="8" fill="#76858A" text-anchor="end">${mn.toFixed(0)}</text></svg>`;
+   };
+   const add=(lbl,val,tbl,unit)=>{ if(!val)return;
+    const z=zScore(val,lmsAt(LMS[tbl],sex,months)), p=zToPct(z), [txt,cls]=zBadge(z);
+    out+=`<div class="gr-row"><div class="gr-h"><b>${lbl}</b><span class="badge ${cls}">${txt}</span></div>
+      ${chart(tbl,val,lbl,unit)}
+      <div class="gr-legend"><span><i style="background:#05A854"></i>الخط 50 = المتوسط</span><span><i style="background:#EAAA00"></i>15–85 طبيعي</span><span><i style="background:#EE2737"></i>خارج 3–97 يحتاج تقييم</span></div>
+      <div class="mini">القيمة: <b>${val} ${unit}</b> · المئين: <b>${p}</b> · Z: <b>${z.toFixed(2)}</b></div>
+      <div class="mini" style="margin-top:5px;color:var(--ink2)">${EXPL[tbl]}</div></div>`;};
+   add('الوزن حسب العمر',w,'wfa','كجم');
+   add('الطول حسب العمر',ht,'hfa','سم');
+   if(months<=24) add('محيط الرأس حسب العمر',hc,'hca','سم');
+   if(w&&ht){const bmi=w/Math.pow(ht/100,2);out+=`<div class="arow"><span class="k">BMI</span><span class="v">${bmi.toFixed(1)}</span></div>`}
+   out+=`<div class="ph-note"><b>كيف تقرأ المخطط؟</b> النقطة السوداء تمثّل طفلك. كلما اقتربت من الخط الأخضر (50) كان النمو متوسطًا. بين 15 و85 طبيعي، وخارج 3 أو 97 يحتاج تقييمًا طبيًا. الأهم هو <b>اتجاه النمو مع الوقت</b> لا قراءة واحدة.</div>
+     <div class="acts" style="border:0;padding:10px 0 0"><a class="act p" href="#map/vacc">افتح الطفل السليم في وصلني</a></div>`;
+   r.innerHTML=out;
+  };
+ }
+ else if(id==='screen'){
+  box.innerHTML=`<div class="card form"><h3>الفحوصات الوقائية المقترحة</h3>
+   <div class="mini" style="margin-bottom:10px">مبنية على توصيات فرقة العمل الأمريكية للخدمات الوقائية (USPSTF) — للاسترشاد.</div>
+   <div class="row2"><div><label>العمر</label><input type="number" id="sage" inputmode="numeric" placeholder="40"></div>
+    <div><label>الجنس</label><select id="ssex"><option value="m">ذكر</option><option value="f">أنثى</option></select></div></div>
+   <label>التدخين</label><select id="ssmoke"><option value="no">غير مدخّن</option><option value="ex">مدخّن سابق</option><option value="yes">مدخّن حاليًا</option></select>
+   <label>هل ينطبق عليك أيٌّ مما يلي؟</label>
+   <div class="reasons" id="scond">
+    <button type="button" class="reason" data-r="سمنة">زيادة وزن/سمنة</button>
+    <button type="button" class="reason" data-r="ضغط">ارتفاع ضغط</button>
+    <button type="button" class="reason" data-r="سكري">سكري</button>
+    <button type="button" class="reason" data-r="عائلي">تاريخ عائلي</button>
+    <button type="button" class="reason" data-r="حمل">حمل حاليًا</button></div>
+   <button class="submit" id="sgo">اعرض المقترح</button><div id="sres" style="margin-top:14px"></div></div>`;
+  let conds=new Set();
+  box.querySelectorAll('#scond .reason').forEach(b=>b.onclick=()=>{const v=b.dataset.r;
+   if(conds.has(v)){conds.delete(v);b.classList.remove('on')}else{conds.add(v);b.classList.add('on')}});
+  box.querySelector('#sgo').onclick=()=>{
+   const age=+box.querySelector('#sage').value, sex=box.querySelector('#ssex').value, sm=box.querySelector('#ssmoke').value;
+   const r=box.querySelector('#sres');
+   if(!age||age<1||age>120){r.innerHTML='<div class="ph-note">أدخل عمرًا صحيحًا.</div>';return}
+   const L=[];
+   const add=(g,t,d)=>L.push({g,t,d});
+   if(age>=18) add('A','قياس ضغط الدم','يُوصى بقياسه لكل بالغ؛ ارتفاع الضغط صامت وقد لا يسبب أعراضًا.');
+   if(age>=15&&age<=65) add('A','فحص فيروس نقص المناعة','فحص لمرة واحدة على الأقل ضمن الرعاية الوقائية.');
+   if(age>=18&&age<=79) add('B','فحص التهاب الكبد C','فحص لمرة واحدة للبالغين.');
+   if(age>=18) add('B','فحص الاكتئاب والقلق','أسئلة قصيرة تكشف الحاجة للدعم النفسي.');
+   if(age>=18) add('B','قياس الوزن والطول (BMI)','لكشف السمنة وتقديم إرشاد غذائي وحركي.');
+   if(age>=35&&age<=70&&(conds.has('سمنة')||conds.has('عائلي'))) add('B','فحص السكري وما قبل السكري','للبالغين ذوي زيادة الوزن — سكر صائم أو تراكمي.');
+   else if(age>=35) add('B','فحص السكري','يُناقَش حسب عوامل الخطورة.');
+   if(age>=40&&age<=75) add('B','فحص الدهون وتقييم خطر القلب','لتقدير الحاجة لعلاج وقائي.');
+   if(age>=45&&age<=75) add(age<50?'B':'A','فحص سرطان القولون','يبدأ من 45 سنة؛ نوع الفحص يُناقَش مع الطبيب.');
+   if(sex==='f'&&age>=40&&age<=74) add('B','تصوير الثدي (ماموجرام)','كل سنتين من عمر 40 سنة.');
+   if(sex==='f'&&age>=21&&age<=65) add('A','فحص عنق الرحم','مسحة دورية حسب البروتوكول المعتمد.');
+   if(sex==='f'&&age>=65) add('B','فحص هشاشة العظام','قياس كثافة العظام للنساء 65 فأكثر.');
+   if(sex==='m'&&age>=65&&age<=75&&sm!=='no') add('B','فحص تمدد الشريان الأورطي','سونار لمرة واحدة للمدخنين السابقين أو الحاليين.');
+   if(age>=50&&age<=80&&sm!=='no') add('B','فحص سرطان الرئة','أشعة مقطعية منخفضة الجرعة لمن لديه تاريخ تدخين كثيف.');
+   if(sm==='yes') add('A','الإقلاع عن التدخين','تدخّل سلوكي ودوائي — من أعلى التدخلات فائدة.');
+   if(conds.has('حمل')) add('A','متابعة الحمل','حمض الفوليك، فحوصات فقر الدم والسكري والضغط.');
+   if(conds.has('سكري')) add('B','فحص العين والقدم والكلى','متابعة دورية لمضاعفات السكري.');
+   if(!L.length) add('C','لا توجد فحوصات مقترحة تلقائيًا','ناقش احتياجك مع طبيب الأسرة.');
+   const GD={A:['#05A854','فائدة مؤكدة — يُوصى به بقوة'],B:['#004C97','فائدة معتدلة — يُوصى به'],C:['#EAAA00','يُناقَش حسب الحالة']};
+   r.innerHTML=`<div class="mini" style="margin-bottom:10px">قد يكون من المناسب مناقشة ما يلي مع طبيب الأسرة:</div>`+
+    L.map((x,i)=>{const g=GD[x.g]||GD.C;
+     return `<div class="scr-c" style="--gc:${g[0]};animation-delay:${i*45}ms">
+      <span class="scr-g">${x.g}</span>
+      <div><b>${x.t}</b><p>${x.d}</p><span class="scr-lv">${g[1]}</span></div></div>`}).join('')+
+    `<div class="ph-note">درجات USPSTF: <b>A</b> فائدة مؤكدة · <b>B</b> فائدة معتدلة · <b>C</b> يُناقَش فرديًا. القرار النهائي لطبيبك حسب حالتك وسياسة المجمع.</div>
+     <div class="acts" style="border:0;padding:10px 0 0"><a class="act p" href="#map/clinics">افتح عيادات طب الأسرة</a></div>`;
+  };
+ }
+ else if(id==='vacc'){
+  box.innerHTML=`<div class="card form"><h3>دليل التطعيمات</h3>
+   <label>اختر المرحلة العمرية</label>
+   <select id="vsel"><option value="">— اعرض الجدول كاملًا —</option>${VACC_SCHED.map((v,i)=>`<option value="${i}">${v.age}</option>`).join('')}</select>
+   <div id="vres" style="margin-top:14px"></div></div>`;
+  const draw=(idx)=>{const list=(idx===''?VACC_SCHED:[VACC_SCHED[+idx]]);
+   box.querySelector('#vres').innerHTML=list.map((v,i)=>`<div class="vc" style="animation-delay:${i*40}ms"><div class="vc-a">${esc(v.age)}</div>
+     <div class="vc-i">${v.items.map(x=>`<span class="svc-chip" style="--sc:#EAAA00"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>${esc(x)}</span>`).join('')}</div></div>`).join('')+
+    `<div class="ph-note">الجدول استرشادي وفق البرنامج الوطني للتحصين. الجرعات المتأخرة تُستكمل ولا تُعاد من البداية — راجع قسم التطعيمات.</div>
+     <div class="acts" style="border:0;padding:10px 0 0"><a class="act p" href="#map/vacc">افتح التطعيمات في وصلني</a></div>`;};
+  box.querySelector('#vsel').onchange=e=>draw(e.target.value); draw('');
+ }
+ else if(id==='lab'){
+  box.innerHTML=`<div class="card form"><h3>اعرف تحليلك قبل إجرائه</h3>
+   <label>اختر التحليل</label>
+   <select id="lsel">${LAB_INFO.map((x,i)=>`<option value="${i}">${x.n}</option>`).join('')}</select>
+   <div id="lres" style="margin-top:14px"></div></div>`;
+  const draw=i=>{const x=LAB_INFO[+i];
+   box.querySelector('#lres').innerHTML=`
+    <div class="arow"><span class="k">لماذا يُطلب</span><span class="v">${esc(x.why)}</span></div>
+    <div class="arow"><span class="k">يحتاج صيامًا؟</span><span class="v"><span class="badge ${/^نعم|غالبًا/.test(x.fast)?'wait':'open'}">${esc(x.fast)}</span></span></div>
+    <div class="arow"><span class="k">الماء</span><span class="v">${esc(x.water)}</span></div>
+    <div class="arow"><span class="k">نوع العينة</span><span class="v">${esc(x.sample)}</span></div>
+    <div class="arow"><span class="k">أفضل وقت</span><span class="v">${esc(x.best)}</span></div>
+    <div class="arow"><span class="k">تعليمات</span><span class="v">${esc(x.prep)}</span></div>
+    <div class="acts" style="border:0;padding:12px 0 0"><a class="act p" href="#map/${x.loc}">افتح المختبر في وصلني</a></div>`;};
+  box.querySelector('#lsel').onchange=e=>draw(e.target.value); draw(0);
+ }
+}
+window.renderTool=renderTool;
+
+/* ══════════════════ التوجيه الواقعي داخل المستشفى (360°) ══════════════════
+   عارض بانورامي أسطواني خفيف — بلا مكتبات خارجية ولا خرائط مدفوعة ولا GPS.
+   الصور بديلة مؤقتة، تُستبدل بصور حقيقية من لوحة الإدارة. */
+const SCENES_DEF=[
+ {id:'s_pharm',name:'أمام الصيدلية',b:'مبنى العيادات',f:'الدور الأرضي',img:'data:image/webp;base64,UklGRqwUAABXRUJQVlA4IKAUAABwwwGdASoACAADPpVKo00lq6OloVTYIXASiWlu/F+5i+xd/KgD+AfPkLW0AvwCf0Up9EMkmQOip5V52/5A9czov/wr/Y+oDzWdN43cjJgfTnpE+k/+Po7csv84YB5APMZuAdAsDscuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly4dMVIL8Tons7HBXDHSC/Abp0/3DHSC2BtXKcuXLlcongvxOie7dsTcMdIL8SE3RJ/uGOkCq6zJAgQFGhvcbXOlz/TP94QHzXhdchacq+EWRkQICjQ3uNrnS5/pn+8ID5rwuuQtOVfCLIyIEBRob3G1zpc/0z/eEB814XXIWnKvhFkZECAo0N7ja50uf6Z/vCA+a8LrkLTlXwiyMiBAcfjJdcMIv12mGOh+qpgQH3qID5mR/sOkQWo6eIWO8gvDzrOU5Ym2qzkuWvEMdIL59s6umxPO5v0n+3E/XaYY6H6qmBAfeogPmZH+w6RBajp4hY7yC+2015aWoQTmJwJP9vzEQLGZGqTgPBDQH/ZmVIt3zMTFR46QXkiUdlFpISPLzly5bLOPjiMacCf9oLUgobjXDQWE8TqhvcpyWKeIfu+ZiYqPHSC8kSjsotJCR5ecuXLmZt2FlfE6J72Aa5FbQWpBgO7cLxi3XDHX6llupmpy5dlheOmX4nRPljImXduuGOlH8Rlxvcpy5mbdhZXxOie8NAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECB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r9WqsEwTAzCw6uu91+pEPaBl9ZCBE5s8LB++9Me6JhfifwVhxZ2m4srEhwemCYJgmCX/JiilkPaBl9ZCTgmCYJgaFp642xKi8h7QMvrIScEwTBMDQtPXG2JUXkPaBl9ZCBE5s8LB++9Me6JhfifwVhxZ2m4srEhwemCYJgmCX/JiilkPaBl9ZCTgmCYJgaFp642xKjFP2uGUa2Q66T3hoErWZIEpAgQJSBpoP3/cMdODXfjXie8NAgaaD9/3DHTg134ojnvDSkDTQfv+4Y6cGu/FEc94aBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQI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',yaw:0,acc:true,
+  say:'أنت أمام الصيدلية الخارجية. الممر يمتد أمامك.',
+  labels:[{t:'الصيدلية',yaw:-38,pitch:2},{t:'الممر إلى الأمام',yaw:6,pitch:-4}],
+  hs:[{id:'h1',to:'s_cor1',yaw:4,pitch:-16,dir:'أمام',txt:'تقدّم في الممر'}]},
+ {id:'s_cor1',name:'الممر الأول',b:'مبنى العيادات',f:'الدور الأرضي',img:'data:image/webp;base64,UklGRkIVAABXRUJQVlA4IDYVAADQugGdASoACAADPpVKpE0lpSOioVTYILASiWlu9yYd/o1oA4rnlf8f6RPRWHQEkEFxLjVVZ8az8Z7zP+MegB3J86n2XxNuFWgUSn85ugOcluMNKOtCBwDMdIL8TonvDQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQID5seJuGOkF+A3V0Sf7hjo4CPnVOXLlyuUWa78Tonu3bHwVwx0gvkn7GLly5cuHTJGUgvxOiNsz5/uGOcwIuqWyC+WOiMKlldQsHhSnK1cF7nPwTEqoJdCLqlsgvljojCpZXULB4UpytXBe5z8ExKqCXQi6pbIL5Y6IwqWV1CweFKcrfgvxN8IsBdbSRPeGTS88qn3hoEB8dCEvDAMgQICaXnlU+8NAgPjoQl4YBkCBATS88qn3hoEB8dCEvDAMgQICaXnlVBg/Uhu2S3oHwTVqyyECBLrWAhXsoGi+fyrWT/cmpTe08Dn0CL8mD+8NBfS8pphuledNIuVQx0i9Ac2SmllMcnfDr646PubctCZLWrgH5VrJ/uTUpvaeBz6BF+TB/eGgvpeU0w3SvOmkXKoY6QZ4wNvWDjonvFCg2KeGOkF+ZDw4GuU5cuZjGkUXSC/E6fD+vgSf7hjr4mN3mNAgQIgoNinhjpBfmQ8OBrlOXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXL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9rFC5wTBMEwR+diqJ/Gjxv1W6cvienXTr4ztTfpfiDFF64M134xMdEWmzWbVWCYJgZhYdXV/i3H1HPaxQucEwTBMDMLDq6xiLzp0XjGgJuEQQIKmLQwQed3n5ViwYFWB6IelCnT4K+w8XHq8XeAWzeAsfD4rV8ENMOjBtQa4cdpmCnHA5VpKcfNSbTChHXDHSC/E6J7w0CBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQHwAAD+/pJTuegAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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',yaw:0,acc:true,
+  say:'أنت في منتصف الممر الأول. واصل إلى التقاطع.',
+  labels:[{t:'دورات المياه يمينًا',yaw:52,pitch:1},{t:'التقاطع أمامك',yaw:4,pitch:-3}],
+  hs:[{id:'h2',to:'s_junction',yaw:3,pitch:-17,dir:'أمام',txt:'واصل إلى التقاطع'},
+      {id:'b1',to:'s_pharm',yaw:180,pitch:-16,dir:'خلف',txt:'رجوع للصيدلية',back:true}]},
+ {id:'s_junction',name:'التقاطع',b:'مبنى العيادات',f:'الدور الأرضي',img:'data:image/webp;base64,UklGRuYTAABXRUJQVlA4INoTAACQtAGdASoACAADPpVKpU0lpSOioVToILASiWlu8p9QAXNR5b/Aeh4f+eN6dcIHePHb+koaO2bcUf2Q9UjX/uc+L9MXsA41/5j7AOEBzk2AC8IdI+tYBwDMdIL8TonvDQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIEBRgJ9IL8TonWx8+kF+J0TrY+fSC/E6J1sfPpBfidE62Pn0gvxOidbHz6QX4nROtj59IL8TonWx8+kF+J0VE4661wX4nSGj8izh0gvx2RTCMSkF+KQR+RZw6QX47IphGJSC/FII/Is4dIL8dkUwjEpBfikEfkWcOkEq6+5Tl1CU5ag8C1IL/wnRMFCf+4Y/cgvsPr7lOXUJTlqDwLUgv/CdEwUJ/7hj9yC+w+vuU5dQlOWoPAtSC/8J0T8nlv1dfFakGFt8lsrzQx0g6vU11n6xbrhz2ih0Kwf+4ZREcpDC85cuXw8woE4Ce8NBYMQaDDMvxOjxFK9XXxWpBfizBtuQ8NAgQNNBi5AgQIEDTQYuQIECBA00GLkCBAgQNNBi5AgQIEDTQYuQIECBA00GLkCBAgQNNBi5AgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECB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cwsOtPHiHf3Nq25xbY+EeEeEeDmFge7KrYnbKsahsYGtynZAwGJlevN2EHVf7Bpu2yY0gvxRH33jFvKNiya7Rt4cQtSC/ZzKczHkljlJAczOs8cJ7w0CUlIECUgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQID4AAA/v33YxlN9AAAAAErIfQAAAAA53gAAAAAAAAAAAAJLxA4G0owSFEIlfEDgbSuFSE6HYELTxfNH4k1ITodgQtPF80fiTUhOh2BC08XzR+JNSE6HYELTxfNH4k1ITodgQtPF80fiTUhOh2BC08XzR+JNSE6HYELTxfNH4k1ITodgQtPF80fgA4GWteMTiEMxAhFcDLWvGJxCGYgQiuBlrXjE4hDMQIRXAy1rxicQhmIEPWVtDqoz3HJW0OqjPcclbQ6qM9xyVtDqoz3HJW0OqjPcclbQ6qM9xyVtDqoz3HJW0OqjPaQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGcJmwgAGL7E8Mh3aLP6GsxQeJfhLUWt7CVpOSi4igtxQOqYs2YJzbBbhfsB5LaswoLcUDqmLNmCc2wW4X7AeS2rMJ/uVVRa/mwMEspig6HZxacbp/fUEAAThooqfyKlX1PvmmIi3l/B7yrlnkxEW8v4PeVcs8mIi3l/B7yrlnkxEW8v4PeVcs8mIi3l/B7yrlnkxEW8v4PeVcs8pG5eBBHDgD1BzOoqfyKqQX4TKGIi3l/B7yrlnkxEW8v4PeVcs8mIi3l/B7yrlnkxEW8v4PeVcs8mIi3l/B7yrlnkxEW8v4PeVcs8fWp5/06cQnzm1yaP1puP88N+dfl3j8To8dTAa+nKuQJwi1wTAgkty7xKe9+B8/Y97H3+L0tNx/nhvzr8u8fidHjqYDX05VyBOEWuCYEAAVeXU9RZpExAQRUEYT8lPBhJgoXOXU9RZpExAQRUEYT8lPAASt/gFZMBX6Pa6cl3ZTdR8frUjd/+CKWG6P2UltZF5L260TainjAJqTfuJQu9pvBDQQACS6j/mmVh1s4234Y8A8XTXf6e/q7qVhIyRNiIzIZF5OGLcmRKyP5JTRanOu7OSfz90pKxZ23pCJuIRgb6YhuzxpMFusPd2cEb1H/NMrDrZxtvwx4B4umu/09/V3UrCRkibERmQyLycMW5MiVkfySmi1Odd2ck/n7pCcILffSVTsTiO9k052h7HF6Q7tEv0B9Keb+NSXki0pX1hGZDIvJwxbkyJWR/JKaLU513ZyT+fulJWLO29IRNxCMDfTEN2eNJgt1h7uzgjeo/5plYdbONt+GPAPF013+nv6u6lYSMkTYiMyGReThi3JkSsj+SU0Wpzruzkn8/dHw2qUSLBJAFn8STo6CagQ6qUSLBJAFn8STo6CagQUH0lzoU1XN/Ek6OgmoEOqlEiwSQBZ/Ek6OgmoEKF95VrBf3OVawJ6dwE3tEc+8q1gy6YrwyqYrwS9No5kgxOhf7w1D7Lw1D7LwVzbgAIuj7Lw1D7oBF0fdAITE+mUCLo+6ARdH3QCLo+6AQmMjmUCLo+6ARdH3QCLo+6AQmMjmUCLo+6ARdH3QCLo+6AQmMjmUCLo+6ARdH3QCLo+6AQmMjmUCLo+6ARdH3QCLo+6AQmMjmUCLo+6ARdH3QCLo+6AQmMjmUCLo+6ARdH3QCLo+6AQmMjmUCLo+6ARdH3QCLo+6AQmMjmUCLo+6AabNPU+18gD+W6ilkul2y01L3J+UNuwZCkOT/DzEna4H1rKi38WLgTWJ4th/IS6FmF8ppbhtmDqefZBhe2Uso+GU3i98yQWpS6vjKzPVdPsIDtm098tuDjHfdo6uzre1aCAv0HPdIQUu206ugAh9IC4Qo6vaTPrWVFoQSMhM0EitvsDcdtxdsr/ap7b7Ut6Wt+wbU3tZm71Pmr4yscJkgtWCpq+MrM9Vt1FLczGr4wv4QUmF2A3LzMpyNKHHFXZn1rKhyLgkRrE8Ww/kJc+jAPlIFa0gv232pb0tb9g2pva0bsFk9T5q+MrM9V0+wgO2bT3y24OMd92jq7Ot7VoIC/Qc90hBS7bTq6ACH0gLhCjq9pM+tZUWhBIyEzQSK2+wNx23F2yv9qntvtS3pa37BtTe1mbvU+avjKwexxyTE/T9AQAAAClm4moiQQAK31eAAAAAB1AgAAAABFggAAAAA1QQAAAAAnwQAAAAAaoIAAAAAT4IAAAAANUEAAAAAJ8EAAAAAGqCAAAAAE+CAAAAADVBAAAAACfBAAAAAAAAA=',yaw:0,acc:true,
+  say:'وصلت إلى التقاطع. انعطف يمينًا نحو المختبر.',
+  labels:[{t:'العيادات يسارًا',yaw:-62,pitch:1},{t:'المختبر يمينًا',yaw:58,pitch:1},{t:'المصعد أمامك',yaw:0,pitch:3}],
+  hs:[{id:'h3',to:'s_turn',yaw:56,pitch:-16,dir:'يمين',txt:'انعطف يمينًا'},
+      {id:'b2',to:'s_cor1',yaw:180,pitch:-16,dir:'خلف',txt:'رجوع للممر الأول',back:true}]},
+ {id:'s_turn',name:'بعد اللفة اليمنى',b:'مبنى العيادات',f:'الدور الأرضي',img:'data:image/webp;base64,UklGRjwVAABXRUJQVlA4IDAVAACQ5AGdASoACAADPpVKpE0lq6OioVTYIXASiWlu/Eb5p1q+Xk/F/11/+qVTq9OlP//5GG6dKCsCNvtgP5v/wpH/09X0h6kvqn/N6b6VbN//hbAO/3zvVw3pq1jgNUx0gvxOie8NAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIN1nA0CBAgQbrOBoECBAg3WcDQIECBBus4GgQIECDdZwNAgQIEG6zgaBAgQIN1nA0CBAgQbrOBoEB8emAdeq+moP0ajdEYU8Tr1X01B+jUbojCnideq+moP0ajdEYU8Tr1X01B+jUbojCnideq+moP0ajdEYU8Tr1X01B+jUbojCnideq+moP0ajdEYU8Tr1X01B+jUbojC0l1w2wWSdFuN0T6nXSBMFZynNl3cb4t9J/vX+5S1d1xOjQ10gTBWcpzZd3G+LfSf71/uUtXdcTo0NdILZqkM3+Cn8U0KC07QpiekKgdsTJdcHwAkIdF8UFG8W62s+NHDcBr9ikeXK7HFBjN3VJ5A9E9oGR6mMNIrGXric/CMsrUV5SFInBfgTyQPwdaxnTH7pB1ePzLuL39wx4fQBkU+9En+5HU6BjTRdP9w57HzIp96JP9yOp0DGmi6f7hz2PmRT70Sf7kdToGNNF0/3DnsfMin3ok/3DHSC/E6J7w0CBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQI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ZJbCIJwt8Qb2E/Ru8e20M0UZ6NN0S4o+hnfdI4RPgVLiYkEGSWyBw2qTfGGSM3sJ1/EIKlnbJvLVIemMMka8r2ghoP7ObpHCJ8CpcTEggyS2QOG1Sb4wyRm9hOv4hBUs7ZN5apD0nnjDJGUVSz6sQV0eQtwTBMEwMwsOrrGISIe2z0E+DkAn6TtzeWMvBBbfEymjG7GJdetfZ6FERwTBMEwMwsOphGISS19noURHBMEwTAzCw6mEYhJLX2ehREcEwTBMDMLDqYRiEktfZ6FEIK4R4zfxjmEoaNbd7EymjG7GJdetfgs27LBMEwTAzCw6usYhIh7QMvqfpVWCYJgZhYdXXe6/e5D2gZf4Ng4JgmCYGYWHV13uv1Ih7bPQT4OQCfpO3N5Yy8EFt8TKaMbsYl1619noURHBMEwTAzCw6mEYhJLX2ehREcEwTBMDMLDqYRiEktfZ6FERwTBMEwMwsOphGISS19noUQgrhHjN/GOYSho1t3sTKaMbsYl161+CzbssEwTBMDMLDq6xiEiHts9BQSqsEwTAzCw6mEYhayT/gj1ak3emsNAgQIECBAgQIEDTQfwP2uGUgUgwss20T39bAU/gftcMdIL8TonvDQIGmg/gftcMpApBfidE94aBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECB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',yaw:0,acc:true,
+  say:'انعطفت يمينًا. المختبر في نهاية هذا الممر.',
+  labels:[{t:'المختبر في النهاية',yaw:2,pitch:-2}],
+  hs:[{id:'h4',to:'s_cor2',yaw:2,pitch:-17,dir:'أمام',txt:'تقدّم في الممر الثاني'},
+      {id:'b3',to:'s_junction',yaw:180,pitch:-16,dir:'خلف',txt:'رجوع للتقاطع',back:true}]},
+ {id:'s_cor2',name:'الممر الثاني',b:'مبنى العيادات',f:'الدور الأرضي',img:'data:image/webp;base64,UklGRnQVAABXRUJQVlA4IGgVAADwuwGdASoACAADPpVKpE0lp6OiIVTYIPASiWlu/F+5i+wf6ryWlW+n9Gg4JIqYrSmG+XF/V95f/Q88wDuj+rXpxIldRL6AegB2gO1dX+9Bmj3WjA4BmOkF+J0T3hoECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECAowE+kF+J0TrY+fSC/E6J1sfPpBfidE62Pn0gvxOidbHz6QX4nROtj59IL8TonWx8+kF+J0TrY+fSC/E6Kicdda4L8TpDR+RZw6QX47IphGJSC/FII/Is4dIL8dkUwjEpBfikEfkWcOkF+OyKYRiUgvxSCPyLOHSCVdfcpy7ffcpqDwLUgwLl0BylhP/cMiFLpBKuvuU5dvvuU1B4FqQYFy6A5Swn/uGRCl0glXX3Kcu333Kag8C1IMC5dAdH9iqrOMdYoY6Rg6LrU2bkxoEwNPj8TxJwx06+lKHJ94GgQYXQXC0GVDHSMHRdamzcmNAmBp8fieJOGOnX0pQ5PvA0CBEK6bULE0CBAiCg2K11QWpBnWDvYk1OXLmYxpFNyQX4nT4f18mp/uGOviY3g48NAgRBQbFa6oLUgzrB3sSanLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLly5cuXLlaI/yznFAp3A4p3A4p3A4p3A4p3A4p3A4p3A4p3A4p3A4p3A4oQQTSCfjKsaFLxlWNCl4yrGhS8ZVjQpeMqxhs6fe2dFKkMjIgMjIgMjIgMjIgMjIgMjIgMjIgMjIgMjIgMjHAFaw4BZyqypA9ZO30/tWzoKOZ+tErxmHGx49GqqGkq2md9aZC6vIIi/N3t1JF6t1qQSDAVrDgFnKrKkD1k7fT+1bOgo5n6so0V2DjonvCETUkteUiaNQunadEpA3pMCO3wv8tJ1EiI8HhL4ytbv3d2rv7Vs6CjmfrRK8ZhxsePRqqhpKtpnfWmQuryCIvzd7dSRerdakEhAMx3AQT36Ra3AYo1Jd4AxhNoKc6FAy/SLZoOr2DWRr15DJTxYI0VUFqQX4jtyfd968f4B2U8vcZVjFtX5vDN6W72BCfd6RbNB1dUxujSV6eHDRw40a8r2gho0z5b+1IZfxwYLlAy/SLZoOrqmN0aOEag1UFqQX3+lWFeHDRpny39qQy/jgwXKBl+kWzQdXVMbo0lenhw0cONGvK9oIaNM+W/tSGX8cGC5QMv0i2aDq6pjdGjgDKCawv7YSsS1jQpeMqxj+Px7hS8ZKVwt/WNCl4yrGP49jGGmEeyAONGvJtPg9vvmiQCgvEIGY7gIJ79Itmg6uqY3RpK9PDho0xa5cvtvUO1U8UbjoQKgGjNPD8wpeMhkrcnAkQyU8YMgXNpy3J4y9Gg7c3mTBjnmwq+7714oZZ+7w257PdLVa1FLXLl9t6h2qnijcdCBUA0Zp4fmFLxkMlbk4EiGSnjBkC5tOW5PGXo0Hbm8yYMc82FX3fevIZKeMGQLm05cQLf3SUb0t3prRqEGez3S7WdpTGwTnFOX6RbNB1dUxujJrv/gW/uko3pbvTWjUIM9nul2s7SmNgnOKcv0i2aDq6pjdGkrhSqkfELyvaCGjhxo15XtBDRp7mAaWfQPpQTTelu9NaNQfF64EpjYJzinL9Itmg6uqY3RpK4UqpHxC8r2gho4caNeV7QQ0ae5InxC8r2gho4caNeV7QQ0ae5InxC8r2gho4caNeV7QPUrWPfcRPi/jgwXKBl+kWzQdXVI1yRPiF5XtBDRw40a8r2gho09yRPiF5XtBDRw40a8r2gho09zANLPoH0oJpvS3emtGoPi9cCVUj4heV7QQ0cONGvK9oIaNPckT4heV7QQ0cONGvK9oIaNPcwDSz6B9KCab0t3prRqEGej9+PYJzinL9Itmg6uqY3Rk13/wL20s+gfSgmm9Ld6a0ahBno/gSWCc4py/SLZoOrqmN0aSuFKY2Cc4py/SLZoOrqmN0aSuFKrJQTnFOX6RbNB1dUxujJrv/gcaF0lG9Ld6a0ahBns90u1naUxsE5xTl+kWzQdXVMbo0lcKVUj4heV7QQ0cONGvK9oIaNPcl7Sz6B9KCab0t3prRqD4vXAlMbBOcU5fpFs0HV1TG6NJXClVI+IXle0ENHDjRryvaCGjT3Je0s+gfSgmm9Ld6a0ahBno/gVCJ8X8cGC5QMv0i2aDqiDekTY5uko3pbvTWjUIM9nul2s7Smz/ELyvaCGjhxo15XtBDRp7mFD4heV7QQ0cONGvK9oIaNPcl7Sz6B9KCab0t3prRqD4vXAlNn+IXle0ENHDjRryvaCGjT3MKHxC8r2gho4caNeV7QQ0ae5L2ln0D6UE03pbvTWjUIM9H8CoRPi/jgwXKBl+kWzQdUQb0ibNBLPoH0oJpvS3emtGoQZ6P349gnOKcv0i2aDq6pjdGkrhSqyUE5xTl+kWzQdXVMbo0lcKUxsE5xTl+kWzQdXVMboya7/4F7aWfQPpQTTelu9NaNQgz0fwKhE+L+ODBcoGX6RbNB1dUjXJE+IXle0ENHDjRryvaCGjT3MA0s+gfSgmm9Ld6a0ag+L1wJVZKCc4py/SLZoOrqmN0aSuFKY2Cc4py/SLZoOrqmN0aSuFKqR8QvK9oIaOHGjXle0ENGnuS9pZ9A+lBNN6W701o1B8XrgSmz/ELyvaCGjhxo15XtBDRp7mAaWfQPpQTTelu9Cf4a5ZzeLA3n+qsEwTAzCw6mG91+pJa9bUkOA43Sn6dubyxl3FPlTXk8HEtOctqcjRGqsEwTAzCw6uu9y03D8ZsBZGblcEwTBMDMLDrT1T4IO/ubWAsiU9qrBMEwMwryA0w7d6Pk2awL4nejl03xKu17YM8CYYpX8vUXLanI0RqrBMEwMwsOrrvctNw/GbAWRKe1VgmCYGYWHN2+91+rQeoqyzLWgcEwTBMDMLDrT0zBLa+M1tSRRlMpeHzc16Y90SCWvbXk8HEtOctqciPsEwTBMDMLDq673LTcPxmwFkZuVwTBMEwMwsOrrvdfqRG+rAWRCdgmCYJgZhXkBph270fJs4HIbNrrq+McwlDQ5fo4mGKV/LTnLanIj7BMEwTAzCw6uu9y05L+oui7Mx98EwTBMDMLDq673X6oZyQuOAe1rilvwk0KE/4cV0g6uHHeGxIUjQhhT5I1juEDAZHKfIEfmYFUCxwEusMMZwTZivD3FAv43K95v72wI3v/DiwmDQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIEBIAD+/VffseAAAAAAAAAAAAAAAAAA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',yaw:0,acc:true,
+  say:'أنت في الممر الثاني. مدخل المختبر أمامك.',
+  labels:[{t:'استقبال العينات أمامك',yaw:3,pitch:-2},{t:'انتظار يسارًا',yaw:-58,pitch:1}],
+  hs:[{id:'h5',to:'s_lab',yaw:2,pitch:-17,dir:'أمام',txt:'ادخل إلى المختبر'},
+      {id:'b4',to:'s_turn',yaw:180,pitch:-16,dir:'خلف',txt:'رجوع',back:true}]},
+ {id:'s_lab',name:'مدخل المختبر',b:'مبنى العيادات',f:'الدور الأرضي',img:'data:image/webp;base64,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gmCYGYWHV2FPggwXFnQh5lBqrBMEwTAFPgcMWKdoXXMmqzxNHf+yOmbZIljhaeOEvsQ5l9T9KqwTBMDMLDq7DHDJ4inZ54cHpgmCYJgZhYdXYY4ZPEU7PPDg9MEwTBMDMLDq7DHDJ4inZ54cHZoOaXo/sjpm2SJY4WnjhL7EOZfU/SqsEwTAzCw6uwxwyeIp2eeHB6YJgmCYGYWHV2GOGUBqoLUg0IfK+J0T3hoECBAgQIECI/FhoECBAgSt1nA65kgQWDOI8xoECBAgQIECBAgQIj8WGgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIECBAgQIEC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',yaw:0,acc:true,
+  say:'وصلت إلى المختبر — استقبال العينات أمامك.',
+  labels:[{t:'استقبال عينات المختبر',yaw:0,pitch:0},{t:'سحب الدم يمينًا',yaw:48,pitch:1}],
+  hs:[{id:'b5',to:'s_cor2',yaw:180,pitch:-16,dir:'خلف',txt:'رجوع',back:true}]}
+];
+function getScenes(){return ov('scenes',SCENES_DEF)}
+/* ربط مواقع الخريطة بالمشاهد */
+const LOC2SCENE={pharm:'s_pharm',labr:'s_lab',clinics:'s_junction',reception:'s_cor1',xray:'s_cor2'};
+function scenePath(from,to){
+ const S=getScenes(), byId={}; S.forEach(s=>byId[s.id]=s);
+ if(!byId[from]||!byId[to])return null;
+ const prev={},q=[from],seen={[from]:1};
+ while(q.length){const cur=q.shift(); if(cur===to)break;
+  (byId[cur].hs||[]).forEach(hp=>{if(!seen[hp.to]&&byId[hp.to]){seen[hp.to]=1;prev[hp.to]=cur;q.push(hp.to)}})}
+ if(!seen[to])return null;
+ const path=[to]; let c=to; while(c!==from){c=prev[c];path.unshift(c)} return path;
+}
+let WK=null;
+PAGES.walk=function(arg,arg2){
+ document.body.classList.add('mapview');
+ const S=getScenes(), byId={}; S.forEach(s=>byId[s.id]=s);
+ const from = LOC2SCENE[arg]||byId[arg]?arg&&(LOC2SCENE[arg]||arg):'s_pharm';
+ const to   = LOC2SCENE[arg2]||arg2||'s_lab';
+ const path = scenePath(byId[from]?from:'s_pharm', byId[to]?to:'s_lab') || ['s_pharm'];
+ WK={path,i:0,yaw:0,pitch:0,zoom:1,voice:false,byId};
+ const el=document.createElement('div');el.id='wkwrap';
+ el.innerHTML=`
+  <div class="wk-top">
+    <button class="wk-b" id="wkExit" aria-label="إنهاء المسار"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div class="wk-ttl"><b id="wkName"></b><span id="wkMeta"></span></div>
+    <button class="wk-b" id="wkVoice" aria-label="التعليمات الصوتية"><svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4zM15.5 8.5a5 5 0 010 7"/></svg></button>
+  </div>
+  <div class="wk-prog"><span id="wkBar"></span></div>
+  <div class="wk-stage" id="wkStage">
+    <div class="wk-pano" id="wkPano"><img id="wkImgA" alt=""><img id="wkImgB" alt=""></div>
+    <div class="wk-layer" id="wkLayer"></div>
+    <div class="wk-fade" id="wkFade"></div>
+  </div>
+  <div class="wk-bot">
+    <div class="wk-step"><span class="wk-ic" id="wkDirIc"></span><div><b id="wkTxt"></b><span id="wkSub"></span></div></div>
+    <div class="wk-acts">
+      <button class="wk-a" id="wkLost">🧭 أنا تائه</button>
+      <button class="wk-a" id="wkReset">📍 إعادة تحديد موقعي</button>
+      <button class="wk-a" id="wkMap">🗺️ الخريطة</button>
+      <button class="wk-a end" id="wkEnd">إنهاء</button>
+    </div>
+  </div>`;
+ $('app').appendChild(el);
+ initWalk();
+};
+PAGES.walk.title='التوجيه الواقعي';
+
+function initWalk(){
+ const pano=$('wkPano'),A=$('wkImgA'),B=$('wkImgB'),layer=$('wkLayer'),stage=$('wkStage');
+ let cur=A, nxt=B, dragging=false, lastX=0, lastY=0, vel=0;
+ const S=WK.byId;
+ function scene(){return S[WK.path[WK.i]]}
+ function render(){
+  const s=scene(); if(!s)return;
+  $('wkName').textContent=s.name;
+  $('wkMeta').textContent=`${s.b} · ${s.f}`;
+  const pct=Math.round((WK.i/Math.max(1,WK.path.length-1))*100);
+  $('wkBar').style.width=pct+'%';
+  const left=WK.path.length-1-WK.i;
+  const nextHs=(s.hs||[]).find(x=>!x.back&&x.to===WK.path[WK.i+1]);
+  $('wkTxt').textContent = nextHs? nextHs.txt : 'وصلت إلى '+s.name;
+  $('wkSub').textContent = left>0? `تبقّى ${left} ${left===1?'خطوة':'خطوات'} · نحو ${S[WK.path[WK.path.length-1]].name}` : 'انتهى المسار';
+  const DIR={'أمام':'↑','يمين':'↱','يسار':'↰','خلف':'↓','مصعد':'⇅','درج':'⇗'};
+  $('wkDirIc').textContent = nextHs? (DIR[nextHs.dir]||'↑') : '✓';
+  paintLayer();
+  if(WK.voice) speakText(s.say + (nextHs? '. '+nextHs.txt : ''));
+ }
+ function setImg(img,src){img.src=src;img.style.height='100%';img.style.width='auto'}
+ function applyView(){
+  const s=scene(); if(!s)return;
+  const w=stage.clientWidth, h=stage.clientHeight;
+  const iw=cur.naturalWidth||2048, ih=cur.naturalHeight||768;
+  const sc=(h/ih)*WK.zoom;
+  const dispW=iw*sc;
+  const x=-((WK.yaw+180)/360)*dispW + w/2;
+  const y=-(WK.pitch/90)*(h*0.35);
+  [A,B].forEach(im=>{im.style.transform=`translate(${x}px, calc(-50% + ${y}px)) scale(1)`;im.style.width=dispW+'px';im.style.height='auto'});
+  paintLayer();
+ }
+ function proj(yaw,pitch){
+  const w=stage.clientWidth,h=stage.clientHeight;
+  let d=((yaw-WK.yaw+540)%360)-180;
+  const iw=cur.naturalWidth||2048, ih=cur.naturalHeight||768;
+  const sc=(h/ih)*WK.zoom, dispW=iw*sc;
+  const x=w/2 + (d/360)*dispW;
+  const y=h/2 + (pitch/90)*(h*0.35)*-1 + (-(WK.pitch/90)*(h*0.35));
+  return [x,y,Math.abs(d)<95];
+ }
+ function paintLayer(){
+  const s=scene(); if(!s){layer.innerHTML='';return}
+  let out='';
+  (s.labels||[]).forEach(l=>{const [x,y,vis]=proj(l.yaw,l.pitch); if(!vis)return;
+   out+=`<span class="wk-lab" style="left:${x.toFixed(0)}px;top:${y.toFixed(0)}px">${esc(l.t)}</span>`});
+  const nextId=WK.path[WK.i+1];
+  (s.hs||[]).forEach(hp=>{
+   const isNext = hp.to===nextId && !hp.back;
+   const isBack = hp.back && WK.i>0 && hp.to===WK.path[WK.i-1];
+   if(!isNext && !isBack)return;
+   const [x,y,vis]=proj(hp.yaw,hp.pitch); if(!vis)return;
+   out+=`<button class="wk-hs ${isNext?'nx':'bk'}" data-to="${hp.to}" style="left:${x.toFixed(0)}px;top:${y.toFixed(0)}px">
+     <span class="wk-ring"></span><span class="wk-arrow">${isNext?'↑':'↓'}</span>
+     <span class="wk-hs-t">${esc(hp.txt)}</span></button>`});
+  layer.innerHTML=out;
+  layer.querySelectorAll('.wk-hs').forEach(b=>b.onclick=()=>goScene(b.dataset.to));
+ }
+ function goScene(id){
+  const idx=WK.path.indexOf(id);
+  const s=WK.byId[id]; if(!s)return;
+  /* حركة تقريب ثم مزج ناعم */
+  const fade=$('wkFade');
+  WK.zoom=1; const t0=performance.now();
+  const zoomIn=()=>{const p=Math.min(1,(performance.now()-t0)/380);
+   WK.zoom=1+0.45*p; applyView();
+   if(p<1)requestAnimationFrame(zoomIn); else swap()};
+  const swap=()=>{
+   setImg(nxt,s.img);
+   nxt.style.opacity='0'; nxt.style.display='block';
+   requestAnimationFrame(()=>{nxt.style.transition='opacity .42s ease';nxt.style.opacity='1';cur.style.transition='opacity .42s ease';cur.style.opacity='0'});
+   setTimeout(()=>{
+    const tmp=cur; cur=nxt; nxt=tmp;
+    nxt.style.display='none'; nxt.style.transition=''; cur.style.transition='';
+    WK.zoom=1; if(idx>=0)WK.i=idx; else {WK.path=[id];WK.i=0}
+    applyView(); render(); preload();
+   },440);
+  };
+  requestAnimationFrame(zoomIn);
+ }
+ function preload(){const nid=WK.path[WK.i+1]; if(nid&&WK.byId[nid]){const p=new Image();p.src=WK.byId[nid].img}}
+ /* التحكم باللمس */
+ stage.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;lastY=e.clientY;stage.setPointerCapture(e.pointerId)});
+ stage.addEventListener('pointermove',e=>{if(!dragging)return;
+  const dx=e.clientX-lastX, dy=e.clientY-lastY; lastX=e.clientX; lastY=e.clientY;
+  WK.yaw=(WK.yaw - dx*0.22 + 360)%360;
+  WK.pitch=Math.max(-38,Math.min(38,WK.pitch + dy*0.14));
+  applyView()});
+ ['pointerup','pointercancel','pointerleave'].forEach(ev=>stage.addEventListener(ev,()=>dragging=false));
+ stage.addEventListener('wheel',e=>{e.preventDefault();WK.zoom=Math.max(1,Math.min(2.2,WK.zoom - e.deltaY*0.0012));applyView()},{passive:false});
+ let pd=null;
+ stage.addEventListener('touchmove',e=>{if(e.touches.length===2){e.preventDefault();
+  const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+  if(pd)WK.zoom=Math.max(1,Math.min(2.2,WK.zoom*(d/pd))); pd=d; applyView()}},{passive:false});
+ stage.addEventListener('touchend',()=>pd=null);
+ /* الأزرار */
+ $('wkExit').onclick=$('wkEnd').onclick=()=>{document.body.classList.remove('mapview');go('nav')};
+ const mb=$('wkMap'); if(mb)mb.onclick=()=>{document.body.classList.remove('mapview');go('map')};
+ $('wkVoice').onclick=()=>{WK.voice=!WK.voice;$('wkVoice').classList.toggle('on',WK.voice);
+  if(WK.voice){const s=scene();speakText(s.say)}else stopSpeak($('wkVoice'))};
+ $('wkLost').onclick=()=>{const s=scene();
+  alert('أنت الآن في: '+s.name+'\n'+s.b+' · '+s.f+'\n\n'+s.say+'\n\nاتبع الدائرة الخضراء النابضة على الأرض للانتقال للخطوة التالية.')};
+ $('wkReset').onclick=()=>{WK.yaw=WK.byId[WK.path[WK.i]].yaw||0;WK.pitch=0;WK.zoom=1;applyView();render()};
+ /* بدء */
+ B.style.display='none';
+ const first=scene();
+ if(!first){$('wkTxt').textContent='تعذّر تحميل المسار';return}
+ A.onerror=()=>{stage.insertAdjacentHTML('beforeend','<div class="wk-err">تعذّر تحميل مشهد التجوّل.<br>تأكد من رفع صور المشاهد، أو استخدم الخريطة التفاعلية.<br><button class="wk-a" style="margin-top:10px" onclick="go(\'map\')">افتح الخريطة</button></div>')};
+ A.onload=()=>{WK.yaw=first.yaw||0;applyView();render();preload()};
+ setImg(A,first.img);
+ setTimeout(()=>{if(!A.complete||!A.naturalWidth)A.onerror&&A.onerror()},4000);
+ window.addEventListener('resize',applyView);
+}
+
+/* ══════════ محرّر مشاهد التجوّل الواقعي (لوحة الإدارة) ══════════ */
+function sceneEditor(host){
+ let scenes=ov('scenes',SCENES_DEF).map(s=>JSON.parse(JSON.stringify(s)));
+ let cur=0, mode='hs'; /* hs = نقطة انتقال · lb = اسم خدمة */
+ const save=()=>{setOv('scenes',scenes);syncData()};
+ const wrap=document.createElement('div');host.appendChild(wrap);
+
+ function render(){
+  const s=scenes[cur];
+  wrap.innerHTML=`
+   <div class="card"><h3>🎬 المشاهد (${scenes.length})</h3>
+    <div class="chips" id="scList" style="margin-bottom:6px"></div>
+    <div class="acts" style="border:0;padding:6px 0 0">
+      <button class="act p" id="scAdd">+ مشهد جديد</button>
+      <button class="act" id="scDel" style="background:#FDECEE;color:#A81B29">حذف المشهد</button>
+      <button class="act" id="scPrev">▶ معاينة المسار</button></div></div>
+
+   ${s?`<div class="card form"><h3>بيانات المشهد</h3>
+    <label>اسم المشهد</label><input type="text" id="sName" value="${esc(s.name||'')}">
+    <div class="row2"><div><label>المبنى</label><input type="text" id="sB" value="${esc(s.b||'')}"></div>
+     <div><label>الطابق</label><input type="text" id="sF" value="${esc(s.f||'')}"></div></div>
+    <label>رابط الصورة البانورامية (أو ارفعها أدناه)</label><input type="text" id="sImg" value="${String(s.img||'').startsWith('data:')?'(صورة مضمّنة)':esc(s.img||'')}" placeholder="pano/pano-name.webp">
+    <label class="filebtn" style="cursor:pointer;margin-top:8px">📷 رفع صورة 360° من الجهاز<input type="file" id="sUp" accept="image/*" style="display:none"></label>
+    <div class="row2" style="margin-top:10px"><div><label>زاوية البداية (°)</label><input type="number" id="sYaw" value="${s.yaw||0}"></div>
+     <div><label>مناسب للكرسي المتحرك</label><select id="sAcc"><option value="1" ${s.acc!==false?'selected':''}>نعم</option><option value="0" ${s.acc===false?'selected':''}>لا</option></select></div></div>
+    <label>الوصف الصوتي</label><textarea id="sSay">${esc(s.say||'')}</textarea>
+    <button class="act p" id="sSave" style="margin-top:10px">حفظ البيانات</button></div>
+
+   <div class="card"><h3>🖱️ ضع النقاط داخل المشهد</h3>
+    <div class="mini" style="margin-bottom:8px">اختر النوع ثم <b>اضغط داخل الصورة</b> لإضافة عنصر في مكانه.</div>
+    <div class="chips" style="margin-bottom:10px">
+      <button class="chip ${mode==='hs'?'on':''}" id="mHs">🟢 نقطة انتقال</button>
+      <button class="chip ${mode==='lb'?'on':''}" id="mLb">🏷️ اسم خدمة</button></div>
+    <div class="sc-canvas" id="scCanvas">
+      <img id="scImg" src="${esc(s.img||'')}" alt="">
+      <div class="sc-layer" id="scLayer"></div></div>
+    <div class="mini" style="margin-top:8px">اسحب أي عنصر لتعديل مكانه · اضغط ✕ لحذفه.</div></div>
+
+   <div class="card"><h3>نقاط الانتقال (${(s.hs||[]).length})</h3><div id="hsList"></div></div>
+   <div class="card"><h3>أسماء الخدمات (${(s.labels||[]).length})</h3><div id="lbList"></div></div>`:'<div class="card"><div class="mini">لا مشاهد — أضف مشهدًا جديدًا.</div></div>'}`;
+
+  /* قائمة المشاهد */
+  const sl=wrap.querySelector('#scList');
+  scenes.forEach((x,i)=>{const b=document.createElement('button');b.className='chip'+(i===cur?' on':'');
+   b.textContent=x.name||('مشهد '+(i+1));b.onclick=()=>{cur=i;render()};sl.appendChild(b)});
+  wrap.querySelector('#scAdd').onclick=()=>{
+   scenes.push({id:'s_'+Date.now(),name:'مشهد جديد',b:'مبنى العيادات',f:'الدور الأرضي',img:'',yaw:0,acc:true,say:'',labels:[],hs:[]});
+   cur=scenes.length-1;save();render()};
+  wrap.querySelector('#scDel').onclick=()=>{if(!scenes.length)return;
+   if(confirm('حذف هذا المشهد؟')){scenes.splice(cur,1);cur=Math.max(0,cur-1);save();render()}};
+  wrap.querySelector('#scPrev').onclick=()=>{save();closeAdminAndGo('walk')};
+  if(!scenes.length)return;
+
+  /* حفظ البيانات */
+  wrap.querySelector('#sSave').onclick=()=>{
+   const s2=scenes[cur];
+   s2.name=wrap.querySelector('#sName').value.trim()||s2.name;
+   s2.b=wrap.querySelector('#sB').value.trim(); s2.f=wrap.querySelector('#sF').value.trim();
+   const iv=wrap.querySelector('#sImg').value.trim(); if(iv&&iv!=='(صورة مضمّنة)')s2.img=iv;
+   s2.yaw=+wrap.querySelector('#sYaw').value||0;
+   s2.acc=wrap.querySelector('#sAcc').value==='1';
+   s2.say=wrap.querySelector('#sSay').value.trim();
+   save();render();alert('تم الحفظ');
+  };
+  /* رفع صورة */
+  wrap.querySelector('#sUp').onchange=e=>{const f=e.target.files[0]; if(!f)return;
+   if(f.size>3.5*1024*1024){alert('الصورة كبيرة (>3.5 ميجابايت). اضغطها في squoosh.app أولًا.');return}
+   const r=new FileReader(); r.onload=()=>{scenes[cur].img=r.result;save();render()}; r.readAsDataURL(f)};
+
+  /* لوحة الوضع */
+  wrap.querySelector('#mHs').onclick=()=>{mode='hs';render()};
+  wrap.querySelector('#mLb').onclick=()=>{mode='lb';render()};
+
+  paintCanvas();
+  paintLists();
+ }
+
+ /* تحويل موضع الضغط داخل الصورة إلى yaw/pitch */
+ function toYawPitch(el,ev){
+  const r=el.getBoundingClientRect();
+  const x=(ev.clientX-r.left)/r.width, y=(ev.clientY-r.top)/r.height;
+  return [Math.round((x*360)-180), Math.round(90-(y*180))];
+ }
+ function toXY(yaw,pitch){return [((yaw+180)/360)*100, ((90-pitch)/180)*100]}
+
+ function paintCanvas(){
+  const s=scenes[cur]; const cv=wrap.querySelector('#scCanvas'), layer=wrap.querySelector('#scLayer');
+  if(!cv||!s)return;
+  let out='';
+  (s.hs||[]).forEach((hp,i)=>{const [x,y]=toXY(hp.yaw,hp.pitch);
+   out+=`<span class="sc-pt hs" style="left:${x}%;top:${y}%" data-t="hs" data-i="${i}" title="${esc(hp.txt||'')}">↑<b class="sc-x" data-del="hs:${i}">✕</b></span>`});
+  (s.labels||[]).forEach((l,i)=>{const [x,y]=toXY(l.yaw,l.pitch);
+   out+=`<span class="sc-pt lb" style="left:${x}%;top:${y}%" data-t="lb" data-i="${i}">${esc(l.t||'')}<b class="sc-x" data-del="lb:${i}">✕</b></span>`});
+  layer.innerHTML=out;
+
+  /* إضافة بالضغط */
+  cv.onclick=ev=>{
+   if(ev.target.closest('.sc-pt'))return;
+   const [yaw,pitch]=toYawPitch(cv,ev);
+   if(mode==='hs'){
+    const others=scenes.filter((_,i)=>i!==cur);
+    if(!others.length){alert('أضف مشهدًا آخر أولًا لتربط النقطة به.');return}
+    const to=prompt('اسم المشهد التالي:\n'+others.map((o,i)=>(i+1)+'. '+o.name).join('\n')+'\n\nاكتب الرقم:');
+    const idx=parseInt(to,10)-1; if(isNaN(idx)||!others[idx])return;
+    const txt=prompt('التعليمة (مثال: تقدّم في الممر)','تقدّم');
+    const dir=prompt('الاتجاه: أمام / يمين / يسار / خلف / مصعد / درج','أمام')||'أمام';
+    scenes[cur].hs=scenes[cur].hs||[];
+    scenes[cur].hs.push({id:'h_'+Date.now(),to:others[idx].id,yaw,pitch,dir,txt:txt||'تقدّم',back:dir==='خلف'});
+   }else{
+    const t=prompt('اسم الخدمة الظاهرة هنا:'); if(!t)return;
+    scenes[cur].labels=scenes[cur].labels||[];
+    scenes[cur].labels.push({t,yaw,pitch});
+   }
+   save();render();
+  };
+  /* حذف وسحب */
+  layer.querySelectorAll('.sc-x').forEach(b=>b.onclick=ev=>{ev.stopPropagation();
+   const [t,i]=b.dataset.del.split(':');
+   if(t==='hs')scenes[cur].hs.splice(+i,1); else scenes[cur].labels.splice(+i,1);
+   save();render()});
+  layer.querySelectorAll('.sc-pt').forEach(el=>{
+   el.onpointerdown=ev=>{ev.stopPropagation();ev.preventDefault();
+    const t=el.dataset.t,i=+el.dataset.i;
+    const move=e2=>{const [yaw,pitch]=toYawPitch(cv,e2);
+     const [x,y]=toXY(yaw,pitch); el.style.left=x+'%'; el.style.top=y+'%';
+     if(t==='hs'){scenes[cur].hs[i].yaw=yaw;scenes[cur].hs[i].pitch=pitch}
+     else{scenes[cur].labels[i].yaw=yaw;scenes[cur].labels[i].pitch=pitch}};
+    const up=()=>{document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',up);save()};
+    document.addEventListener('pointermove',move);document.addEventListener('pointerup',up)};
+  });
+ }
+
+ function paintLists(){
+  const s=scenes[cur];
+  const nm=id=>{const f=scenes.find(x=>x.id===id);return f?f.name:'—'};
+  const hl=wrap.querySelector('#hsList');
+  if(hl)hl.innerHTML=(s.hs||[]).length?(s.hs||[]).map((hp,i)=>`<div class="dept" style="padding:11px 13px">
+    <span class="chip-c" style="background:${hp.back?'#B2BEC4':'#05A854'};min-height:34px"></span>
+    <div class="info"><b>${esc(hp.txt||'')}</b><div class="mini">${esc(hp.dir||'')} ← ${esc(nm(hp.to))} · (${hp.yaw}°, ${hp.pitch}°)</div></div></div>`).join(''):'<div class="mini">لا نقاط — اضغط داخل الصورة لإضافتها.</div>';
+  const ll=wrap.querySelector('#lbList');
+  if(ll)ll.innerHTML=(s.labels||[]).length?(s.labels||[]).map(l=>`<div class="dept" style="padding:11px 13px">
+    <span class="chip-c" style="background:#004C97;min-height:34px"></span>
+    <div class="info"><b>${esc(l.t)}</b><div class="mini">(${l.yaw}°, ${l.pitch}°)</div></div></div>`).join(''):'<div class="mini">لا أسماء خدمات بعد.</div>';
+ }
+ render();
+}
+function closeAdminAndGo(r){adminOK=true;go(r)}
 
 /* ══════════════════ مساعد دليلك الذكي ══════════════════
    • يجيب فقط من قاعدة معرفة «دليلك» (searchKB) — لا معلومات عامة ولا تخمين.
@@ -2864,7 +3779,14 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('asstOv'))closeAs
 /* بدء */
 router();
 initFirebase().then(ok=>{if(!ok)window.addEventListener('online',()=>{if(!fbReady)initFirebase()},{once:true})});
-if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+if('serviceWorker'in navigator){
+ navigator.serviceWorker.register('sw.js').then(r=>{
+  r.update();
+  if(r.waiting)r.waiting.postMessage({t:'skip'});
+  r.addEventListener('updatefound',()=>{const n=r.installing;
+   n&&n.addEventListener('statechange',()=>{if(n.state==='installed'&&navigator.serviceWorker.controller)location.reload()})});
+ }).catch(()=>{});
+}
 </script>
 </body>
 </html>
