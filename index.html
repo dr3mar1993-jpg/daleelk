@@ -287,7 +287,7 @@ body.mapview .asst-fab{display:none}
  transition:transform .26s cubic-bezier(.34,1.56,.44,1),box-shadow .22s,border-color .2s;animation:orbFloat 5.5s ease-in-out infinite}
 .orb-i svg{width:25px;height:25px;stroke:var(--oc);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .orb-i:hover,.orb-i:active{transform:scale(1.2) translateY(-3px);border-color:var(--oc);box-shadow:0 10px 24px -8px var(--oc)}
-.orb-i .tip{position:absolute;bottom:-19px;font-size:10.5px;font-weight:700;color:var(--ink2);white-space:nowrap;opacity:1;text-shadow:0 1px 3px rgba(255,255,255,.9)}
+.orb-i .tip{position:absolute;bottom:-20px;font-size:10px;font-weight:700;color:var(--ink2);white-space:nowrap;opacity:1;text-shadow:0 1px 3px rgba(255,255,255,.9)}
 .orb-i:hover .tip,.orb-i:active .tip{color:var(--oc)}
 @keyframes orbFloat{0%,100%{margin-top:0}50%{margin-top:-6px}}
 @media(prefers-reduced-motion:reduce){.grat-heart,.grat-halo,.orb-i{animation:none!important}}
@@ -359,6 +359,28 @@ body.mapview .asst-fab{display:none}
 .wk-switch{position:absolute;top:calc(56px + env(safe-area-inset-top));inset-inline-start:50%;transform:translateX(50%);
  z-index:12;background:rgba(11,70,68,.94);color:#fff;font-size:12.5px;font-weight:700;padding:10px 16px;border-radius:22px;
  box-shadow:0 6px 20px rgba(0,0,0,.3);backdrop-filter:blur(6px)}
+/* بطاقات الرسائل */
+.msg-kpi{display:flex;gap:9px;margin:10px 0 14px}
+.msg-kpi span{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:color-mix(in srgb,var(--k,#0B4644) 9%,#fff);
+ border:1px solid color-mix(in srgb,var(--k,#0B4644) 22%,var(--line));border-radius:12px;padding:10px 6px;font-size:11px;color:var(--ink3);font-weight:600}
+.msg-kpi b{font-size:20px;color:var(--k,#0B4644);line-height:1}
+.msg-list{display:flex;flex-direction:column;gap:12px}
+.msg-c{border:1px solid var(--line);border-inline-start:5px solid var(--mc);border-radius:var(--r);background:var(--card);overflow:hidden;box-shadow:var(--sh);animation:cardIn .4s both}
+.msg-h{display:flex;align-items:center;gap:10px;padding:11px 13px;background:color-mix(in srgb,var(--mc) 7%,#fff);border-bottom:1px solid var(--line2)}
+.msg-n{flex:none;width:30px;height:30px;border-radius:9px;background:var(--mc);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+.msg-hh{flex:1;min-width:0}
+.msg-hh b{display:block;font-size:14.5px;line-height:1.35}
+.msg-hh span{display:block;font-size:11px;color:var(--ink3);margin-top:2px}
+.msg-st{flex:none;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.msg-q{padding:13px;font-size:14.5px;line-height:1.8;color:var(--ink);background:var(--bg);border-inline-start:3px solid color-mix(in srgb,var(--mc) 40%,#fff);margin:12px 13px;border-radius:10px}
+.msg-t{width:100%;border-collapse:collapse;margin:0 0 4px}
+.msg-t tr{border-top:1px solid var(--line2)}
+.msg-t th{width:38%;text-align:right;font-size:11.5px;font-weight:600;color:var(--ink3);padding:9px 13px;vertical-align:top;background:color-mix(in srgb,var(--mc) 4%,#fff)}
+.msg-t td{text-align:right;font-size:13px;color:var(--ink);padding:9px 13px;font-weight:500}
+.mtag{display:inline-block;background:color-mix(in srgb,var(--mc) 13%,#fff);color:var(--ink);border:1px solid color-mix(in srgb,var(--mc) 28%,var(--line));font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;margin:2px 3px 2px 0}
+.msg-f{display:flex;gap:7px;padding:10px 13px;border-top:1px solid var(--line2);flex-wrap:wrap}
+.msg-b{flex:1;min-width:88px;font-size:11.5px;font-weight:700;padding:9px 6px;border-radius:9px;background:var(--bg);color:var(--ink2);border:1px solid var(--line)}
+.msg-b.ok{background:var(--green-l);color:var(--green-dk);border-color:#BFE6D2}
 /* محرّر المشاهد */
 .sc-canvas{position:relative;width:100%;border:1.5px solid var(--line);border-radius:var(--rs);overflow:hidden;background:#0d1a17;cursor:crosshair;direction:ltr}
 .sc-canvas img{width:100%;display:block;user-select:none;-webkit-user-drag:none}
@@ -415,6 +437,15 @@ body.mapview .asst-fab{display:none}
 .tk-b b{display:block;font-size:13.5px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tk-b span{display:block;font-size:11.5px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
 .tk-go{flex:none;color:var(--tc);font-size:22px;font-weight:800}
+.ticker.mq{padding:0;overflow:hidden;cursor:default;display:block}
+.mq-track{overflow:hidden;padding:11px 0}
+.mq-run{display:inline-flex;gap:34px;white-space:nowrap;animation:mqRun 30s linear infinite;will-change:transform}
+.ticker.mq:hover .mq-run{animation-play-state:paused}
+@keyframes mqRun{from{transform:translateX(0)}to{transform:translateX(50%)}}
+.mq-i{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--ink2);cursor:pointer}
+.mq-i b{color:var(--ink);font-weight:800}
+.mq-i i{width:8px;height:8px;border-radius:50%;flex:none}
+@media(prefers-reduced-motion:reduce){.mq-run{animation:none}}
 /* عدّاد BMI ومخطط النمو */
 .gauge-wrap{position:relative;display:flex;flex-direction:column;align-items:center;margin-bottom:6px}
 .gauge{width:100%;max-width:250px}
@@ -1764,6 +1795,7 @@ const MAP_URL='map.html'; /* قسم «وصلني» — الخريطة الحال
 function ov(key,def){try{const v=localStorage.getItem('kfmmc_ov_'+key);if(v)return JSON.parse(v)}catch(e){}return def}
 function setOv(key,val){try{localStorage.setItem('kfmmc_ov_'+key,JSON.stringify(val))}catch(e){}fbSetContent(key,val);logChange(key)}
 function logChange(what){try{const l=JSON.parse(localStorage.getItem('kfmmc_changelog')||'[]');l.push({what,ts:Date.now()});localStorage.setItem('kfmmc_changelog',JSON.stringify(l.slice(-200)))}catch(e){}}
+function tickerCfg(){try{return JSON.parse(localStorage.getItem('kfmmc_ticker')||'{"on":true,"mode":"fade"}')}catch(e){return{on:true,mode:'fade'}}}
 function getEndpoint(){try{return localStorage.getItem('kfmmc_endpoint')||''}catch(e){return''}}
 /* ═══════════════ مزامنة Firebase (تعمل عند إدخال الإعدادات) ═══════════════ */
 let FB=null, fbReady=false;
@@ -1808,16 +1840,30 @@ const CONTACTS_DEF=[{entity:'الاستعلامات',number:'',ext:'',hours:'',s
 const POLICIES_DEF=[{title:'العيادة العاجلة',kind:'video',link:'urgent-care.mp4',dept:'العيادة العاجلة',note:'تعريف مرئي بخدمة العيادة العاجلة ومتى تلجأ إليها.',status:'approved'},{title:'الحجز عبر تطبيق صحتك',kind:'video',link:'booking-sehatak.mp4',dept:'المواعيد',note:'خطوات حجز وتعديل المواعيد عبر تطبيق صحتك.',status:'approved'},{title:'وثيقة حقوق وواجبات المريض',kind:'pdf',link:'',dept:'عام',note:'الوثيقة الرسمية — تُرفع من الإدارة.',status:'review'},{title:'سياسة الزيارة',kind:'image',link:'',dept:'الزيارة',note:'أوقات وضوابط الزيارة — تُرفع من الإدارة.',status:'pending'}];
 /* حقوق المريض — عرض بصري */
 const PRIGHTS=[
- {ic:'shield',t:'رعاية آمنة ومحترمة',d:'الحصول على رعاية صحية آمنة وعالية الجودة، باحترام وكرامة ودون أي تمييز.'},
- {ic:'doc',t:'المعرفة والمعلومات',d:'معرفة تشخيصك وخطة علاجك والبدائل المتاحة ونتائجها المتوقعة بلغة مفهومة.'},
- {ic:'cli',t:'الموافقة المستنيرة',d:'الموافقة أو الرفض لأي إجراء أو علاج بعد شرحٍ وافٍ لفوائده ومخاطره.'},
- {ic:'lock',t:'الخصوصية والسرية',d:'سرية معلوماتك الصحية وعدم الاطلاع عليها إلا للمصرّح لهم ولأغراض العلاج.'},
- {ic:'wm',t:'معرفة مقدّم الرعاية',d:'معرفة هوية ومهنة كل من يشارك في رعايتك من الأطباء والممرضين.'},
- {ic:'chat',t:'إبداء الرأي والشكوى',d:'تقديم ملاحظة أو شكوى أو اقتراح دون أن يؤثر ذلك على مستوى رعايتك.'},
- {ic:'route',t:'رأي طبي ثانٍ',d:'طلب رأي طبي ثانٍ ضمن الأنظمة والإجراءات المعتمدة.'},
- {ic:'heart',t:'الرعاية الرحيمة',d:'رعاية تراعي راحتك وألمك واحتياجاتك النفسية والاجتماعية والدينية.'},
- {ic:'bell',t:'المرافق والزيارة',d:'وجود مرافق والزيارة وفق السياسة المعتمدة بما يحقق مصلحتك وسلامتك.'},
- {ic:'urg',t:'واجباتك',d:'تزويد الفريق الطبي بمعلومات دقيقة، واحترام الأنظمة والمرضى والموظفين.'}
+ {g:'r',ic:'shield',t:'رعاية آمنة ومحترمة',d:'الحصول على رعاية صحية آمنة وعالية الجودة، باحترام وكرامة، دون تمييز بسبب العمر أو الجنس أو الجنسية أو الرتبة أو الحالة الاجتماعية.'},
+ {g:'r',ic:'doc',t:'المعرفة والمعلومات',d:'معرفة تشخيصك وخطة علاجك والبدائل المتاحة ونتائجها المتوقعة ومخاطرها، بلغة مفهومة وبأسلوب واضح.'},
+ {g:'r',ic:'cli',t:'الموافقة المستنيرة',d:'الموافقة أو الرفض لأي إجراء أو عملية أو علاج بعد شرح وافٍ، وحقك في سحب الموافقة في أي وقت.'},
+ {g:'r',ic:'lock',t:'الخصوصية والسرية',d:'سرية معلوماتك الصحية وملفك الطبي، وعدم اطّلاع أحد عليها إلا المصرّح لهم لأغراض علاجك أو بموجب النظام.'},
+ {g:'r',ic:'wm',t:'معرفة مقدّم الرعاية',d:'معرفة اسم ومهنة وتخصص كل من يشارك في رعايتك من الأطباء والممرضين والفنيين.'},
+ {g:'r',ic:'route',t:'رأي طبي ثانٍ',d:'طلب رأي طبي ثانٍ داخل المنشأة أو خارجها وفق الأنظمة والإجراءات المعتمدة.'},
+ {g:'r',ic:'heart',t:'تخفيف الألم والرعاية الرحيمة',d:'تقييم ألمك ومعالجته قدر الإمكان، ورعاية تراعي احتياجاتك النفسية والاجتماعية والدينية.'},
+ {g:'r',ic:'chat',t:'إبداء الرأي والشكوى',d:'تقديم ملاحظة أو شكوى أو اقتراح ومعرفة نتيجتها، دون أن يؤثر ذلك على مستوى رعايتك.'},
+ {g:'r',ic:'bell',t:'المرافق والزيارة',d:'وجود مرافق والزيارة وفق السياسة المعتمدة بما يحقق مصلحتك وسلامتك وسلامة بقية المرضى.'},
+ {g:'r',ic:'rec',t:'الاطلاع على ملفك',d:'طلب نسخة من ملفك الطبي أو تقاريرك وفق الإجراءات المعتمدة في شؤون المرضى.'},
+ {g:'r',ic:'prc',t:'المشاركة في القرار',d:'المشاركة في اتخاذ القرارات المتعلقة بعلاجك، وإشراك من تختاره من أسرتك عند رغبتك.'},
+ {g:'r',ic:'acc',t:'احتياجات خاصة',d:'رعاية تراعي احتياجات كبار السن وذوي الإعاقة والأطفال والحوامل، وتوفير المساعدة اللازمة.'},
+ {g:'r',ic:'lab',t:'معرفة التكاليف',d:'معرفة ما ينطبق على حالتك من تغطية أو استحقاق علاجي وفق أنظمة الخدمات الطبية للقوات المسلحة.'},
+ {g:'r',ic:'urg',t:'الرعاية الطارئة',d:'تلقّي الرعاية الإسعافية العاجلة عند الحاجة دون تأخير، وحسب أولوية الفرز الطبي.'},
+ {g:'r',ic:'oth',t:'الترجمة والتواصل',d:'المساعدة على التواصل عند وجود صعوبة في اللغة أو السمع أو النطق قدر المتاح.'},
+ {g:'d',ic:'doc',t:'تزويد معلومات دقيقة',d:'إعطاء الفريق الطبي معلومات صحيحة وكاملة عن حالتك وأدويتك وحساسيتك وتاريخك المرضي.'},
+ {g:'d',ic:'route',t:'الالتزام بخطة العلاج',d:'اتباع التعليمات الطبية والالتزام بالأدوية والمواعيد، وإبلاغ الفريق عند عدم قدرتك على ذلك.'},
+ {g:'d',ic:'bell',t:'احترام المواعيد',d:'الحضور في الموعد المحدد، وإلغاء الموعد مبكرًا عند تعذّر الحضور ليستفيد مريض آخر.'},
+ {g:'d',ic:'wm',t:'احترام الآخرين',d:'احترام المرضى والمرافقين والعاملين، وعدم إصدار أي سلوك مسيء لفظيًا أو جسديًا.'},
+ {g:'d',ic:'lock',t:'احترام الخصوصية',d:'الحفاظ على خصوصية بقية المرضى، وعدم التصوير داخل المنشأة دون إذن.'},
+ {g:'d',ic:'shield',t:'الالتزام بالأنظمة',d:'اتباع أنظمة المنشأة وتعليمات السلامة، ومنع التدخين داخل المباني والمواقف المغطاة.'},
+ {g:'d',ic:'rec',t:'المحافظة على الممتلكات',d:'المحافظة على أجهزة ومرافق المنشأة وعدم العبث بها، والاعتناء بأغراضك الشخصية.'},
+ {g:'d',ic:'prc',t:'مسؤولية الرفض',d:'تحمّل نتائج رفض العلاج أو عدم الالتزام بالتعليمات بعد إبلاغك بها.'},
+ {g:'d',ic:'heart',t:'استخدام الخدمة بمسؤولية',d:'استخدام الطوارئ للحالات الطارئة فعلًا، والعيادات للحالات غير العاجلة.'}
 ];
 let CONTACTS=[],POLICIES=[];
 function syncData(){KB=ov('kb',KB_DEF);DEPTS=ov('depts',DEPTS_DEF);CONTACTS=ov('contacts',CONTACTS_DEF);POLICIES=ov('policies',POLICIES_DEF);try{const s=ov('services',null);if(s&&s.length&&SERVICES_DEF)SERVICES=s}catch(e){}}
@@ -2008,7 +2054,12 @@ function router(){
  document.body.classList.remove('mapview');
  $('app').innerHTML=''; fn(arg,arg2);
 }
-$('back').onclick=()=>{ if(history.length>1)history.back(); else go('home') };
+$('back').onclick=()=>{
+ const cur=(location.hash||'#home').slice(1).split('/')[0];
+ const UP={nav:'home',map:'nav',walk:'nav',dinfo:'info',news:'alerts',terms:'rights',privacy:'rights'};
+ if(UP[cur]){go(UP[cur]);return}
+ if(history.length>1)history.back(); else go('home');
+};
 window.addEventListener('hashchange',router);
 /* ── إتاحة الوصول: تكبير/تصغير الخط (يُحفظ) ── */
 const FS=[0.9,1,1.12,1.28,1.45];let fsIdx=1;
@@ -2062,7 +2113,7 @@ PAGES.home=function(){
  let ex=0;
  const el=document.createElement('div');el.className='wrap';
  el.innerHTML=`
- <div class="sec-hero"><h1>كيف نقدر نساعدك؟</h1><p>دليلك — بديلك الرقمي لمكتب الاستعلامات داخل المستشفى</p></div>
+ <div class="sec-hero"><h1>كيف نقدر نساعدك؟</h1><p style="line-height:1.75"><b style="font-size:17px;color:var(--green-dk)">دليلك… سبيلك</b><br><span style="font-size:13.5px">للمعلومة، وللخدمة، ولوجهتك</span></p></div>
  <div class="ask-box">
   <div class="ask-top"><div class="ask-ic"><svg viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 115 0c0 1.7-2.5 2-2.5 4"/><circle cx="12" cy="17.5" r=".6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="9.2"/></svg></div>
    <div class="t"><b>اسأل دليلك</b><span>اسأل عن أي خدمة أو إجراء داخل المستشفى</span></div></div>
@@ -2082,22 +2133,22 @@ PAGES.home=function(){
  const gw=el.querySelector('#gratWrap');
  if(gw){
   const ORB=[
-   {ic:'rec',c:'#004C97',r:'info',t:'الأقسام'},
+   {ic:'rec',c:'#004C97',r:'info',t:'دليل الأقسام'},
    {ic:'route',c:'#29504D',r:'plan',t:'خطط زيارتي'},
    {ic:'lab',c:'#05A854',r:'tools',t:'أدوات صحتك'},
-   {ic:'doc',c:'#009CDE',r:'guides',t:'تعليمات'},
-   {ic:'shield',c:'#5F259F',r:'rights',t:'حقوقك'},
+   {ic:'doc',c:'#009CDE',r:'guides',t:'تعليمات وأدلة'},
+   {ic:'shield',c:'#5F259F',r:'rights',t:'حقوقك وواجباتك'},
    {ic:'bell',c:'#EAAA00',r:'alerts',t:'أخبار وتنبيهات'},
    {ic:'cli',c:'#861F41',url:'https://ehealthlibrary.my.canva.site/library',t:'مكتبة التوعية'},
-   {ic:'chat',c:'#6B767B',r:'complaints',t:'ملاحظاتك'}
+   {ic:'chat',c:'#6B767B',r:'complaints',t:'ملاحظات واقتراحات'}
   ];
-  const R=132, orbHTML=ORB.map((o,i)=>{
+  const R=136, orbHTML=ORB.map((o,i)=>{
    const a=(-90+(360/ORB.length)*i)*Math.PI/180;
    const x=Math.cos(a)*R, y=Math.sin(a)*R;
    const tag=o.url?'a':'button', attr=o.url?`href="${o.url}" target="_blank" rel="noopener"`:`data-r="${o.r}"`;
    return `<${tag} class="orb-i" ${attr} style="--oc:${o.c};left:calc(50% + ${x.toFixed(0)}px - 26px);top:calc(50% + ${y.toFixed(0)}px - 26px);animation-delay:${i*0.34}s" aria-label="${o.t}"><svg viewBox="0 0 24 24">${ICN[o.ic]||ICN.oth}</svg><span class="tip">${o.t}</span></${tag}>`;
   }).join('');
-  gw.innerHTML=`<div style="position:relative;width:100%;max-width:330px;height:330px;display:grid;place-items:center">
+  gw.innerHTML=`<div style="position:relative;width:100%;max-width:346px;height:346px;display:grid;place-items:center">
     <span class="grat-halo"></span>
     <button class="grat-btn" id="gratBtn" aria-label="امتنان — شكر وتقدير لموظف">
       <span class="grat-heart"></span>
@@ -2130,11 +2181,20 @@ PAGES.home=function(){
  setInterval(()=>{ if(document.activeElement!==q){ex=(ex+1)%EXAMPLES.length;q.placeholder=EXAMPLES[ex]}},2600);
  // شريط متناوب: تنبيهات الخدمات وأخبار المجمع
  (function(){ const tk=el.querySelector('#ticker'); if(!tk)return;
-  const items=[]; 
+  const cfg=tickerCfg(); if(!cfg.on)return;
+  const items=[];
   try{getAlerts().forEach(a=>items.push({k:a.type,t:ALERT_TP[a.type]||'تنبيه',x:a.title,d:a.desc,go:'alerts'}))}catch(e){}
-  try{getNews().forEach(n=>items.push({k:'news',t:'خبر',x:n.title,d:n.desc,go:'alerts'}))}catch(e){}
+  try{getNews().forEach((n,i)=>items.push({k:'news',t:'خبر',x:n.title,d:n.desc,go:'news/'+i}))}catch(e){}
   if(!items.length)return; tk.hidden=false;
   const CL={maintenance:'#EAAA00',new:'#05A854',info:'#004C97',news:'#5F259F'};
+  if(cfg.mode==='marquee'){
+   tk.classList.add('mq'); tk.style.setProperty('--tc','#0B4644');
+   const strip=items.map(it=>`<span class="mq-i" data-go="${it.go}"><i style="background:${CL[it.k]||'#05A854'}"></i><b>${esc(it.t)}:</b> ${esc(it.x)}</span>`).join('');
+   tk.innerHTML=`<div class="mq-track"><div class="mq-run">${strip}${strip}</div></div>`;
+   tk.querySelectorAll('.mq-i').forEach(s=>s.onclick=()=>go(s.dataset.go));
+   const n=items.length; tk.querySelector('.mq-run').style.animationDuration=Math.max(18,n*7)+'s';
+   return;
+  }
   let ti=0;
   const paint=()=>{const it=items[ti];
    tk.style.setProperty('--tc',CL[it.k]||'#05A854');
@@ -2385,10 +2445,19 @@ PAGES.contacts=function(){const el=document.createElement('div');el.className='w
 PAGES.contacts.title='أرقام التواصل';
 PAGES.rights=function(){
  const el=document.createElement('div');el.className='wrap page';
- el.innerHTML=`<h2>حقوقك وواجباتك</h2><p class="lead">ما لك من حقوق وما عليك من واجبات كمريض داخل المستشفى.</p>
-  <div class="rights-grid">${PRIGHTS.map((r,i)=>`<div class="right-c" style="animation-delay:${i*40}ms"><span class="ric"><svg viewBox="0 0 24 24">${ICN[r.ic]||ICN.doc}</svg></span><div><b>${esc(r.t)}</b><p>${esc(r.d)}</p></div></div>`).join('')}</div>
-  <div class="card" style="text-align:center;margin-top:14px"><h3>الوثائق النظامية</h3><div class="acts" style="justify-content:center;border:0;padding:8px 0 0"><button class="act" onclick="go('terms')">شروط الاستخدام</button><button class="act" onclick="go('privacy')">سياسة الخصوصية</button></div></div>`;
+ const draw=g=>PRIGHTS.filter(r=>r.g===g).map((r,i)=>`<div class="right-c" style="animation-delay:${i*35}ms"><span class="ric" style="${g==='d'?'background:#EEF1F0':''}"><svg viewBox="0 0 24 24">${ICN[r.ic]||ICN.doc}</svg></span><div><b>${esc(r.t)}</b><p>${esc(r.d)}</p></div></div>`).join('');
+ el.innerHTML=`<h2>حقوقك وواجباتك</h2><p class="lead">وفق أنظمة وزارة الصحة والخدمات الطبية للقوات المسلحة.</p>
+  <div class="chips" id="rwTabs" style="margin-bottom:14px">
+   <button class="chip on" data-g="r">🛡️ حقوقك (${PRIGHTS.filter(x=>x.g==='r').length})</button>
+   <button class="chip" data-g="d">📋 واجباتك (${PRIGHTS.filter(x=>x.g==='d').length})</button></div>
+  <div class="rights-grid" id="rwBody"></div>
+  <div class="card" style="text-align:center;margin-top:16px"><h3>الوثائق النظامية</h3><div class="acts" style="justify-content:center;border:0;padding:8px 0 0"><button class="act" onclick="go('terms')">شروط الاستخدام</button><button class="act" onclick="go('privacy')">سياسة الخصوصية</button></div></div>
+  <div class="ph-note">للاستفسار أو تقديم ملاحظة حول حقوقك، تواصل مع علاقات المرضى أو استخدم خدمة الملاحظات في التطبيق.</div>`;
  $('app').appendChild(el);
+ const body=el.querySelector('#rwBody');
+ const show=g=>{body.innerHTML=draw(g);el.querySelectorAll('#rwTabs .chip').forEach(b=>b.classList.toggle('on',b.dataset.g===g))};
+ el.querySelectorAll('#rwTabs .chip').forEach(b=>b.onclick=()=>show(b.dataset.g));
+ show('r');
 };
 PAGES.rights.title='حقوقك وواجباتك';
 
@@ -2743,9 +2812,56 @@ function renderAdTab(cur,body){
  }
  else if(cur==='msgs'){
   const gr=loadRecs('kfmmc_gratitude'),co=loadRecs('kfmmc_complaints');
-  body.innerHTML=`<div class="card"><h3>💚 رسائل «امتنان» (${gr.length})</h3>${gr.length?gr.slice().reverse().map(g=>`<div class="dept"><span class="chip-c" style="background:var(--green)"></span><div class="info"><b>${esc(g.name||g.dept||'غير محدد')}</b><div class="desc">${esc(g.msg||'')}</div><div class="mini">${(g.reasons||[]).join('، ')}${g.title?' · '+esc(g.title):''} <span class="dot"></span> ${new Date(g.ts).toLocaleString('ar-SA')}</div></div></div>`).join(''):'<div class="mini">لا رسائل على هذا الجهاز.</div>'}<div class="acts" style="border:0;padding:10px 0 0"><button class="act" onclick="exportJSON('kfmmc_gratitude')">JSON</button><button class="act" onclick="exportCSV('kfmmc_gratitude')">CSV</button></div></div>
-   <div class="card"><h3>📝 الشكاوى والاقتراحات (${co.length})</h3>${co.length?co.slice().reverse().map(c=>`<div class="dept"><span class="chip-c" style="background:var(--c-yellow)"></span><div class="info"><b>${esc(c.type||'ملاحظة')}</b><div class="desc">${esc(c.msg||'')}</div><div class="mini">${esc(c.dept||'')} <span class="dot"></span> ${new Date(c.ts).toLocaleString('ar-SA')}</div></div></div>`).join(''):'<div class="mini">لا ملاحظات على هذا الجهاز.</div>'}<div class="acts" style="border:0;padding:10px 0 0"><button class="act" onclick="exportJSON('kfmmc_complaints')">JSON</button><button class="act" onclick="exportCSV('kfmmc_complaints')">CSV</button></div></div>
-   <div class="ph-note">هذه رسائل هذا الجهاز. عند تفعيل الخيار (أ) في الإعدادات، تصلك رسائل كل الأجهزة على جدول Formspree/Google.</div>`;
+  const fmt=t=>{try{const d=new Date(t);return d.toLocaleDateString('ar-SA')+' · '+d.toLocaleTimeString('ar-SA',{hour:'2-digit',minute:'2-digit'})}catch(e){return '—'}};
+  const ST={new:['جديدة','#004C97'],read:['تمت القراءة','#EAAA00'],done:['تمت المعالجة','#05A854']};
+  const setStatus=(key,idx,st)=>{const a=loadRecs(key);if(a[idx]){a[idx].status=st;localStorage.setItem(key,JSON.stringify(a))}renderAdTab('msgs',body)};
+  window._setMsgSt=setStatus;
+  const card=(r,i,key,accent,type)=>{
+   const st=ST[r.status||'new']||ST.new;
+   const rows=[];
+   if(type==='g'){
+    rows.push(['الموظف', r.unknown?'<i>لم يُحدَّد</i>':(esc(r.name)||'—')]);
+    if(r.title)rows.push(['المسمى',esc(r.title)]);
+    if(r.dept)rows.push(['القسم',esc(r.dept)]);
+    if(r.descEmp)rows.push(['وصف الموظف',esc(r.descEmp)]);
+    if(r.date||r.time)rows.push(['وقت الموقف',esc((r.date||'')+' '+(r.time||''))]);
+    if((r.reasons||[]).length)rows.push(['أسباب الشكر',(r.reasons||[]).map(x=>`<span class="mtag">${esc(x)}</span>`).join('')]);
+    rows.push(['مقدّم الشكر', r.from?esc(r.from):'<i>لم يذكر اسمه</i>']);
+    if(r.contact)rows.push(['وسيلة التواصل',esc(r.contact)]);
+    rows.push(['موافقة المشاركة', r.consent?'<span class="badge open">نعم</span>':'<span class="badge closed">لا</span>']);
+   }else{
+    rows.push(['النوع',esc(r.type||'ملاحظة')]);
+    if(r.dept)rows.push(['القسم',esc(r.dept)]);
+    if(r.contact)rows.push(['وسيلة التواصل',esc(r.contact)]);
+   }
+   return `<article class="msg-c" style="--mc:${accent}">
+    <header class="msg-h">
+      <span class="msg-n">#${i+1}</span>
+      <div class="msg-hh"><b>${type==='g'?(r.unknown?'شكر لموظف (غير محدّد)':esc(r.name||'شكر لموظف')):esc(r.type||'ملاحظة')}</b>
+        <span>${fmt(r.ts)}</span></div>
+      <span class="msg-st" style="background:${st[1]}1f;color:${st[1]}">${st[0]}</span>
+    </header>
+    <div class="msg-q">${esc(r.msg||'—')}</div>
+    <table class="msg-t"><tbody>${rows.map(x=>`<tr><th>${x[0]}</th><td>${x[1]}</td></tr>`).join('')}</tbody></table>
+    <footer class="msg-f">
+      <button class="msg-b" onclick="_setMsgSt('${key}',${i},'read')">📖 مقروءة</button>
+      <button class="msg-b ok" onclick="_setMsgSt('${key}',${i},'done')">✅ تمت المعالجة</button>
+      <button class="msg-b" onclick="speakText(this.closest('.msg-c').querySelector('.msg-q').innerText,this)"><span class="slabel">🔊 استمع</span></button>
+    </footer></article>`;
+  };
+  const stats=(arr)=>{const n=arr.filter(x=>(x.status||'new')==='new').length,d=arr.filter(x=>x.status==='done').length;
+   return `<div class="msg-kpi"><span><b>${arr.length}</b>الإجمالي</span><span style="--k:#004C97"><b>${n}</b>جديدة</span><span style="--k:#05A854"><b>${d}</b>مُعالجة</span></div>`};
+  body.innerHTML=`
+   <div class="card"><h3>💚 رسائل «امتنان» (${gr.length})</h3>
+    ${stats(gr)}
+    <div class="msg-list">${gr.length?gr.map((g,i)=>card(g,i,'kfmmc_gratitude','#05A854','g')).reverse().join(''):'<div class="mini">لا رسائل على هذا الجهاز.</div>'}</div>
+    <div class="acts" style="border:0;padding:12px 0 0"><button class="act" onclick="exportJSON('kfmmc_gratitude')">⬇ JSON</button><button class="act p" onclick="exportCSV('kfmmc_gratitude')">⬇ Excel/CSV</button></div></div>
+
+   <div class="card"><h3>📝 الشكاوى والاقتراحات (${co.length})</h3>
+    ${stats(co)}
+    <div class="msg-list">${co.length?co.map((c,i)=>card(c,i,'kfmmc_complaints','#EAAA00','c')).reverse().join(''):'<div class="mini">لا ملاحظات على هذا الجهاز.</div>'}</div>
+    <div class="acts" style="border:0;padding:12px 0 0"><button class="act" onclick="exportJSON('kfmmc_complaints')">⬇ JSON</button><button class="act p" onclick="exportCSV('kfmmc_complaints')">⬇ Excel/CSV</button></div></div>
+   <div class="ph-note">عند فتح ملف CSV في Excel: افتح Excel أولًا ← بيانات ← من نص/CSV ← اختر الملف ← الترميز UTF-8، لتظهر العربية سليمة.</div>`;
  }
  else if(cur==='cards') mkEditor(body,{key:'services',def:SERVICES_DEF,title:'بطاقة',titleField:'t',noStatus:1,fields:[{k:'t',label:'اسم البطاقة'},{k:'s',label:'الوصف تحت الاسم'},{k:'c',label:'اللون',type:'select',opts:[['#05A854','أخضر'],['#0B4644','أخضر غامق'],['#29504D','زيتي'],['#004C97','أزرق'],['#009CDE','أزرق فاتح'],['#5F259F','بنفسجي'],['#EAAA00','أصفر'],['#861F41','أحمر غامق'],['#EE2737','أحمر'],['#B2BEC4','رمادي']]},{k:'ic',label:'الأيقونة',type:'select',opts:[['map','خريطة'],['rec','معلومات'],['route','مسار'],['shield','درع/حقوق'],['doc','ملف'],['bell','تنبيه'],['heart','قلب/امتنان'],['chat','محادثة'],['cli','عيادة'],['ph','صيدلية'],['lab','مختبر'],['lock','قفل']]},{k:'r',label:'الوجهة عند الضغط',type:'select',opts:[['map','وصلني (الخريطة)'],['info','معلومات الأقسام'],['plan','خطط زيارتي'],['rights','حقوقك وواجباتك'],['guides','تعليمات وأدلة'],['alerts','التنبيهات'],['gratitude','امتنان'],['complaints','الشكاوى'],['ask','اسأل دليلك'],['dept','دليل الأقسام']]}]});
  else if(cur==='kb') mkEditor(body,{key:'kb',def:KB_DEF,title:'سؤال',titleField:'q',fields:[{k:'q',label:'السؤال الأساسي'},{k:'alts',label:'صياغات بديلة (افصل بفاصلة)',split:1},{k:'kw',label:'كلمات مفتاحية (افصل بفاصلة)',split:1},{k:'short',label:'الإجابة المختصرة',type:'textarea'},{k:'detail',label:'تفاصيل (اختياري)',type:'textarea'},{k:'dept',label:'القسم المرتبط',type:'select',opts:depOpts},{k:'loc',label:'الموقع في وصلني (المعرّف)'},{k:'src',label:'المصدر'}],onchange:()=>{}});
@@ -2776,6 +2892,13 @@ function renderAdTab(cur,body){
      <div class="mini" style="margin:2px 0 8px">إن لم يكن مُفعّلًا على الخادم، يرجع تلقائيًا لصوت الجهاز.</div>
      <div class="acts" style="border:0;padding:10px 0 0"><button class="act p" id="ttsSave">حفظ</button><button class="act" id="ttsTest">جرّب الصوت</button><span class="mini" id="ttsStat" style="align-self:center"></span></div>
      <div class="ph-note">جودة النطق تعتمد على أصوات الجهاز. في الآيفون: الإعدادات ← إمكانية الوصول ← المحتوى المنطوق ← الأصوات ← العربية ← نزّل صوتًا مُحسّنًا.</div></div></div>
+   <div class="card"><h3>📢 شريط الأخبار والتنبيهات</h3>
+    <div class="mini" style="margin-bottom:10px">يظهر أسفل الصفحة الرئيسية.</div>
+    <div class="form">
+     <label class="check"><input type="checkbox" id="tkOn"> <b>تفعيل الشريط</b></label>
+     <label style="margin-top:12px">طريقة العرض</label>
+     <select id="tkMode"><option value="fade">بطاقة تتبدّل كل ٧ ثوانٍ (الحالية)</option><option value="marquee">شريط متحرك من اليمين لليسار</option></select>
+     <button class="act p" id="tkSave" style="margin-top:12px">حفظ</button> <span class="mini" id="tkStat" style="align-self:center"></span></div></div>
    <div class="card"><h3>🧭 تفاعل الخريطة «وصلني»</h3>
     <div class="mini" style="margin-bottom:10px">جرّب الأنسب لمستخدميك — يمكن تفعيل وتعطيل كل خيار.</div>
     <label class="check"><input type="checkbox" id="tgTrack"> <b>التتبّع الحيّ للموقع</b> — يتتبّع المؤشر تحرّك المستخدم فعليًا</label>
@@ -2793,6 +2916,11 @@ function renderAdTab(cur,body){
      <div class="mini" style="margin-top:8px">تأكد من تفعيل <b>Realtime Database</b> في مشروعك ووضع قواعد القراءة/الكتابة المناسبة.</div></div></div>
    <div class="card"><h3>رمز الدخول</h3><div class="mini">الرمز الحالي مبدئي داخل الكود. لتغييره بشكل دائم أخبرني بالرمز الجديد.</div></div>`;
   body.querySelector('#epSave').onclick=()=>{try{localStorage.setItem('kfmmc_endpoint',body.querySelector('#ep').value.trim())}catch(e){}alert('تم حفظ الرابط. ستُرسَل الرسائل الجديدة إليه.')};
+  // إعدادات الشريط
+  const tc=tickerCfg(); const tOn=body.querySelector('#tkOn'), tMd=body.querySelector('#tkMode');
+  if(tOn){tOn.checked=tc.on!==false; tMd.value=tc.mode||'fade';
+   body.querySelector('#tkSave').onclick=()=>{try{localStorage.setItem('kfmmc_ticker',JSON.stringify({on:tOn.checked,mode:tMd.value}))}catch(e){}
+    const st=body.querySelector('#tkStat'); if(st){st.textContent='✅ تم الحفظ';setTimeout(()=>st.textContent='',2000)}};}
   // وضع الرد الصوتي
   const cur2=ttsMode(); const rb=body.querySelector('#tm'+(cur2==='always'?3:cur2==='voice'?2:1)); if(rb)rb.checked=true;
   const tsBtn=body.querySelector('#ttsSave');
@@ -3635,6 +3763,7 @@ function askAsst(text){
    if(st)html+=`<div style="margin-top:7px"><span class="badge ${st.s}">${st.t}</span></div>`;
    if(e.detail)html+=`<div style="margin-top:7px;font-size:14px;color:var(--ink2)">${asstEsc(e.detail)}</div>`;
    html+='<div class="arow2">';
+   if(e.act&&e.act.includes('refill'))html+=`<button class="abtn p" onclick="refillFlow()"><svg viewBox="0 0 24 24">${ICN.ph}</svg>ساعدني خطوة بخطوة</button>`;
    if(e.act&&e.act.includes('video'))html+=`<button class="abtn p" onclick="closeAsst();go('guides')"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/></svg>شاهد فيديو الخطوات</button>`;
    if(e.act&&e.act.includes('call'))html+=`<button class="abtn" onclick="openCall()"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>اتصل 943</button>`;
    if(e.loc)html+=`<button class="abtn p" onclick="askOrigin('${e.loc}')"><svg viewBox="0 0 24 24"><path d="M9 20l-6-3V4l6 3 6-3 6 3v13l-6-3-6 3z"/></svg>وصّلني إلى هناك</button>`;
@@ -3650,6 +3779,49 @@ function askAsst(text){
  },520);
 }
 window.askAsst=askAsst;window.closeAsst=closeAsst;
+/* ── تدفّق إعادة صرف الأدوية (حوار خطوة بخطوة) ── */
+function refillAsk(html,plain){const body=$('asstBody');if(!body)return;
+ const m={r:'a',t:plain,html};asstMsgs.push(m);paintMsg(m,body);maybeSpeak(plain,asstVoiceMode);}
+function refillFlow(){
+ const q='أكيد، أساعدك في إعادة صرف أدويتك. هل الدواء مصروف من طب الأسرة أم من عيادة تخصصية مثل القلب أو الأعصاب أو الطب النفسي؟';
+ refillAsk(esc(q)+`<div class="arow2">
+   <button class="abtn p" onclick="refillPath('fam')">طب الأسرة</button>
+   <button class="abtn p" onclick="refillPath('spec')">عيادة تخصصية</button>
+   <button class="abtn" onclick="refillPath('unknown')">لا أعرف</button></div>`,q);
+}
+function refillPath(k){
+ if(k==='spec'){
+  const t='الأدوية الموصوفة من عيادة تخصصية (القلب، الأعصاب، الطب النفسي وغيرها) يجب إعادة صرفها ومتابعتها من نفس التخصص الذي وصفها — خاصة الأدوية التي تحتاج متابعة تخصصية.';
+  refillAsk(esc(t)+`<div class="arow2">
+    <button class="abtn p" onclick="refillCheck()">تأكد من الصرفية أولًا</button>
+    <button class="abtn" onclick="openCall()">اتصل 943 (اضغط 2)</button>
+    <a class="abtn" href="#map/spec">موقع العيادات التخصصية</a></div>`,t);
+  return;
+ }
+ if(k==='fam'){
+  const t='إذا كان الدواء من الأدوية التي يتابعها طب الأسرة، احجز موعدًا في عيادة طب الأسرة عبر تطبيق «صحتك». احجز مبكرًا قبل نفاد الدواء بوقت كافٍ ولا تنتظر آخر يوم.';
+  refillAsk(esc(t)+`<div class="arow2">
+    <button class="abtn p" onclick="closeAsst();go('guides')">▶ طريقة حجز موعد إعادة الصرف</button>
+    <button class="abtn" onclick="refillCheck()">تأكد من الصرفية أولًا</button>
+    <a class="abtn" href="#map/clinics">موقع طب الأسرة</a></div>`,t);
+  return;
+ }
+ const t='لمعرفة الجهة: راجع الوصفة أو اسأل الصيدلية عن الطبيب الذي وصف الدواء. الأدوية المزمنة البسيطة غالبًا يتابعها طب الأسرة، وأدوية التخصصات الدقيقة يتابعها التخصص نفسه.';
+ refillAsk(esc(t)+`<div class="arow2">
+   <a class="abtn p" href="#map/pharm">اسأل الصيدلية</a>
+   <button class="abtn" onclick="refillFlow()">أعد السؤال</button></div>`,t);
+}
+function refillCheck(){
+ const t='قبل حجز موعد جديد، تأكد من الصيدلية عن: وجود صرفية متبقية · موعد الصرف القادم · تاريخ انتهاء الصرفية · عدد مرات الصرف المتبقية. إذا كانت الصرفية سارية استمر بالصرف حسب المواعيد، واحجز موعدًا قبل انتهائها بوقت مناسب.';
+ refillAsk(esc(t)+`<div class="arow2">
+   <a class="abtn p" href="#map/pharm">افتح الصيدلية في وصلني</a>
+   <button class="abtn" onclick="refillNote()">ملاحظة مهمة</button></div>`,t);
+}
+function refillNote(){
+ const t='مهم: ليس بالضرورة أن تنتهي جميع أدويتك في نفس الوقت. اعرف تاريخ انتهاء الصرفية لكل دواء على حدة، فقد تختلف مدة الصرف أو صلاحية الوصفة من دواء لآخر — لا تعتمد على تاريخ دواء واحد لبقية أدويتك.';
+ refillAsk(esc(t),t);
+}
+window.refillFlow=refillFlow;window.refillPath=refillPath;window.refillCheck=refillCheck;window.refillNote=refillNote;
 /* ── الانتقال السريع: «وينك الحين؟» ثم فتح المسار في وصلني ── */
 const ORIGIN_QUICK=['parking','gate','reception','waitm','clinics','pharm'];
 function askOrigin(destLoc){
