@@ -1,5 +1,5 @@
 /* دليلك — Service Worker (شبكة أولًا، ويحدّث نفسه فورًا) */
-const CACHE = 'daleelk-v8';
+const CACHE = 'daleelk-v9';
 self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
