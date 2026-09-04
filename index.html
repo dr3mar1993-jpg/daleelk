@@ -879,9 +879,11 @@ body.dark .ys-warn{background:#2e2610;border-color:#5c4d1a;color:#e8d9a0}
 .vacts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
 .vacts .act{font-size:12px;padding:6px 10px}
 
-.qlinks{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:12px;padding-top:11px;border-top:1px dashed var(--line)}
-.qlh{width:100%;font-size:11.5px;font-weight:800;color:#76858A;margin-bottom:2px}
-.qlink{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:#F7FAF8;color:var(--green-dk);border-radius:999px;padding:7px 12px 7px 8px;font-size:12.5px;font-weight:700;text-decoration:none}
+.qlinks{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0 4px;padding:10px 11px;background:#F5F9F7;border:1px solid var(--line);border-radius:14px}
+.qlh{width:100%;font-size:11.5px;font-weight:800;color:#5C6B70;margin-bottom:4px}
+.qlink{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;color:var(--green-dk);border-radius:13px;padding:8px 12px 8px 8px;font-size:12.5px;font-weight:700;text-decoration:none}
+.qlt{display:flex;flex-direction:column;gap:1px;line-height:1.35}
+.qlt i{font-style:normal;font-size:10.5px;font-weight:600;color:#76858A}
 .qlink:active{transform:scale(.97)}
 .qlink.ext{border-color:#0E8A4A;background:#EAF7F0}
 .qlink.ext .qli{background:#0E8A4A}
@@ -899,6 +901,35 @@ body.dark .ys-warn{background:#2e2610;border-color:#5c4d1a;color:#e8d9a0}
 .faq[open] .fq-x{transform:rotate(45deg)}
 .faq .fq-b{padding:0 15px 14px;font-size:15px;line-height:1.85;color:var(--ink2)}
 .faq .fq-b .qlinks{margin-top:10px}
+
+.qa-d{border:1px solid var(--line);border-inline-start:5px solid var(--qc,#0B4644);border-radius:14px;background:#fff;margin-bottom:9px;overflow:hidden}
+.qa-d>summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:800;color:var(--green-dk)}
+.qa-d>summary::-webkit-details-marker{display:none}
+.qa-n{font-size:11.5px;font-weight:700;color:#4A5A5E;background:#F0F4F2;border-radius:999px;padding:2px 9px}
+.qa-s{margin-inline-start:auto;font-size:11px;font-weight:800;color:#A8121C;background:#FDECEE;border-radius:999px;padding:2px 9px}
+.qa-body{padding:0 12px 12px}
+.qa-row{border-top:1px solid var(--line);padding:11px 2px}
+.qa-row.stale{background:#FFFBF3}
+.qa-q{font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;line-height:1.6}
+.qa-q:hover{color:var(--g)}
+.qa-a{font-size:12.5px;color:var(--ink2);margin-top:3px;cursor:pointer;line-height:1.6}
+.qa-m{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:11px;color:#76858A}
+.qa-m span{background:#F5F8F7;border-radius:999px;padding:2px 8px}
+.qa-m .ok{background:#E8F7EE;color:#0A6B34;font-weight:700}
+.qa-m .warn{background:#FDECEE;color:#A8121C;font-weight:700}
+.kpi{margin-bottom:12px}
+.kpi-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:13.5px}
+.kpi-h b{color:var(--ink)}
+.kpi-h span{font-size:16px;font-weight:800;color:var(--green-dk)}
+.kbar{display:block;height:8px;border-radius:999px;background:#EEF3F1;margin:5px 0 3px;overflow:hidden}
+.kbar i{display:block;height:100%;border-radius:999px}
+.kh{display:block;font-size:13px;color:var(--green-dk);margin:14px 0 6px}
+.krow{display:flex;align-items:center;gap:9px;font-size:12.5px;padding:4px 0}
+.krow span{flex:1;min-width:0;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.krow .kbar{flex:1.2;margin:0}
+.krow b{color:var(--green-dk)}
+.klist{margin:8px 0 0;padding-inline-start:18px;font-size:13px;line-height:1.9;color:var(--ink2)}
+.klist b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -4769,7 +4800,7 @@ PAGES.admin=function(){
   return;
  }
  syncData();
- const tabs=[['use','📊 الاستخدام'],['msgs','📨 الرسائل'],['cards','🏠 بطاقات الرئيسية'],['kb','❓ الأسئلة'],['dept','🏥 الأقسام'],['places','🗺️ الخريطة'],['contacts','☎️ الأرقام'],['policies','📄 السياسات'],['alerts','🛠️ التنبيهات'],['news','📰 الأخبار'],['scenes','🧊 محرّر المجسّم'],['io','⇄ استيراد/تصدير'],['set','⚙️ الإعدادات']];
+ const tabs=[['use','📊 الاستخدام'],['msgs','📨 الرسائل'],['cards','🏠 بطاقات الرئيسية'],['kb','❓ الأسئلة'],['qa','🔍 مراجعة الأسئلة'],['kpi','📈 مؤشرات الأداء'],['dept','🏥 الأقسام'],['places','🗺️ الخريطة'],['contacts','☎️ الأرقام'],['policies','📄 السياسات'],['alerts','🛠️ التنبيهات'],['news','📰 الأخبار'],['scenes','🧊 محرّر المجسّم'],['io','⇄ استيراد/تصدير'],['set','⚙️ الإعدادات']];
  let cur=window._adTab||'use';
  el.innerHTML=`<h2>لوحة الإدارة</h2><div class="chips" id="adtabs" style="margin:6px 0 16px"></div><div id="adbody"></div>`;
  $('app').appendChild(el);
@@ -5045,6 +5076,8 @@ function renderAdTab(cur,body){
  }
 
  else if(cur==='cards') mkEditor(body,{key:'services',def:SERVICES_DEF,title:'بطاقة',titleField:'t',noStatus:1,fields:[{k:'t',label:'اسم البطاقة'},{k:'s',label:'الوصف تحت الاسم'},{k:'c',label:'اللون',type:'select',opts:[['#05A854','أخضر'],['#0B4644','أخضر غامق'],['#29504D','زيتي'],['#004C97','أزرق'],['#009CDE','أزرق فاتح'],['#5F259F','بنفسجي'],['#EAAA00','أصفر'],['#861F41','أحمر غامق'],['#EE2737','أحمر'],['#B2BEC4','رمادي']]},{k:'ic',label:'الأيقونة',type:'select',opts:[['map','خريطة'],['rec','معلومات'],['route','مسار'],['shield','درع/حقوق'],['doc','ملف'],['bell','تنبيه'],['heart','قلب/امتنان'],['chat','محادثة'],['cli','عيادة'],['ph','صيدلية'],['lab','مختبر'],['lock','قفل']]},{k:'r',label:'الوجهة عند الضغط',type:'select',opts:[['map','وصلني (الخريطة)'],['info','معلومات الأقسام'],['plan','خطط زيارتي'],['rights','حقوقك وواجباتك'],['guides','تعليمات وأدلة'],['alerts','التنبيهات'],['gratitude','امتنان'],['complaints','منصة يسّروا'],['ask','اسأل دليلك'],['dept','دليل الأقسام']]}]});
+ else if(cur==='qa') qaReviewTab(body);
+ else if(cur==='kpi') kpiTab(body);
  else if(cur==='kb') mkEditor(body,{key:'kb',def:KB_DEF,title:'سؤال',titleField:'q',fields:[{k:'q',label:'السؤال الأساسي'},{k:'alts',label:'صياغات بديلة (افصل بفاصلة)',split:1},{k:'kw',label:'كلمات مفتاحية (افصل بفاصلة)',split:1},{k:'short',label:'الإجابة المختصرة',type:'textarea'},{k:'detail',label:'تفاصيل (اختياري)',type:'textarea'},{k:'dept',label:'القسم المرتبط',type:'select',opts:depOpts},{k:'loc',label:'الموقع في وصلني (المعرّف)'},{k:'src',label:'المصدر'}],onchange:()=>{}});
  else if(cur==='dept') mkEditor(body,{key:'depts',def:DEPTS_DEF,title:'قسم',titleField:'ar',fields:[{k:'ar',label:'اسم القسم'},{k:'desc',label:'وصف مختصر',type:'textarea'},{k:'building',label:'المبنى/الطابق'},{k:'loc',label:'الموقع في وصلني (المعرّف)'},{k:'contact',label:'رقم تواصل'},{k:'services',label:'الخدمات المقدَّمة (افصل بـ ·)',type:'textarea'},{k:'cat',label:'التصنيف (اللون والأيقونة)',type:'select',opts:[['rec','استقبال وتسجيل'],['cli','عيادات'],['ph','صيدلية'],['lab','مختبر وأشعة'],['prc','إجراءات وتطعيمات'],['wm','مناطق رجال'],['wf','مناطق نساء'],['urg','طوارئ'],['io','دخول ومواقف'],['acc','ذوي الإعاقة'],['oth','أخرى']]},{k:'hours',label:'ربط الأوقات',type:'select',opts:[['','— بدون —'],['pharmacy','الصيدلية (24 ساعة)'],['lab','المختبر (08:00–11:30)'],['xray','الأشعة (24 ساعة)']]}]});
  else if(cur==='contacts') mkEditor(body,{key:'contacts',def:CONTACTS_DEF,title:'رقم',titleField:'entity',fields:[{k:'entity',label:'الجهة'},{k:'number',label:'الرقم'},{k:'ext',label:'تحويلة'},{k:'hours',label:'أوقات الرد'}]});
@@ -6142,12 +6175,143 @@ if('serviceWorker'in navigator){
 </script>
 
 <script>
+/* ═══ مراجعة الأسئلة حسب القسم (تحرير الصياغة والإجابة وتاريخ المراجعة) ═══ */
+function qaReviewTab(host){
+ const wrap=document.createElement('div');host.appendChild(wrap);
+ const GRP=[['rec','الاستقبال والتسجيل','#004C97'],['cli','العيادات','#0B4644'],['ph','الصيدلية','#EAAA00'],['lab','المختبر والتحاليل','#861F41'],['rad','الأشعة','#5F259F'],['prc','الإجراءات والتطعيمات','#05A854'],['urg','الطوارئ والعاجلة','#EE2737'],['wm','مناطق الرجال','#009CDE'],['wf','مناطق النساء','#5F259F'],['io','الدخول والمواقف','#0E8A4A'],['oth','عام وخدمات أخرى','#6B767B']];
+ const REV_MONTHS=6;
+ const ageOf=k=>{const d=k.rev?Date.parse(k.rev):NaN;return isNaN(d)?null:Math.floor((Date.now()-d)/86400000)};
+ const stale=k=>{const a=ageOf(k);return a===null||a>REV_MONTHS*30};
+ const deptName=id=>{const d=(typeof dById==='function')?dById(id):null;return d?d.ar:(id||'—')};
+ function save(){setOv('kb',KB.slice());syncData();draw()}
+ function editor(k,box){
+  box.innerHTML=`<div class="card form" style="margin:8px 0 14px">
+   <label>صيغة السؤال</label><input id="e-q" value="${esc(k.q||'')}">
+   <label>صياغات بديلة (افصل بفاصلة)</label><input id="e-alts" value="${esc((k.alts||[]).join('، '))}">
+   <label>كلمات مفتاحية (افصل بفاصلة)</label><input id="e-kw" value="${esc((k.kw||[]).join('، '))}">
+   <label>الإجابة المختصرة</label><textarea id="e-short" rows="4">${esc(k.short||'')}</textarea>
+   <label>تفاصيل إضافية (اختياري)</label><textarea id="e-detail" rows="3">${esc(k.detail||'')}</textarea>
+   <div class="row2"><div><label>القسم المرتبط</label><select id="e-dept"><option value="">— بلا قسم —</option>${DEPTS.map(d=>`<option value="${d.id}"${d.id===k.dept?' selected':''}>${esc(d.ar)}</option>`).join('')}</select></div>
+    <div><label>حالة التدقيق</label><select id="e-status"><option value="approved"${k.status==='approved'?' selected':''}>معتمد</option><option value="review"${k.status!=='approved'?' selected':''}>قيد المراجعة</option></select></div></div>
+   <div class="row2"><div><label>المصدر / المرجع</label><input id="e-src" value="${esc(k.src||'')}"></div>
+    <div><label>تاريخ آخر مراجعة</label><input type="date" id="e-rev" value="${esc(k.rev||'')}"></div></div>
+   <label>راجعها</label><input id="e-by" value="${esc(k.revBy||'')}" placeholder="اسم المراجع">
+   <div class="acts" style="border:0;padding:10px 0 0"><button class="act p" id="e-save">حفظ</button><button class="act" id="e-today">تاريخ اليوم ✓</button><button class="act" id="e-cancel">إلغاء</button></div></div>`;
+  const g=id=>box.querySelector(id);
+  g('#e-today').onclick=()=>{g('#e-rev').value=new Date().toISOString().slice(0,10);g('#e-status').value='approved'};
+  g('#e-cancel').onclick=()=>{box.innerHTML=''};
+  g('#e-save').onclick=()=>{
+   k.q=g('#e-q').value.trim();
+   k.alts=g('#e-alts').value.split(/[،,]/).map(x=>x.trim()).filter(Boolean);
+   k.kw=g('#e-kw').value.split(/[،,]/).map(x=>x.trim()).filter(Boolean);
+   k.short=g('#e-short').value.trim();k.detail=g('#e-detail').value.trim();
+   k.dept=g('#e-dept').value||undefined;k.status=g('#e-status').value;
+   k.src=g('#e-src').value.trim();k.rev=g('#e-rev').value||'';k.revBy=g('#e-by').value.trim();
+   save();alert('حُفظ السؤال وسيُزامن سحابيًا.')};
+ }
+ function draw(){
+  const total=KB.length,appr=KB.filter(k=>k.status==='approved').length,st=KB.filter(stale).length;
+  wrap.innerHTML=`<div class="card"><h3>مراجعة الأسئلة حسب القسم</h3>
+    <div class="mini">اضغط أي قسم لعرض أسئلته، ثم اضغط السؤال لتعديل صيغته وإجابته وتوثيق تاريخ المراجعة.</div>
+    <div class="chips" style="margin-top:10px"><span class="chip">${total} سؤالًا</span><span class="chip">${appr} معتمد</span><span class="chip" style="color:#A8121C">${st} يحتاج مراجعة</span></div>
+    <div class="acts" style="border:0;padding:8px 0 0"><button class="act" id="qa-stale">اعرض ما يحتاج مراجعة فقط</button><button class="act" id="qa-all">اعرض الكل</button></div></div>
+   <div id="qa-list"></div>`;
+  const list=wrap.querySelector('#qa-list');let onlyStale=false;
+  const render=()=>{
+   list.innerHTML='';
+   const byDept={};KB.forEach(k=>{if(onlyStale&&!stale(k))return;const key=k.dept||('cat:'+(k.cat||'oth'));(byDept[key]=byDept[key]||[]).push(k)});
+   const order=Object.keys(byDept).sort((a,b)=>byDept[b].length-byDept[a].length);
+   if(!order.length){list.innerHTML='<div class="ph-note">لا أسئلة مطابقة.</div>';return}
+   order.forEach(key=>{
+    const arr=byDept[key];const isDept=key.indexOf('cat:')!==0;
+    const title=isDept?deptName(key):(GRP.find(g=>g[0]===key.slice(4))||[,'عام'])[1];
+    const col=isDept?'#0B4644':((GRP.find(g=>g[0]===key.slice(4))||[,, '#6B767B'])[2]);
+    const nStale=arr.filter(stale).length;
+    const d=document.createElement('details');d.className='qa-d';d.style.setProperty('--qc',col);
+    d.innerHTML=`<summary><b>${esc(title)}</b><span class="qa-n">${arr.length}</span>${nStale?`<span class="qa-s">${nStale} للمراجعة</span>`:''}</summary><div class="qa-body"></div>`;
+    const body=d.querySelector('.qa-body');
+    arr.forEach(k=>{
+     const row=document.createElement('div');row.className='qa-row'+(stale(k)?' stale':'');
+     const a=ageOf(k);
+     row.innerHTML=`<div class="qa-q">${esc(k.q)}</div>
+       <div class="qa-a">${esc((k.short||'').slice(0,120))}${(k.short||'').length>120?'…':''}</div>
+       <div class="qa-m"><span class="${k.status==='approved'?'ok':'warn'}">${k.status==='approved'?'معتمد':'قيد المراجعة'}</span>
+        <span>${k.rev?('آخر مراجعة: '+k.rev+(a!==null?` (${a} يومًا)`:'')):'بلا تاريخ مراجعة'}</span>
+        ${k.revBy?`<span>${esc(k.revBy)}</span>`:''}${k.src?`<span>${esc(k.src)}</span>`:''}</div>
+       <div class="qa-edit"></div>`;
+     row.querySelector('.qa-q').onclick=()=>editor(k,row.querySelector('.qa-edit'));
+     row.querySelector('.qa-a').onclick=()=>editor(k,row.querySelector('.qa-edit'));
+     body.appendChild(row)});
+    list.appendChild(d)})};
+  wrap.querySelector('#qa-stale').onclick=()=>{onlyStale=true;render()};
+  wrap.querySelector('#qa-all').onclick=()=>{onlyStale=false;render()};
+  render()}
+ draw()}
+
+/* ═══ مؤشرات الأداء الموسّعة ═══ */
+function kpiTab(host){
+ const use=(()=>{try{return JSON.parse(localStorage.getItem('kfmmc_place_use')||'{}')||{}}catch(e){return{}}})();
+ const asked=(()=>{try{return JSON.parse(localStorage.getItem('kfmmc_ask_use')||'{}')||{}}catch(e){return{}}})();
+ const routes=(()=>{try{return JSON.parse(localStorage.getItem('kfmmc_route_use')||'{}')||{}}catch(e){return{}}})();
+ const sum=o=>Object.values(o).reduce((a,b)=>a+(+b||0),0);
+ const top=(o,n)=>Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,n);
+ const D=DEPTS||[],K=KB||[];
+ const withHours=D.filter(d=>d.hours||/\d/.test(d.building||'')).length;
+ const withContact=D.filter(d=>d.contact||d.tel).length;
+ const withServices=D.filter(d=>(d.services||'').length>8).length;
+ const appr=K.filter(k=>k.status==='approved').length;
+ const dated=K.filter(k=>k.rev).length;
+ const stale=K.filter(k=>{const d=k.rev?Date.parse(k.rev):NaN;return isNaN(d)||((Date.now()-d)/86400000)>180}).length;
+ const noDept=K.filter(k=>!k.dept).length;
+ const deptCov=D.filter(d=>K.some(k=>k.dept===d.id)).length;
+ const pct=(a,b)=>b?Math.round(a*100/b):0;
+ const bar=(v,c)=>`<span class="kbar"><i style="width:${v}%;background:${c}"></i></span>`;
+ const card=(t,rows)=>`<div class="card"><h3>${t}</h3>${rows}</div>`;
+ const metric=(label,val,sub,v,c)=>`<div class="kpi"><div class="kpi-h"><b>${label}</b><span>${val}</span></div>${v!==undefined?bar(v,c||'#05A854'):''}${sub?`<div class="mini">${sub}</div>`:''}</div>`;
+ const listRows=(arr,fmt)=>arr.length?arr.map(fmt).join(''):'<div class="mini">لا بيانات بعد.</div>';
+ host.innerHTML=
+  card('جاهزية المحتوى — قابلية القرار',
+   metric('اكتمال بيانات الأقسام',pct(withServices,D.length)+'%',withServices+' من '+D.length+' قسمًا لديها خدمات موثّقة',pct(withServices,D.length))+
+   metric('الأقسام ذات أوقات عمل موثّقة',pct(withHours,D.length)+'%',withHours+' من '+D.length,pct(withHours,D.length),'#004C97')+
+   metric('الأقسام ذات وسيلة تواصل',pct(withContact,D.length)+'%',withContact+' من '+D.length,pct(withContact,D.length),'#009CDE')+
+   metric('تغطية الأسئلة للأقسام',pct(deptCov,D.length)+'%',deptCov+' قسمًا لديه سؤال واحد على الأقل',pct(deptCov,D.length),'#5F259F'))+
+  card('جودة قاعدة المعرفة',
+   metric('نسبة الأسئلة المعتمدة',pct(appr,K.length)+'%',appr+' من '+K.length,pct(appr,K.length))+
+   metric('موثّقة بتاريخ مراجعة',pct(dated,K.length)+'%',dated+' سؤالًا',pct(dated,K.length),'#0E8A4A')+
+   metric('تحتاج مراجعة (أكثر من 6 أشهر أو بلا تاريخ)',stale,'راجعها من تبويب «مراجعة الأسئلة»',pct(stale,K.length),'#EE2737')+
+   metric('أسئلة بلا قسم مرتبط',noDept,'ربطها يحسّن الأيقونات والتحويل للخدمة',pct(noDept,K.length),'#EAAA00'))+
+  card('طلب المرضى — أين يتجه الناس؟',
+   '<div class="mini" style="margin-bottom:8px">مبني على استخدام هذا الجهاز؛ الأرقام السحابية تُجمع في Firebase تحت stats.</div>'+
+   '<b class="kh">أكثر الوجهات طلبًا</b>'+listRows(top(use,8),([id,n])=>{const p=(typeof PLACES!=='undefined')?null:null;const d=D.find(x=>x.loc===id||x.id===id);return `<div class="krow"><span>${esc(d?d.ar:id)}</span>${bar(Math.min(100,n*100/Math.max(1,top(use,1)[0]?top(use,1)[0][1]:1)),'#05A854')}<b>${n}</b></div>`})+
+   '<b class="kh">أكثر الأسئلة سؤالًا</b>'+listRows(top(asked,8),([q,n])=>`<div class="krow"><span>${esc(q)}</span><b>${n}</b></div>`)+
+   '<b class="kh">أكثر المسارات استخدامًا</b>'+listRows(top(routes,6),([r,n])=>`<div class="krow"><span>${esc(r)}</span><b>${n}</b></div>`))+
+  card('مؤشرات مقترحة للبناء المؤسسي',
+   `<div class="mini">تُقاس شهريًا وتُرفع للإدارة:</div>
+    <ul class="klist">
+     <li><b>نسبة الأسئلة المجابة دون تدخل موظف</b> — بديل عن مكالمات الاستعلامات.</li>
+     <li><b>عدد استفسارات الاتجاهات</b> — دليل على وضوح اللوحات الميدانية؛ ارتفاعها في قسم يعني حاجة للافتات.</li>
+     <li><b>الأقسام الأكثر بحثًا مقابل الأقل توثيقًا</b> — أولوية جمع المعلومات.</li>
+     <li><b>زمن تحديث المحتوى</b> — متوسط عمر المعلومة منذ آخر مراجعة.</li>
+     <li><b>معدل استخدام خطط الزيارة</b> — مؤشر على تعقيد الرحلة داخل المجمع.</li>
+     <li><b>الأدوات الأكثر استخدامًا</b> — يوجّه برامج التوعية والتثقيف الصحي.</li>
+     <li><b>الشكاوى المتكررة حسب القسم</b> — ربطها بمنصة يسّروا لإغلاق الحلقة.</li>
+    </ul>`);
+}
+/* تسجيل استخدام الأسئلة والمسارات محليًا لتغذية المؤشرات */
+(function(){
+ const bump=(key,id)=>{try{const o=JSON.parse(localStorage.getItem(key)||'{}')||{};o[id]=(o[id]||0)+1;localStorage.setItem(key,JSON.stringify(o))}catch(e){}};
+ if(typeof answerCard==='function'){const _a=answerCard;window.answerCard=function(e){if(e&&e.q)bump('kfmmc_ask_use',e.q);return _a.apply(this,arguments)}}
+ window.addEventListener('hashchange',()=>{const h=location.hash||'';const m=h.match(/^#walk\/(.+)$/);if(m)bump('kfmmc_route_use',decodeURIComponent(m[1]))});
+})();
+</script>
+
+<script>
 /* تحديثات ميدانية معتمدة — نموذج جمع المعلومات (أغسطس 2026) */
 (function(){
  const DEPT_FIX={
-  pharm:{services:'صرف الأدوية بالوصفة · إعادة صرف الأدوية المزمنة · طلب إعادة الصرف إلكترونيًا · استشارة صيدلي · توصيل الأدوية عبر 943',
+  pharm:{services:'صرف الأدوية بالوصفة · إعادة صرف الأدوية المزمنة · إعادة الصرف إلكترونيًا (وصفة سارية) · استشارة صيدلي · توصيل الأدوية عبر 943',
    building:'ضمن مبنى العيادات · نافذة مخصّصة لكبار السن',
-   contact:'تحويلة 4155 / 4154 · عيادة التخثّر 5475 · التوصيل عبر 943 · منصة طلب الأدوية: kfmmc.med.sa/refill',
+   contact:'تحويلة 4155 / 4154 · عيادة التخثّر 5475 · التوصيل عبر 943 · إعادة الصرف إلكترونيًا: kfmmc.med.sa/refill',
    desc:'صرف الأدوية للمرضى الخارجيين — 24 ساعة كل الأيام'},
   labr:{services:'استقبال العينات · تحاليل الدم والبول · التحاليل الدورية · تسليم عينات البول والبراز',
    desc:'استلام عينات التحاليل — 24 ساعة كل الأيام',
@@ -6176,6 +6340,20 @@ if('serviceWorker'in navigator){
   spec:{services:'العيادات التخصصية بالتحويل · المتابعة بعد العمليات',
    desc:'العيادات التخصصية والمواعيد — الأحد إلى الخميس 7:30ص – 4:30م',
    building:'جميع المواعيد بعد التحويل من طبيب الأسرة — لا تُقدَّم استشارات مباشرة'},
+  clinics:{services:'عيادات مجدولة بموعد · عيادات افتراضية عن بُعد · متابعة الأمراض المزمنة · صرف وإعادة صرف أدوية طب الأسرة · طلب التحاليل ومراجعة النتائج · التحويل للعيادات الأخرى · التحويل لعيادة الصحة النفسية أو الطب النفسي',
+   desc:'عيادات طب الأسرة المجدولة — الأحد إلى الخميس، أول موعد 8:00ص وآخر موعد 8:00م',
+   building:'استراحة من 12:00 ظهرًا إلى 1:00 · استقبال المواعيد 8:00ص – 8:00م · الحجز عبر تطبيق صحتك',
+   contact:'التأخر أكثر من 15 دقيقة يُعدّ الموعد فائتًا ويلزم حجز موعد جديد عبر صحتك'},
+  urg:{services:'الحالات العاجلة غير الطارئة · التقييم التمريضي وقياس العلامات الحيوية · الكشف الطبي · خدمة نهاية الأسبوع لطب الأسرة',
+   desc:'عيادة الرعاية العاجلة — 24 ساعة طوال أيام الأسبوع، للحالات المحوّلة من الطوارئ',
+   building:'الدخول يكون عبر قسم الطوارئ أولًا: تقييم أولي ثم تحويل إن كانت الحالة غير طارئة'},
+  vaccr:{services:'التطعيمات المجدولة حسب عمر الطفل · برنامج الطفل السليم وفق الجدول المعتمد',
+   desc:'عيادة التطعيمات والطفل السليم',
+   building:'المتابعة العامة للأطفال وتقييم الأعراض تكون في عيادات طب الأسرة لا هنا'},
+  physio:{services:'العلاج الطبيعي · العلاج الوظيفي · الأطراف الصناعية والأجهزة التقويمية · إعادة التأهيل بعد الإصابات والعمليات · تمارين علاجية · تقييم الأجهزة المساعدة',
+   desc:'وحدة التأهيل — العلاج الطبيعي والوظيفي والأطراف الصناعية، الأحد إلى الخميس 7:30ص – 4:30م',
+   building:'الدخول بتحويل من الطبيب المعالج · التحويل في نفس اليوم يُخدَم في الوقت نفسه',
+   contact:'مدير القسم: أ. علي الغامدي'},
   psvc:{services:'إصدار التقارير الطبية · نسخ الملف الطبي · التحويلات الخارجية · تحديث البيانات · تسجيل المواليد · الإجازات المرضية',
    building:'الأحد إلى الخميس · يشترط لطلب التقرير وجود متابعة خلال آخر 6 أشهر في طب الأسرة أو العيادات التخصصية',
    contact:'تحويلة التقارير 5547'}
@@ -6225,10 +6403,125 @@ if('serviceWorker'in navigator){
    alts:['حجز تخصصي','استشارة مباشرة'],kw:['تخصصي','تحويل','حجز'],
    short:'لا. جميع مواعيد العيادات التخصصية تكون بعد تحويل من طبيب الأسرة، ولا تُقدَّم استشارات مباشرة.',
    src:'العيادات التخصصية — نموذج جمع المعلومات',status:'approved'}
+ ,{id:'fm-hours',cat:'cli',aud:'all',intent:'معلومة',dept:'clinics',q:'ما أوقات عيادات طب الأسرة؟',
+   alts:['دوام طب الأسرة','متى تفتح عيادات طب الأسرة'],kw:['أوقات','دوام','طب الأسرة','مواعيد'],
+   short:'العيادات المجدولة من الأحد إلى الخميس: أول موعد 8:00 صباحًا وآخر موعد 8:00 مساءً، مع استراحة من 12:00 ظهرًا إلى 1:00. واستقبال المواعيد يعمل من 8:00ص إلى 8:00م.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-book',cat:'cli',aud:'all',intent:'إجراء',dept:'clinics',q:'كيف أحجز موعدًا في طب الأسرة؟',
+   alts:['حجز موعد','احجز طب الأسرة'],kw:['حجز','موعد','صحتك'],
+   short:'الحجز عبر تطبيق «صحتك»، سواء للعيادة الحضورية أو الافتراضية. وعند فوات الموعد يلزم حجز موعد جديد من التطبيق.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-nowalkin',cat:'cli',aud:'all',intent:'إجراء',dept:'urg',q:'ليس لدي موعد وحالتي عاجلة — أين أذهب؟',
+   alts:['بدون موعد','حالة عاجلة','وش أسوي بدون موعد'],kw:['بدون موعد','عاجل','طوارئ','رعاية عاجلة'],
+   short:'توجّه إلى قسم الطوارئ أولًا (24 ساعة). يُجري الفريق تقييمًا أوليًا: إن كانت الحالة طارئة تُستكمل داخل الطوارئ، وإن لم تكن فتُحوَّل إلى عيادة الرعاية العاجلة التابعة لطب الأسرة، حيث يستقبلك الممرض ويقيس علاماتك الحيوية قبل دخولك للطبيب.',
+   steps:['اذهب إلى قسم الطوارئ','التقييم الأولي من فريق الطوارئ','الحالات الطارئة تُستكمل في الطوارئ','غير الطارئة تُحوَّل لعيادة الرعاية العاجلة','التقييم التمريضي والعلامات الحيوية ثم الانتظار لدخول الطبيب'],
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-weekend',cat:'cli',aud:'all',intent:'معلومة',dept:'urg',q:'ماذا يتوفر من طب الأسرة في نهاية الأسبوع؟',
+   alts:['الجمعة والسبت','عطلة نهاية الأسبوع'],kw:['نهاية الأسبوع','جمعة','سبت','عطلة'],
+   short:'عيادات المواعيد تعمل من الأحد إلى الخميس فقط. في نهاية الأسبوع تكون عيادة الرعاية العاجلة (عبر الطوارئ) هي الخدمة المتاحة من طب الأسرة.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-virtual',cat:'cli',aud:'all',intent:'إجراء',dept:'clinics',q:'ما العيادة الافتراضية ومتى تناسبني؟',
+   alts:['عيادة افتراضية','موعد عن بعد','اتصال مرئي'],kw:['افتراضية','عن بعد','صحتك'],
+   short:'موعد عن بُعد يُحجز عبر «صحتك» وتنضم إليه من التطبيق. تناسب ما لا يحتاج فحصًا سريريًا: صرف أو إعادة صرف أدوية طب الأسرة، طلب بعض التحاليل، مراجعة نتائج سابقة، ومناقشة أعراض بسيطة.',
+   detail:'انضم قبل الموعد بـ15 دقيقة، وابقَ داخل التطبيق حتى ينضم الطبيب. وإن فاتك الموعد احجز موعدًا جديدًا.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-inperson',cat:'cli',aud:'all',intent:'معلومة',dept:'clinics',q:'متى أحتاج موعدًا حضوريًا بدل الافتراضي؟',
+   alts:['موعد حضوري','لازم أحضر'],kw:['حضوري','فحص سريري','تحويل'],
+   short:'عندما تحتاج فحصًا سريريًا، أو أخذ تاريخ مرضي وتقييمًا تفصيليًا، أو تحويلًا لتخصص آخر، أو تقييم مشكلة لا يمكن التعامل معها عن بُعد، أو إجراءات تستلزم حضورك.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-late',cat:'cli',aud:'all',intent:'معلومة',dept:'clinics',q:'تأخرت عن موعدي — ماذا يحدث؟',
+   alts:['تأخرت عن الموعد','فاتني الموعد'],kw:['تأخر','فوات','موعد'],
+   short:'التأخر أكثر من 15 دقيقة يجعل الموعد فائتًا، ويلزم حجز موعد جديد عبر «صحتك» — حفاظًا على انتظام مواعيد بقية المرضى.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-vaccclinic',cat:'prc',aud:'all',intent:'معلومة',dept:'vaccr',q:'ماذا تقدّم عيادة التطعيمات والطفل السليم؟',
+   alts:['الطفل السليم','عيادة التطعيمات'],kw:['تطعيمات','طفل سليم','متابعة الطفل'],
+   short:'متابعة التطعيمات المجدولة حسب عمر الطفل، وبرنامج الطفل السليم وفق الجدول المعتمد. أما المتابعة العامة للأطفال أو تقييم الأعراض فتكون في عيادات طب الأسرة.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-chronic',cat:'cli',aud:'all',intent:'معلومة',dept:'clinics',q:'أين أتابع مرضي المزمن؟ وهل عيادات الأمراض المزمنة تعمل؟',
+   alts:['عيادة مزمن','السكري والضغط','متابعة مزمن'],kw:['مزمن','سكري','ضغط','متابعة'],
+   short:'عيادات الأمراض المزمنة متوقفة مؤقتًا حاليًا وسيُعلَن عن إعادة تشغيلها. خلال فترة التوقف احجز موعدًا في عيادات طب الأسرة لمتابعة مرضك المزمن وإعادة صرف الأدوية التابعة لطب الأسرة.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-mental',cat:'cli',aud:'all',intent:'إجراء',dept:'clinics',q:'كيف أصل إلى عيادة الصحة النفسية؟',
+   alts:['الصحة النفسية','منتال هيلث','استشارة نفسية'],kw:['صحة نفسية','منتال','تحويل'],
+   short:'احجز موعدًا في عيادة طب الأسرة، ويقيّم الطبيب حالتك، وعند الحاجة يحوّلك إلى عيادة الصحة النفسية التابعة لطب الأسرة، وتصلك رسالة بتفاصيل الموعد.',
+   detail:'عيادة الصحة النفسية (Mental Health) التابعة لطب الأسرة تختلف عن عيادة الطب النفسي (Psychiatry) — وهما عيادتان منفصلتان، والوصول لكل منهما بالطريقة نفسها: تقييم في طب الأسرة ثم تحويل داخلي.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-psych',cat:'cli',aud:'all',intent:'معلومة',dept:'clinics',q:'ما الفرق بين عيادة الصحة النفسية وعيادة الطب النفسي؟',
+   alts:['الطب النفسي','سايكاتري','psychiatry','الفرق بين النفسية والطب النفسي'],kw:['طب نفسي','صحة نفسية','فرق','عيادتين'],
+   short:'هما عيادتان مختلفتان: عيادة الصحة النفسية (Mental Health) تتبع طب الأسرة، وعيادة الطب النفسي (Psychiatry) عيادة مستقلة. والوصول إلى كلٍّ منهما بالطريقة نفسها: احجز موعدًا في طب الأسرة، ويحدّد الطبيب بعد التقييم العيادة المناسبة ويحوّلك إليها، ثم تصلك رسالة بالموعد.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-referral',cat:'cli',aud:'all',intent:'إجراء',dept:'clinics',q:'كيف أُحوَّل إلى عيادة تخصصية؟',
+   alts:['تحويل تخصصي','أبغى تخصص'],kw:['تحويل','تخصصي','صحتك'],
+   short:'احجز موعدًا في طب الأسرة عبر «صحتك»، ثم يُجرى التقييم الطبي والفحوصات عند الحاجة، ويحوّلك طبيب الأسرة إلى التخصص المناسب إذا كانت حالتك تستدعي ذلك.',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'},
+  {id:'fm-refill-scope',cat:'ph',aud:'all',intent:'معلومة',dept:'clinics',q:'هل يصرف طب الأسرة كل الأدوية؟',
+   alts:['إعادة صرف من طب الأسرة','أدوية العيادات التخصصية'],kw:['صرف','إعادة صرف','أدوية','تخصصية'],
+   short:'طب الأسرة يصرف ويعيد صرف أدوية الأمراض المزمنة والحالات التي تقع ضمن اختصاصه. أما الأدوية التي بدأتها عيادة تخصصية، والأدوية عالية الخطورة، ونتائج التحاليل أو الأشعة التي طلبتها العيادة التخصصية — فمتابعتها تكون مع العيادة التخصصية نفسها التي وصفتها. وفي كل الحالات يلزم حجز موعد عبر «صحتك».',
+   src:'طب الأسرة — نموذج جمع المعلومات',status:'approved'}
+ ,{id:'rh-services',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'ما خدمات التأهيل المتوفرة؟',
+   alts:['خدمات التأهيل','وحدة التأهيل','ايش يقدم قسم التأهيل'],kw:['تأهيل','علاج طبيعي','علاج وظيفي','أطراف صناعية','تقويمية'],
+   short:'تشمل خدمات التأهيل: العلاج الطبيعي، والعلاج الوظيفي، والأطراف الصناعية والأجهزة التقويمية.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-access',cat:'prc',aud:'all',intent:'إجراء',dept:'physio',q:'كيف أحصل على خدمة التأهيل؟',
+   alts:['حجز علاج طبيعي','كيف أدخل التأهيل','تحويل تأهيل'],kw:['تحويل','حجز','تأهيل','علاج طبيعي'],
+   short:'عبر تحويل طبي من الطبيب المعالج إلى التخصص المناسب، ثم يُقيَّم المختص حالتك ويضع خطة العلاج. وإن كان التحويل في اليوم نفسه فقد تُخدَم في الوقت ذاته.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-pt-role',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'ما دور العلاج الطبيعي؟',
+   alts:['فايدة العلاج الطبيعي','وش يسوي العلاج الطبيعي'],kw:['علاج طبيعي','حركة','ألم','توازن'],
+   short:'يساعد على تحسين الحركة والقوة والتوازن، وتخفيف الألم، واستعادة القدرة الوظيفية بعد الإصابات أو العمليات أو بعض الحالات الصحية.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-pt-when',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'متى أحتاج إلى العلاج الطبيعي؟',
+   alts:['هل أحتاج علاج طبيعي','متى أروح العلاج الطبيعي'],kw:['صعوبة المشي','ضعف العضلات','آلام المفاصل','توازن'],
+   short:'عند صعوبة الحركة أو المشي، أو ضعف العضلات، أو آلام المفاصل والعضلات، أو مشاكل التوازن، أو الحاجة إلى التأهيل بعد إصابة أو عملية جراحية.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-ot-role',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'ما دور العلاج الوظيفي؟',
+   alts:['العلاج الوظيفي','وش يسوي العلاج الوظيفي'],kw:['علاج وظيفي','أنشطة الحياة اليومية','العناية الشخصية'],
+   short:'يحسّن قدرة المريض على أداء أنشطة الحياة اليومية: العناية الشخصية، استخدام اليدين، تناول الطعام، والمهام المنزلية أو الدراسية أو الوظيفية.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-pt-vs-ot',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'ما الفرق بين العلاج الطبيعي والعلاج الوظيفي؟',
+   alts:['الفرق بين الطبيعي والوظيفي'],kw:['فرق','علاج طبيعي','علاج وظيفي'],
+   short:'العلاج الطبيعي يركّز على الحركة والقوة والتوازن والمشي، بينما يركّز العلاج الوظيفي على الاستقلالية وأداء أنشطة الحياة اليومية.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-ortho',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'ما دور الأطراف الصناعية والأجهزة التقويمية؟',
+   alts:['الأطراف الصناعية','الأجهزة التقويمية'],kw:['أطراف صناعية','تقويمية','جبيرة','دعامة'],
+   short:'تختص بتقييم وتصميم وتجهيز ومتابعة الأطراف الصناعية والأجهزة التقويمية التي تساعد على تحسين الحركة والوظيفة والدعم والحماية.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-ortho-what',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'ما المقصود بالأجهزة التقويمية؟',
+   alts:['وش هي الأجهزة التقويمية'],kw:['تقويمية','دعامة','جبيرة'],
+   short:'هي أجهزة أو دعامات تُستخدم لدعم أو حماية جزء من الجسم أو تحسين وضعه وحركته ووظيفته.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-crutches',cat:'prc',aud:'all',intent:'إجراء',dept:'physio',q:'هل يمكنني الحصول على عكازات أو مشاية؟',
+   alts:['عكاز','مشاية','ووكر'],kw:['عكازات','مشاية','مساعدة على المشي'],
+   short:'نعم — يُقيَّم احتياجك وتُحدَّد وسيلة المساعدة الأنسب لحالتك وقدرتك على الحركة، وذلك في حال توفرها.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-wheelchair',cat:'prc',aud:'all',intent:'إجراء',dept:'physio',q:'هل يمكنني الحصول على كرسي متحرك؟',
+   alts:['كرسي متحرك','ويلتشير'],kw:['كرسي متحرك','عربة'],
+   short:'نعم — بعد تقييم الحاجة الطبية والوظيفية، ويُحدَّد النوع المناسب بحسب حالتك واحتياجاتك، وذلك في حال توفره.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-wc-types',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'هل تتوفر أنواع مختلفة من الكراسي المتحركة؟',
+   alts:['أنواع الكراسي المتحركة','كرسي كهربائي'],kw:['كراسي','كهربائية','يدوية'],
+   short:'نعم — قد تشمل الكراسي اليدوية والكهربائية والأنواع المتخصصة، ويحدّد المختص النوع الأنسب بعد التقييم ووفقًا لما هو متوفر.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-bed',cat:'prc',aud:'all',intent:'إجراء',dept:'physio',q:'هل يمكن توفير سرير طبي أو أجهزة مساعدة أخرى؟',
+   alts:['سرير طبي','أجهزة مساعدة'],kw:['سرير طبي','أجهزة مساعدة'],
+   short:'يمكن تقييم احتياجك للأسرّة الطبية وبعض الأدوات والأجهزة المساعدة وفقًا للحالة الطبية والوظيفية وللأنظمة المعتمدة، وذلك في حال توفرها.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-choose',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'هل يمكنني اختيار الجهاز المساعد بنفسي؟',
+   alts:['اختيار الجهاز','أختار الكرسي'],kw:['اختيار','جهاز مساعد'],
+   short:'يتم اختيار الجهاز المناسب بالتعاون معك وبناءً على تقييم المختص، لضمان ملاءمته لحالتك وسلامة استخدامه.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-multi',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'هل يمكن أن أحتاج أكثر من تخصص تأهيلي؟',
+   alts:['أكثر من تخصص','تنسيق بين التخصصات'],kw:['تخصصات','تنسيق'],
+   short:'نعم — قد يحتاج بعض المرضى أكثر من خدمة تأهيلية حسب حالتهم واحتياجاتهم، ويتم التنسيق بين التخصصات عند الحاجة.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'},
+  {id:'rh-goal',cat:'prc',aud:'all',intent:'معلومة',dept:'physio',q:'ما الهدف من خدمات التأهيل؟',
+   alts:['هدف التأهيل'],kw:['هدف','تأهيل','استقلالية'],
+   short:'مساعدتك على الوصول إلى أفضل مستوى ممكن من الحركة والوظيفة والاستقلالية وجودة الحياة.',
+   src:'وحدة التأهيل — نموذج جمع المعلومات',status:'approved'}
  ,{id:'fld-refill-portal',cat:'ph',aud:'all',intent:'إجراء',dept:'pharm',q:'كيف أطلب إعادة صرف دوائي إلكترونيًا؟',
-   alts:['منصة طلب الأدوية','طلب دواء أونلاين','إعادة صرف إلكتروني','رابط طلب الأدوية'],kw:['منصة','إلكتروني','إعادة صرف','رابط','طلب دواء'],
-   short:'عبر منصة طلب الأدوية في موقع المجمع: تُدخل بياناتك ورقم ملفك وتُرسل الطلب، ثم يُجهَّز الدواء ويُوصَّل أو تستلمه من الصيدلية. الأيقونة أدناه تفتح المنصة مباشرة.',
-   detail:'الرابط: kfmmc.med.sa/refill\nمناسب للأدوية المزمنة التي لديك وصفة سارية بها. للاستفسار: 943 أو تحويلة الصيدلية 4155.',
+   alts:['منصة إعادة صرف الأدوية','طلب دواء أونلاين','إعادة صرف إلكتروني','رابط طلب الأدوية'],kw:['منصة','إلكتروني','إعادة صرف','رابط','طلب دواء'],
+   short:'المنصة مخصّصة لإعادة صرف الأدوية المزمنة التي لديك بها وصفة سارية وصرف مستحق: تُدخل بياناتك ورقم ملفك وتُرسل الطلب، ثم يُجهَّز الدواء ويُوصَّل أو تستلمه من الصيدلية.',
+   detail:'الرابط: kfmmc.med.sa/refill\nلا تصلح لوصفة جديدة أو دواء لم يُصرف لك من قبل — تلك تحتاج زيارة الطبيب ثم الصرف من الصيدلية مباشرة.\nللاستفسار: 943 أو تحويلة الصيدلية 4155.',
    src:'الصيدلية — منصة طلب الأدوية الإلكترونية',status:'approved'}
  ];
  function applyDept(){if(typeof DEPTS==='undefined')return;
@@ -6251,7 +6544,7 @@ const QL_ICONS={tool:'<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>'
  call:'<path d="M6 3h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z"/>',news:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h7M7 13h10"/>'};
 const REFILL_URL='https://www.kfmmc.med.sa/refill/servicerequestmanual.aspx?shem=rimspwouoe';
 const QL_RULES=[
- [/صرف|إعادة صرف|دواء|أدوية|دوائي|وصفة|روشتة|علاجي المزمن|توصيل/,{t:'منصة طلب الأدوية',h:REFILL_URL,i:'doc',ext:1}],
+ [/صرف|إعادة صرف|دواء|أدوية|دوائي|وصفة|روشتة|علاج مزمن|علاجي المزمن|توصيل|صيدلي|صيدلية/,{t:'إعادة صرف الأدوية إلكترونيًا',s:'للأدوية المزمنة بوصفة سارية فقط',h:REFILL_URL,i:'doc',ext:1}],
  [/وزن|سمنة|كتلة|نحافة|رشاق/,{t:'مؤشر كتلة الجسم',h:'#tools/bmi',i:'tool'}],
  [/نمو|طول الطفل|منحنى|محيط الرأس/,{t:'مخطط نمو الأطفال',h:'#tools/growth',i:'tool'}],
  [/تطعيم|لقاح|جرعة|الطفل السليم/,{t:'دليل التطعيمات',h:'#tools/vacc',i:'tool'}],
@@ -6266,11 +6559,13 @@ const QL_RULES=[
  [/شكوى|اقتراح|ملاحظة|يسّروا/,{t:'الشكاوى والاقتراحات',h:'#complaints',i:'doc'}],
  [/أخبار|فعالية|نشرة/,{t:'تنبيهات وأخبار المجمع',h:'#alerts',i:'news'}],
  [/تواصل|رقم|تحويلة|اتصال/,{t:'أرقام التواصل',h:'#contacts',i:'call'}],
+ [/تأهيل|علاج طبيعي|علاج وظيفي|أطراف صناعية|كرسي متحرك|عكاز|مشاية|تقويمية/,{t:'خطة زيارة العلاج الطبيعي',h:'#plan/physio',i:'plan'}],
  [/زيارة|مرافق|منوم|تنويم/,{t:'خطة زيارة مريض منوّم',h:'#plan/visit',i:'plan'}]
 ];
 const QL_PLAN={pharm:'pharmonly',labr:'lab',bldm:'lab',bldf:'lab',xray:'xray',physio:'physio',dress:'dress',vaccr:'vacc',vacc:'vacc',
  clinics:'fm',spec:'spec',er:'er',urg:'urg',admission:'admit',psvc:'admit'};
-function qlChip(x){const ext=x.ext?' target="_blank" rel="noopener"':'';return `<a class="qlink${x.ext?' ext':''}" href="${x.h}"${ext}><span class="qli"><svg viewBox="0 0 24 24">${QL_ICONS[x.i]||QL_ICONS.tool}</svg></span>${esc(x.t)}${x.ext?'<span class="qlx">↗</span>':''}</a>`}
+function qlChip(x){const ext=x.ext?' target="_blank" rel="noopener"':'';
+ return `<a class="qlink${x.ext?' ext':''}" href="${x.h}"${ext}><span class="qli"><svg viewBox="0 0 24 24">${QL_ICONS[x.i]||QL_ICONS.tool}</svg></span><span class="qlt"><b>${esc(x.t)}</b>${x.s?`<i>${esc(x.s)}</i>`:''}</span>${x.ext?'<span class="qlx">↗</span>':''}</a>`}
 function qlLinks(e){/* يبني قائمة الروابط ذات الصلة لسؤال واحد */
  const txt=[e.q,e.short,e.detail,(e.kw||[]).join(' '),(e.alts||[]).join(' ')].filter(Boolean).join(' ');
  const out=[];const seen=new Set();
@@ -6281,11 +6576,12 @@ function qlLinks(e){/* يبني قائمة الروابط ذات الصلة لس
  const ql=[];QL_RULES.forEach(r=>{if(r[0].test(txt))ql.push(r[1])});
  ql.sort((a,b)=>(b.ext?1:0)-(a.ext?1:0));ql.forEach(add);
  return out.slice(0,5)}
-function qlHTML(e){const L=qlLinks(e);return L.length?`<div class="qlinks"><span class="qlh">اذهب مباشرة إلى:</span>${L.map(qlChip).join('')}</div>`:''}
+function qlHTML(e){const L=qlLinks(e);return L.length?`<div class="qlinks"><span class="qlh">روابط مرتبطة بإجابتك</span>${L.map(qlChip).join('')}</div>`:''}
 /* حقن الأيقونات في بطاقة الإجابة */
 (function(){if(typeof answerCard!=='function')return;const _a=answerCard;
  window.answerCard=function(e){let html=_a.call(this,e);const add=qlHTML(e);
-  if(!add)return html;const i=html.lastIndexOf('</div>');return i>0?html.slice(0,i)+add+html.slice(i):html+add}})();
+  if(!add)return html;const m=html.match(/<div class="short">[\s\S]*?<\/div>/);
+  return m?html.replace(m[0],m[0]+add):html+add}})();
 /* دعم فتح أداة محددة مباشرة: #tools/<id> */
 (function(){if(typeof PAGES==='undefined'||!PAGES.tools)return;const _t=PAGES.tools;
  PAGES.tools=function(arg){const r=_t.apply(this,arguments);
@@ -6623,7 +6919,7 @@ XTOOLS.nutri=function(box){
 /* ═══════════ خطط زيارة جاهزة لكل قسم ═══════════ */
 const VPLANS=[
  {id:'fm',n:'زيارة عيادة طب الأسرة',s:'بموعد مسبق',c:'#0B4644',t:'45–75 دقيقة',
-  prep:['أحضر الهوية/البطاقة العسكرية وبطاقة الملف','صوّر علب أدويتك الحالية','اكتب أهم 3 أسئلة تريد سؤال الطبيب عنها','احضر قبل موعدك بـ20 دقيقة'],
+  prep:['احجز الموعد عبر تطبيق «صحتك» — العيادات المجدولة من الأحد إلى الخميس، أول موعد 8:00ص وآخر موعد 8:00م','التأخر أكثر من 15 دقيقة يُلغي الموعد ويلزم حجز موعد جديد','أحضر الهوية/البطاقة العسكرية وبطاقة الملف','صوّر علب أدويتك الحالية','اكتب أهم 3 أسئلة تريد سؤال الطبيب عنها','بلا موعد وحالتك عاجلة؟ توجّه للطوارئ أولًا ومنها تُحوَّل للرعاية العاجلة'],
   steps:[['الدخول من بوابة العيادات الخارجية','اركن في مواقف المراجعين، والمدخل تحت المظلة المقوّسة.','gate'],
    ['الاستقبال وأهلية العلاج','سجّل حضورك وتأكّد من أهلية العلاج — استلم رقمك.','reception'],
    ['قياس العلامات الحيوية','الضغط والحرارة والوزن قبل دخول العيادة.','nursem'],
@@ -6633,7 +6929,7 @@ const VPLANS=[
    ['الصيدلية الخارجية','استلم دواءك بعد صدور الوصفة — تعمل 24 ساعة.','pharm'],
    ['الخروج وحجز المتابعة','أكّد موعد المتابعة قبل المغادرة إن طُلب منك.','reception']]},
  {id:'pharmonly',n:'الصيدلية فقط',s:'إعادة صرف دواء مزمن',c:'#EAAA00',t:'15–30 دقيقة',
-  prep:['يمكنك تقديم الطلب مسبقًا من منصة طلب الأدوية (kfmmc.med.sa/refill) فيكون جاهزًا عند وصولك','تأكّد أن الوصفة سارية وأن الصرف مستحق — عبر تطبيق صحتك','أحضر الهوية ورقم الملف','يمكن الصرف في أي وقت — الصيدلية تعمل 24 ساعة'],
+  prep:['إن كانت وصفتك سارية فاطلب إعادة الصرف مسبقًا من المنصة (kfmmc.med.sa/refill) فيكون الدواء جاهزًا عند وصولك — أما الوصفة الجديدة فتُصرف مباشرة','تأكّد أن الوصفة سارية وأن الصرف مستحق — عبر تطبيق صحتك','أحضر الهوية ورقم الملف','يمكن الصرف في أي وقت — الصيدلية تعمل 24 ساعة'],
   steps:[['الدخول من بوابة العيادات','ادخل واتجه مباشرة إلى الممر الرئيسي.','gate'],
    ['نافذة الصيدلية الخارجية','قدّم الهوية أو رقم الملف لاستلام رقمك.','pharm'],
    ['انتظار الصيدلية','اجلس في منطقة الانتظار (رجال/نساء) حتى ينادى رقمك.','pwm'],
@@ -6663,7 +6959,7 @@ const VPLANS=[
    ['غرفة التصوير','اتبع تعليمات الفني وثبّت وضعية الجسم لثوانٍ.','xray'],
    ['موعد التقرير','التقرير يصدر عادة خلال أيام — اسأل عن طريقة استلامه.','xray']]},
  {id:'physio',n:'العلاج الطبيعي',s:'جلسة تأهيل',c:'#0E8A4A',t:'45–60 دقيقة',
-  prep:['البس ملابس رياضية مريحة','أحضر التحويل وتقارير الأشعة','احضر قبل الجلسة بـ10 دقائق للإحماء'],
+  prep:['الدخول بتحويل من الطبيب المعالج — وإن كان التحويل في اليوم نفسه فقد تُخدَم في الوقت ذاته','البس ملابس رياضية مريحة','أحضر التحويل وتقارير الأشعة','الأوقات: الأحد إلى الخميس 7:30ص – 4:30م'],
   steps:[['الدخول والتوجه للقسم','اتجه من الممر الرئيسي نحو وحدة العلاج الطبيعي.','gate'],
    ['استقبال العلاج الطبيعي','سجّل حضورك وأكّد جلستك.','physio'],
    ['التقييم الأولي','في الزيارة الأولى يُقيّم الأخصائي حالتك ويضع الخطة.','physio'],
@@ -6701,7 +6997,7 @@ const VPLANS=[
    ['القرار','خروج بوصفة، أو ملاحظة، أو تنويم.','er'],
    ['الصيدلية عند الخروج','صرف الأدوية — الصيدلية تعمل 24 ساعة.','pharm']]},
  {id:'urg',n:'العيادة العاجلة',s:'حالة عاجلة غير طارئة',c:'#B01030',t:'30–60 دقيقة',
-  prep:['للحالات مثل الحرارة والألم البسيط والإصابات الخفيفة','إن كانت الحالة خطيرة توجّه للطوارئ مباشرة'],
+  prep:['الدخول يكون عبر قسم الطوارئ أولًا: تقييم أولي ثم تحويل إن كانت الحالة غير طارئة','تعمل 24 ساعة طوال أيام الأسبوع، وهي خدمة طب الأسرة المتاحة في نهاية الأسبوع','للحالات مثل الحرارة والألم البسيط والإصابات الخفيفة'],
   steps:[['الدخول والتسجيل','سجّل في الاستقبال واذكر شكواك باختصار.','reception'],
    ['الفرز وقياس العلامات','لتحديد مدى إلحاح الحالة.','nursem'],
    ['العيادة العاجلة','الكشف والعلاج الفوري.','urg'],
